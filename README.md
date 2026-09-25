@@ -4,7 +4,7 @@
 
 I like systems where the interesting work does not stop at the framework boundary.
 
-My background spans embedded/storage software, financial systems, fraud-detection products, banking, shipping, full-stack web systems, ML experiments, infrastructure/operations and, more recently, agentic software-engineering workflows.
+I have 12+ years of professional software-engineering experience spanning embedded/storage software, financial systems, fraud-detection products, banking, shipping, full-stack web systems, infrastructure/operations and, more recently, agentic software-engineering workflows.
 
 A recurring theme in my work is moving between abstraction levels:
 
@@ -31,7 +31,7 @@ deployment / operations
 | **VibeGuard** | Human-in-the-loop code review/debugging prototype for AI-assisted development | GitHub inspection, AI audit, diff/review UX and human escalation; currently private while evolving |
 | **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Explicit MCP server for narrowly scoped GitHub administration capabilities | MCP/tool design, capability boundaries, TypeScript, Docker and CI |
 
-See **[PROJECTS.md](PROJECTS.md)** for the wider project map, including older R&D and historical engineering labs.
+Some active experimental infrastructure still lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, where runners and agent workflows can evolve without turning this professional profile into an operational control plane.\n\nSee **[PROJECTS.md](PROJECTS.md)** for the wider project map, including older R&D and historical engineering labs.
 
 ## ML / neural-network work
 
