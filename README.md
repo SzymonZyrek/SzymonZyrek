@@ -31,7 +31,9 @@ deployment / operations
 | **VibeGuard** | Human-in-the-loop code review/debugging prototype for AI-assisted development | GitHub inspection, AI audit, diff/review UX and human escalation; currently private while evolving |
 | **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Explicit MCP server for narrowly scoped GitHub administration capabilities | MCP/tool design, capability boundaries, TypeScript, Docker and CI |
 
-Some active experimental infrastructure still lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, where runners and agent workflows can evolve without turning this professional profile into an operational control plane.\n\nSee **[PROJECTS.md](PROJECTS.md)** for the wider project map, including older R&D and historical engineering labs.
+Some active experimental infrastructure still lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, where runners and agent workflows can evolve without turning this professional profile into an operational control plane.
+
+See **[PROJECTS.md](PROJECTS.md)** for the wider project map, including older R&D and historical engineering labs.
 
 ## ML / neural-network work
 
