@@ -30,8 +30,8 @@ That habit has stayed useful professionally: it helps me reason at a higher leve
 
 ## Realtime systems and the game-engine detour
 
-### game10: realtime engine and rendering sandbox
-**Source:** historical project; original repository predates the current GitHub portfolio migration  
+### Game-10: realtime engine and rendering sandbox
+**Repository:** https://github.com/SzymonZyrek/Game-10  
 **Period:** 2014–2015
 
 Before most of the repositories below, I had a fairly web-shaped mental model of software: Spring/Angular-style application structure, object models, services and layers.
@@ -68,7 +68,11 @@ java_events / cpp_events
 build systems, artifacts and runtime internals
 ```
 
-The original code is old and experimental, which is exactly why I keep the story. It is an early example of a habit that later became much more useful professionally: when two domains disagree about what "good architecture" means, go find the constraint that explains the disagreement.
+The original code is old and experimental, which is exactly why I keep it. The repository now lives at **[SzymonZyrek/Game-10](https://github.com/SzymonZyrek/Game-10)**, with the original engine code preserved rather than rewritten into a modern portfolio reconstruction.
+
+A few useful fossils are directly visible in the source: the [60 Hz loop](https://github.com/SzymonZyrek/Game-10/blob/develop/src/GameLoop.cpp), the [component storage and packed removal logic](https://github.com/SzymonZyrek/Game-10/blob/develop/src/Scene.cpp), the explicit [data-locality TODO](https://github.com/SzymonZyrek/Game-10/blob/develop/src/Component.h), and the [OpenGL renderer](https://github.com/SzymonZyrek/Game-10/blob/develop/src/SimpleRenderer.cpp).
+
+It is an early example of a habit that later became much more useful professionally: when two domains disagree about what "good architecture" means, go find the constraint that explains the disagreement.
 
 ## Early workstation and tooling experiments
 
