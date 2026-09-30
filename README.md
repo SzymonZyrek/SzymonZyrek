@@ -2,76 +2,113 @@
 
 **Software / Systems Architect · Senior Software Engineer**
 
-**[CV / Resume (PDF)](Szymon_Zyrek_CV.pdf)** · **Email:** [stynkdev@gmail.com](mailto:stynkdev@gmail.com) · [szyrek@stynk.eu](mailto:szyrek@stynk.eu)
+**[CV / Resume (PDF)](Szymon_Zyrek_CV.pdf)** · **[Commercial engineering history](CAREER.md)** · **[Project map](PROJECTS.md)** · **[Engineering archaeology](HOBBY_PROJECTS.md)**  
+**Email:** [stynkdev@gmail.com](mailto:stynkdev@gmail.com) · [szyrek@stynk.eu](mailto:szyrek@stynk.eu)
 
-I like systems where the interesting work does not stop at the framework boundary.
+I build systems where product, domain, architecture, implementation and operations remain connected.
 
-I have 12+ years of professional software-engineering experience spanning embedded/storage software, financial systems, fraud-detection products, banking, shipping, full-stack web systems, infrastructure/operations and, more recently, agentic software-engineering workflows.
+Across 12+ years of professional engineering, I have worked from embedded/storage software and C++/Java financial systems through cloud platforms, full-stack product development and production operations to current agentic software-engineering workflows.
 
-A recurring theme in my work is moving between abstraction levels:
+A recurring habit is moving up and down abstraction layers until the system stops feeling magical — then choosing the simplest boundary that survives contact with reality.
+
+## Start here
+
+| If you want to see… | Best entry point |
+|---|---|
+| **End-to-end product and system ownership** | **[Stynk CRM case study](CASE_STUDIES/STYNK_CRM.md)** · [visual tour](CASE_STUDIES/stynk/visual-tour.md) · [discovery/evolution](CASE_STUDIES/stynk/discovery.md) |
+| **My current agentic-engineering product thesis** | **[VibeGuard case study](CASE_STUDIES/VIBEGUARD.md)** · [visual tour](CASE_STUDIES/vibeguard/visual-tour.md) · [evidence](CASE_STUDIES/vibeguard/evidence.md) |
+| **What I built professionally when the code is private** | **[Commercial engineering history](CAREER.md)** |
+| **The wider map of active and historical projects** | **[PROJECTS.md](PROJECTS.md)** |
+| **Why I keep rebuilding abstractions for fun** | **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)** — including the old game-engine, event-system, build-tool and runtime experiments |
+
+## Primary case study — Stynk CRM
+
+Stynk is the clearest example of how I work when I own the whole feedback loop.
+
+It started as a request to capture data from a paper contract and evolved, through production use, into a role-aware operating system for sales, contracts, jobs, planning, files, payments, commissions, notifications, audit and a public website. Repeated business variation then pushed the architecture toward configurable Jobs, typed models, versioned pricing semantics and Studio-authored executable policy.
+
+[![Stynk CRM — case-study closing synthesis](CASE_STUDIES/assets/stynk/slides/stynk_case_study_summary.png)](CASE_STUDIES/STYNK_CRM.md)
+
+**[Read the case study →](CASE_STUDIES/STYNK_CRM.md)** · **[Open the visual tour →](CASE_STUDIES/stynk/visual-tour.md)** · [full-size closing synthesis](CASE_STUDIES/assets/stynk/slides/stynk_case_study_summary.png)
+
+## Selected current work
+
+| Project | What it explores | Useful entry points |
+|---|---|---|
+| **Stynk CRM** | Production product/system ownership from requirements and UX through architecture, Angular/Django implementation, CI/CD, deployment and support | [Case study](CASE_STUDIES/STYNK_CRM.md) · [visual tour](CASE_STUDIES/stynk/visual-tour.md) · [model/runtime](CASE_STUDIES/stynk/model-runtime.md) |
+| **VibeGuard** | A Tech Owner control loop for AI-built software: evidence compression, architecture/security sanity, escalation and durable human decisions | [Case study](CASE_STUDIES/VIBEGUARD.md) · [visual tour](CASE_STUDIES/vibeguard/visual-tour.md) · [ownership model](CASE_STUDIES/vibeguard/ownership-model.md) |
+| **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting agentic software-development loop | Workflow architecture, evaluation, local/hosted execution and evidence-driven coordination |
+| **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Narrowly scoped MCP server for explicit GitHub administration capabilities | Capability boundaries, tool design, TypeScript, Docker and CI |
+
+Most experimental runner/integration infrastructure lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**.
+
+## One engineering thread
+
+The projects are less random than the technology list makes them look.
 
 ```text
-requirements
-   ↓
-domain model
-   ↓
-architecture
-   ↓
-implementation
-   ↓
-verification
-   ↓
-deployment / operations
+game10 / realtime engine + rendering
+        ↓
+data locality, frame budgets, C++ constraints
+        ↓
+events / concurrency / build-system experiments
+        ↓
+artifact resolution + application-runtime archaeology
+        ↓
+large enterprise systems + platform integration
+        ↓
+end-to-end product ownership in Stynk
+        ↓
+ML / model lifecycle / local agents
+        ↓
+HackaTeam + VibeGuard
 ```
 
-## Current work
+The old **[game10 thread](HOBBY_PROJECTS.md#game10-realtime-engine-and-rendering-sandbox)** matters here. Coming from Spring/Angular-style web development, writing a realtime C++ engine made it very obvious that familiar object-heavy patterns are not universal truths: memory layout, predictable work and a frame budget can completely change what “good architecture” means.
 
-| Project | What it is | My focus |
-|---|---|---|
-| **[Stynk CRM — case study](CASE_STUDIES/STYNK_CRM.md)** | Proprietary CRM/ERP-style platform used by a construction company | End-to-end ownership: requirements, domain, UX, Angular/Django implementation, CI/CD, deployment, operations and support |
-| **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting agentic software-development loop | Workflow architecture, evaluation, agent coordination, local/hosted execution and aggressive simplification |
-| **[VibeGuard — case study](CASE_STUDIES/VIBEGUARD.md)** | Tech Owner control-loop PoC for AI-built software | Human technical ownership above agent execution: architecture/security sanity, evidence compression, escalation and decision memory; private R&D prototype |
-| **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Explicit MCP server for narrowly scoped GitHub administration capabilities | MCP/tool design, capability boundaries, TypeScript, Docker and CI |
+That same habit later showed up in **[java_events → cpp_events → JustBuild → FetchDog → Faxus → Meserve](HOBBY_PROJECTS.md)**: rebuild enough of an abstraction to understand the constraints underneath it, then go back to the mature tool with a better model.
 
-Some active experimental infrastructure still lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, where runners and agent workflows can evolve without turning this professional profile into an operational control plane.
+## Commercial engineering
 
-See **[PROJECTS.md](PROJECTS.md)** for the wider project map.
+Most commercial code is private, so **[CAREER.md](CAREER.md)** presents the product and engineering history directly.
 
-## ML / neural-network work
+- **Intel** — embedded/storage-driver software, NAND verification and internal tooling near the hardware boundary.
+- **Misys / Finastra** — TopOffice, KGR, CMR, ALM, UserManagement, identity integration, persistence modernization and the integrated platform work that evolved into FusionFabric.
+- **Ciklum / EverC** — fraud/risk product engineering, AWS/Terraform/Kubernetes delivery, monitoring and production ownership.
+- **Nordea** — Java/Angular financing capability in a microservice/microfrontend banking ecosystem.
+- **Hapag-Lloyd** — Java/Jakarta EE, event-driven shipping/logistics systems and integration/platform services.
+- **Stynk** — current end-to-end product/system ownership.
+
+**[Read the commercial engineering history →](CAREER.md)**
+
+## ML and agentic engineering
 
 I did not arrive at AI through chat interfaces alone.
 
-**[neural-networks-labs](https://github.com/SzymonZyrek/neural-networks-labs)** preserves hands-on experiments with regression/classification, gradient descent, backpropagation, CIFAR classification, object detection, TensorFlow/Detecto workflows, sentiment analysis and early Hugging Face/GPT-2 work.
+**[neural-networks-labs](https://github.com/SzymonZyrek/neural-networks-labs)** preserves hands-on work with regression/classification, gradient descent, backpropagation, computer vision/object detection, sentiment analysis and early transformer/GPT-2 experiments.
 
-**[MLFramework](https://github.com/SzymonZyrek/MLFramework)** moves one level outward: model-backend abstraction, scikit-learn and Keras/TensorFlow training, dataset configuration, model packaging and orchestration.
+**[MLFramework](https://github.com/SzymonZyrek/MLFramework)** moves one layer outward into reusable training infrastructure and model/workflow orchestration.
 
-## Hobby projects / engineering archaeology
+That progression continued through local models and custom agent loops into documentation-driven coding workflows, **HackaTeam** and the current **VibeGuard** Tech Owner experiment.
 
-I have kept a fair amount of old code public: tiny utilities, half-finished frameworks, build-system experiments, editor configs and other things I built mostly because I was curious.
+## Engineering archaeology
 
-I do not treat them as a portfolio of finished products. They are more useful as a record of how I learn — usually by rebuilding a small version of something until I understand which parts are essential, which are accidental complexity, and where the abstraction starts leaking.
+The older public repositories are not presented as finished products. They are a record of how I learn.
 
-If that sounds interesting, I wrote up the timeline in **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)**.
+Highlights include:
 
-## Commercial work
+- **game10** — early C++/OpenGL realtime engine and rendering sandbox; architecture under a frame budget;
+- **java_events / cpp_events** — concurrency, dispatch, ownership and translating abstractions across language/runtime boundaries;
+- **JustBuild / FetchDog / Faxus** — build lifecycles, plugins, artifacts, qualifiers, repositories and dependency resolution;
+- **Meserve** — application-container/runtime internals, metadata, class loading, lifecycle, networking and routing;
+- workstation/editor utilities that made unfamiliar hosts usable enough to start debugging.
 
-A large part of my professional code is not public because it was written in employer- or client-owned repositories. The short version below is deliberately product-oriented; **[CAREER.md](CAREER.md)** contains the fuller engineering history.
+The full chronological story is in **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)** and the repository inventory is in **[PROJECTS.md](PROJECTS.md)**.
 
-- **Misys / Finastra** — TopOffice, KGR, CMR, ALM and UserManagement; DataXtend→JPA modernization; shared identity/OIDC across C++, Java and Objective-C/GNUstep; OpenAPI-wrapped legacy capabilities composed into the Docker-based MisysBoard MVP that evolved into the FusionFabric platform.
-- **Intel** — NAND/storage-driver software, automated verification and internal engineering tooling close to the hardware boundary.
-- **Ciklum / EverC** — MerchantView fraud/risk product work, stabilization during organizational transition, AWS/Terraform/Kubernetes delivery, Grafana/alerting and hands-on on-call production ownership.
-- **Nordea** — Java/Angular financing capability inside a larger microservice/microfrontend banking ecosystem; explicit contracts, quality/security gates and cross-team dependency coordination.
-- **Hapag-Lloyd** — Java/Jakarta EE, event-driven shipping/logistics systems and platform/integration services.
-- **Stynk** — current end-to-end product/system ownership from requirements and UX through implementation, CI/CD, deployment and operations.
+## Technologies
 
-Across those roles the infrastructure story moved from legacy on-prem/Solaris and SSH-managed environments, through Azure and AWS/Kubernetes, to current Docker/Linux operations and Google Cloud/AI-platform experiments.
-
-So this GitHub profile is best read as a mix of **public engineering history, selected experiments and current R&D**, not as a complete chronological record of employment.
-
-## Technologies I have worked with
-
-Java / Jakarta EE / Spring · C / C++ · Objective-C / GNUstep · Python / Django · TypeScript / Angular / React · Groovy / Grails · SQL / PostgreSQL · JPA · JNI · OpenAPI / REST · OAuth / OIDC · Docker · Kubernetes · Terraform · Linux · Azure · AWS · Google Cloud · GitHub Actions · event-driven systems · MCP · local LLM tooling / llama.cpp
+Java / Jakarta EE / Spring · C / C++ · Objective-C / GNUstep · Python / Django · TypeScript / Angular / React · Groovy / Grails · SQL / PostgreSQL · JPA · JNI · OpenAPI / REST · OAuth / OIDC · OpenGL · realtime systems · Docker · Kubernetes · Terraform · Linux · Azure · AWS · Google Cloud · GitHub Actions · event-driven systems · MCP · local LLM tooling / llama.cpp
 
 ---
 
-I am most interested in roles where architecture is still connected to implementation: enough abstraction to design the system, enough proximity to code and operations to know whether the design survives contact with reality.
+I am most interested in work where architecture is still connected to implementation: enough abstraction to design the system, enough proximity to code, users and operations to know whether the design survives contact with reality.
