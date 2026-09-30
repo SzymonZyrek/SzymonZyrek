@@ -12,6 +12,10 @@ This page separates:
 
 That boundary matters more here than polishing the prototype into something it is not.
 
+![Prototype evidence vs product direction](../assets/vibeguard/diagrams/05-prototype-product-boundary.svg)
+
+The implementation is evidence that the idea was explored materially. The newer ownership slice is evidence that the interaction model can be made concrete. Neither is presented as the final production architecture.
+
 ---
 
 ## 1. The existing prototype
