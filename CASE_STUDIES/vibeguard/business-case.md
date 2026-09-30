@@ -1,6 +1,6 @@
 # VibeGuard — business case: scaling agentic engineering without scaling chaos
 
-[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
+[← Case study overview](../VIBEGUARD.md) · [Evidence](evidence.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
 
 VibeGuard is partly a product idea and partly a bet on where software engineering is moving.
 
@@ -35,6 +35,18 @@ A workflow that looks impressive during a two-week prototype can still hit a har
 VibeGuard is exploring whether implementation and ownership can be separated cleanly enough to capture the upside without inheriting those failure modes.
 
 ![From coding agents to a new engineering model](../assets/vibeguard/diagrams/07-engineering-model.svg)
+
+## Evidence before the pitch
+
+The external research supports the **premise**, not the revenue model.
+
+GitHub, Stack Overflow and LinkedIn data point in the same direction: AI-assisted implementation is normalizing quickly, while trust, security concerns and willingness to delegate consequential work lag behind.
+
+![External evidence behind the workflow thesis](../assets/vibeguard/diagrams/08-evidence-landscape.svg)
+
+That is enough to justify testing a new workflow layer. It is not evidence that customers will pay for VibeGuard.
+
+[Exact sources, numbers and claim boundaries →](evidence.md)
 
 ---
 
