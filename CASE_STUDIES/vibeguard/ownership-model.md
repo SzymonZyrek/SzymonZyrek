@@ -438,7 +438,37 @@ Marketplace mechanics become supply infrastructure for ownership rather than the
 
 ---
 
-## 13. What the PoC is testing
+## 13. The year-two test
+
+The strongest test of the model is not:
+
+> Can an agent ship this feature?
+
+It is:
+
+> **Can this engineering system still make coherent changes after a year of business evolution?**
+
+A durable agentic workflow has to support:
+
+- concepts being renamed or replaced;
+- architecture being simplified rather than endlessly wrapped;
+- large refactors when business assumptions change;
+- migration from prototype shortcuts to production boundaries;
+- retiring obsolete patterns from agent context;
+- preserving why important exceptions were accepted;
+- onboarding a new human engineer without reconstructing the project from archaeology.
+
+This is where pure coding capability reaches its ceiling.
+
+A powerful model can still make a locally sensible change against a globally stale representation of the product.
+
+The Tech Owner model exists to keep an authoritative system-level view alive above those local actions.
+
+That is the difference between scaling code generation and scaling **software engineering**.
+
+---
+
+## 14. What the PoC is testing
 
 The current prototype is not testing whether senior developers can review code.
 
