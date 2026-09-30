@@ -4,6 +4,12 @@
 
 VibeGuard is partly a product idea and partly a bet on where software engineering is moving.
 
+The bet is not that coding models will become useful.
+
+They already are.
+
+The important question is what happens **after coding itself stops being the scarce capability**.
+
 The opportunity created by agentic coding is much larger than "developers type code faster".
 
 The deeper opportunity is that software can be applied to far more real-world problems because the cost of turning domain intent into working implementation is falling.
@@ -16,7 +22,19 @@ That is the upside.
 
 The corresponding problem is that **implementation capacity can scale much faster than technical judgement, continuity and accountability**.
 
-VibeGuard is exploring whether those two forces can be separated cleanly enough to capture the upside without inheriting the worst failure modes.
+A workflow that looks impressive during a two-week prototype can still hit a hard ceiling after twelve months of:
+
+- changing business concepts;
+- overlapping generations of architecture;
+- migrations;
+- integrations;
+- security boundaries;
+- accumulated exceptions;
+- refactors whose real scope is larger than the current prompt context.
+
+VibeGuard is exploring whether implementation and ownership can be separated cleanly enough to capture the upside without inheriting those failure modes.
+
+![From coding agents to a new engineering model](../assets/vibeguard/diagrams/07-engineering-model.svg)
 
 ---
 
@@ -271,7 +289,45 @@ That is the workflow problem VibeGuard is aimed at.
 
 ---
 
-## 8. Pushing past stale boundaries of traditional development
+## 8. The real product threshold: can we sell it without being afraid of what is inside?
+
+A working demo is not the same thing as a sellable system.
+
+At some point a founder has to make claims to customers, investors, partners or an acquiring engineering team.
+
+Questions become concrete:
+
+- Who understands the architecture?
+- Who can explain why this dependency exists?
+- Who knows whether the security model is intentional?
+- Who can judge whether the next feature requires a local patch or a structural refactor?
+- Who knows which shortcuts were deliberate?
+- Who can say whether the system will still be evolvable after another year of product change?
+
+If the answer is effectively:
+
+> "the agents built it and it seems to work"
+
+then agentic coding has created implementation without enough technical confidence to support the business around it.
+
+VibeGuard's stronger commercial hypothesis is therefore not merely **quality assurance**.
+
+It is **engineering assurance**: a combination of explicit ownership, evidence and continuity that lets a business use aggressive automation without treating its own software as an opaque asset.
+
+This is where "there is a pilot in this plane" becomes material rather than rhetorical.
+
+The pilot has:
+
+- authority;
+- context;
+- evidence;
+- decision history;
+- explicit risk ownership;
+- a mechanism for forcing the right refactor when local patches stop being rational.
+
+---
+
+## 9. Pushing past stale boundaries of traditional development
 
 Some assumptions of traditional software delivery were shaped by a world in which human implementation capacity was the dominant bottleneck.
 
@@ -301,7 +357,7 @@ VibeGuard is one possible control layer for that reorganized workflow.
 
 ---
 
-## 9. A possible business flywheel
+## 10. A possible business flywheel
 
 The product hypothesis can be expressed as a reinforcing loop:
 
@@ -328,7 +384,7 @@ The product is valuable only if it improves this loop without turning the human 
 
 ---
 
-## 10. Potential commercial shapes
+## 11. Potential commercial shapes
 
 These are hypotheses, not validated revenue models.
 
@@ -364,7 +420,7 @@ The marketplace is then a supply mechanism for ownership rather than the core pr
 
 ---
 
-## 11. What would make the business thesis false?
+## 12. What would make the business thesis false?
 
 The case is not proven.
 
@@ -383,15 +439,19 @@ The PoC exists to make them easier to test.
 
 ---
 
-## 12. The core business claim
+## 13. The core business claim
 
 The strongest version of the hypothesis is not:
 
 > AI will replace developers.
 
+And it is not:
+
+> the next coding model, skill or plugin will finally solve software engineering.
+
 It is:
 
-> **Agentic engineering can make far more software worth building, but scaling it safely requires reorganizing work around what can be delegated and where experienced human judgement remains authoritative.**
+> **Agentic engineering can make far more software worth building, but scaling it into durable, sellable systems requires a new engineering model: delegate what is safe to delegate, preserve experienced human authority where the system changes meaning, and make that ownership visible through evidence.**
 
 If that is true, there is room for a new layer of software and service around:
 
