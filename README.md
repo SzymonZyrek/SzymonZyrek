@@ -2,6 +2,8 @@
 
 **Software / Systems Architect · Senior Software Engineer**
 
+**[CV / Resume (PDF)](Szymon_Zyrek_CV.pdf)** · **Email:** [stynkdev@gmail.com](mailto:stynkdev@gmail.com) · [szyrek@stynk.eu](mailto:szyrek@stynk.eu)
+
 I like systems where the interesting work does not stop at the framework boundary.
 
 I have 12+ years of professional software-engineering experience spanning embedded/storage software, financial systems, fraud-detection products, banking, shipping, full-stack web systems, infrastructure/operations and, more recently, agentic software-engineering workflows.
