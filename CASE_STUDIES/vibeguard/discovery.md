@@ -29,6 +29,10 @@ The original business instinct behind VibeGuard was simple:
 
 The repository became a way to explore what that service might look like.
 
+![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
+
+This is the starting asymmetry: implementation bandwidth rises quickly, while engineering judgement, continuity and accountability remain scarce.
+
 ---
 
 ## 1. Deliberately start with a vibe-coded prototype
@@ -220,6 +224,10 @@ But:
 The interface should therefore compress many machine actions into a small number of **material decisions**.
 
 ---
+
+![The product question moved upward](../assets/vibeguard/diagrams/02-discovery-evolution.svg)
+
+The sequence matters because the later ownership model was not the premise used to justify the prototype. It emerged after the rescue and review models exposed their own limits.
 
 ## 6. V3: the Tech Owner control loop
 
