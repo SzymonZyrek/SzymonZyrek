@@ -9,6 +9,8 @@ I would not present these as products or as alternatives to mature frameworks. T
 A recurring pattern is that I like moving up and down abstraction layers until the pieces stop feeling magical:
 
 ```text
+realtime / graphics / memory constraints
+        ↓
 environment / runtime
         ↓
 developer tooling
@@ -25,6 +27,48 @@ agent workflows and engineering process
 ```
 
 That habit has stayed useful professionally: it helps me reason at a higher level without losing sight of what lower layers actually have to do.
+
+## Realtime systems and the game-engine detour
+
+### game10: realtime engine and rendering sandbox
+**Source:** [historical public Bitbucket archive](https://bitbucket.org/Mexorsu/)  
+**Period:** 2014–2015
+
+Before most of the repositories below, I had a fairly web-shaped mental model of software: Spring/Angular-style application structure, object models, services and layers.
+
+Then I tried to write my own C++/OpenGL game engine and rendering sandbox.
+
+That was a useful collision with a completely different set of constraints. A realtime game loop does not particularly care that an object hierarchy looks elegant if the resulting work has poor locality, allocates unpredictably or cannot fit into the frame budget. I rewrote the loop and surrounding structures repeatedly while learning what the renderer and simulation actually needed.
+
+The lasting lesson was not "game architecture is better than web architecture." It was almost the opposite: **architecture is a response to constraints, not a collection of universally correct patterns.**
+
+At roughly 60 FPS, a frame is about 16.7 ms. That makes costs that are easy to ignore in request/response applications suddenly concrete:
+
+- memory layout and cache locality;
+- predictable iteration over many similar entities;
+- allocation and object-lifecycle cost;
+- separating hot-path state from convenient high-level representations;
+- update order, rendering order and the shape of the main loop.
+
+This was one of the first projects where I felt the difference between knowing a pattern and understanding why the pattern exists.
+
+It also made later C++ work less abstract. Ownership, compilation, linking, data layout and runtime cost had already become things I could observe by breaking my own system rather than only topics from a language book.
+
+The broader learning lineage therefore starts a little earlier than the event/build-system sequence:
+
+```text
+web-shaped application thinking
+        ↓
+game10 / realtime rendering
+        ↓
+constraints become physical: frame budget, locality, ownership
+        ↓
+java_events / cpp_events
+        ↓
+build systems, artifacts and runtime internals
+```
+
+The original code is old and experimental, which is exactly why I keep the story. It is an early example of a habit that later became much more useful professionally: when two domains disagree about what "good architecture" means, go find the constraint that explains the disagreement.
 
 ## Early workstation and tooling experiments
 
