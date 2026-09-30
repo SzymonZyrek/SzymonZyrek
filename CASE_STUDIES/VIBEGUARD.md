@@ -32,6 +32,7 @@ VibeGuard explores what it would look like to put an experienced engineer above 
 | **Discovery** | The valuable human role is not merely "fix the broken code after the fire"; it is ongoing ownership of the technical decisions that automation should not make alone. |
 | **Current PoC** | Project Policy → automated evidence → Owner Inbox → Decision Workspace → recorded owner decision. |
 | **Human value** | Sanity, anti-hallucination, architecture, security, technical debt control and confidence for the founder and their stakeholders. |
+| **Business case** | Agentic coding can make far more software economically viable, but scaling that implementation safely requires reorganizing work around delegated execution, selective human authority and visible technical accountability. |
 | **Prototype boundary** | The current Tech Owner slice is deliberately demo-grade: mock decision packets, local/in-memory state and no claim of production governance infrastructure. |
 
 **Recurring pattern:** let AI carry more implementation bandwidth, but move human attention upward toward decisions whose cost cannot be reduced to "did the tests pass?".
@@ -194,6 +195,61 @@ VibeGuard is therefore exploring a combination of:
 
 **engineering sanity + anti-hallucination + architecture + security + tech-debt control + accountable human ownership.**
 
+### The business case: push agentic engineering past the old workflow ceiling
+
+The larger opportunity is not only to rescue badly vibe-coded startups.
+
+Agentic coding changes the economics of software creation itself.
+
+If implementation becomes dramatically cheaper and faster, many more real-world problems become worth solving with custom software: internal workflows, niche operational tools, domain-specific products and experiments that previously could not justify a conventional engineering team.
+
+That upside creates a new bottleneck.
+
+Traditional delivery assumes human implementation volume and human review volume grow roughly together. Agentic workflows break that relationship:
+
+```text
+implementation capacity grows fast
+        ↓
+change volume grows fast
+        ↓
+senior judgement / review capacity stays scarce
+```
+
+If every agent-produced change needs conventional senior review, the human becomes the glass ceiling.
+
+If changes are allowed through without meaningful ownership, architecture, security, technical debt and conceptual drift can accumulate faster than stakeholders can see them.
+
+The workflow therefore has to be reorganized around a different split:
+
+```text
+delegate what is safe / reversible / verifiable
+        ↓
+collect machine evidence
+        ↓
+escalate only material uncertainty
+        ↓
+experienced Tech Owner keeps authority over the boundary
+```
+
+That creates two forms of leverage at once:
+
+1. **agent leverage** — more useful implementation can happen per unit of time;
+2. **senior-engineer leverage** — battle-tested judgement is spent on architecture, security, debt and irreversible trade-offs instead of repetitive implementation review.
+
+And it creates a third value outside engineering: **credible evidence that somebody real is technically responsible**.
+
+For a founder, customer, investor or partner, the useful signal is not "the AI says the code is fine".
+
+It is closer to:
+
+> **There is a pilot in this plane.**
+
+A real engineer owns the technical direction, material decisions are explicitly reviewed, and there is evidence showing where automation stopped and human judgement took over.
+
+![Business case for reorganizing agentic engineering](assets/vibeguard/diagrams/06-business-case.svg)
+
+[Business case deep dive →](vibeguard/business-case.md)
+
 ---
 
 ## A useful distinction: review vs ownership
@@ -280,6 +336,7 @@ The code is evidence that the idea was explored materially, not proof of a produ
 | **3–5 minutes** | [Visual tour](vibeguard/visual-tour.md) — conceptual diagrams for the responsibility gap, discovery path, ownership loop and prototype boundary. |
 | **5 minutes** | [Discovery & evolution](vibeguard/discovery.md) — AI Studio prototype → rescue marketplace → review layer → persistent Tech Owner. |
 | **5–10 minutes** | [Tech Owner model](vibeguard/ownership-model.md) — what remains human-owned and why. |
+| **5–10 minutes** | [Business case](vibeguard/business-case.md) — why agentic engineering may expand the amount of software worth building, where the traditional workflow hits a ceiling, and how senior technical ownership could become leverage. |
 | **5–10 minutes** | [Prototype & architecture](vibeguard/prototype.md) — what really exists, what is simulated and what a production rewrite would need. |
 
 ---
