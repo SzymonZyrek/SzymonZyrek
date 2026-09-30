@@ -80,7 +80,7 @@ These repositories are not meant to compete with mature frameworks. They documen
 
 A large part of my professional code is not public because it was written in employer- or client-owned repositories. The short version below is deliberately product-oriented; **[CAREER.md](CAREER.md)** contains the fuller engineering history.
 
-- **Misys / Finastra** — TopOffice, KGR, CMR, ALM and UserManagement; legacy persistence modernization from DataXtend to JPA; shared identity/OIDC integration across heterogeneous C++, Java and Objective-C/GNUstep clients; OpenAPI/service boundaries and cross-product dashboard/composition work.
+- **Misys / Finastra** — TopOffice, KGR, CMR, ALM and UserManagement; DataXtend→JPA modernization; shared identity/OIDC across C++, Java and Objective-C/GNUstep; OpenAPI-wrapped legacy capabilities composed into the Docker-based MisysBoard MVP that evolved into the FusionFabric platform.
 - **Intel** — NAND/storage-driver software, automated verification and internal engineering tooling close to the hardware boundary.
 - **Ciklum / EverC** — MerchantView fraud/risk product work, stabilization during organizational transition, AWS/Terraform/Kubernetes delivery, Grafana/alerting and hands-on on-call production ownership.
 - **Nordea** — Java/Angular financing capability inside a larger microservice/microfrontend banking ecosystem; explicit contracts, quality/security gates and cross-team dependency coordination.
