@@ -1,34 +1,33 @@
 # Stynk CRM — end-to-end product / systems case study
 
 > **Source:** proprietary / private  
-> **Role:** solo software engineer / de facto end-to-end IT owner  
+> **Role:** product engineer / system architect / end-to-end technical owner  
 > **Domain:** construction services, field sales, contracts, jobs and operational planning
 
 Stynk CRM is the project where my role expanded furthest beyond "developer".
 
-I own the path from an informal business process to a running production system:
+There was no finished software specification waiting to be implemented. I organised discovery with the owner and employees, examined how Office and Sales actually worked, turned observations into prototypes and domain rules, and revised the model as production use exposed the next missing concept.
+
+The process is better represented as a loop:
 
 ```text
-business conversation
+messy business reality
         ↓
-requirements / domain model
+observation / conversations
         ↓
-architecture
+requirements + domain hypothesis
         ↓
-UX and workflow design
+UX + architecture + implementation
         ↓
-backend + frontend
+verification + production use
         ↓
-verification / CI
-        ↓
-deployment / rollback
-        ↓
-production support and iteration
+new exception / missing rule
+        └──────────────────────→ observation
 ```
 
 This document describes the architecture and selected workflows without publishing client source code, credentials, personal data or proprietary business configuration.
 
-See also: [recommended screenshots for this case study](STYNK_SCREENSHOTS.md) and the [architecture slide gallery](STYNK_ARCHITECTURE.md).
+See also: [discovery and domain evolution](STYNK_DISCOVERY_AND_EVOLUTION.md), [recommended screenshots for this case study](STYNK_SCREENSHOTS.md) and the [architecture slide gallery](STYNK_ARCHITECTURE.md).
 
 ---
 
