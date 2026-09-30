@@ -1,4 +1,4 @@
-# VibeGuard — keeping a real Tech Owner in the loop of AI-built software
+# VibeGuard — scaling agentic software engineering without losing technical ownership
 
 > **Source:** private R&D repository / public sanitized case study  
 > **Status:** fresh product-concept PoC built on top of an earlier prototype  
@@ -21,7 +21,19 @@ The current hypothesis is therefore broader than "AI code review":
 
 > **AI can own more implementation work without removing human technical ownership.**
 
-VibeGuard explores what it would look like to put an experienced engineer above the implementation loop as a persistent **Tech Owner**: the person who owns architecture, security boundaries, irreversible choices and technical sanity while agents handle an increasing share of execution.
+Getting an LLM to produce code is rapidly becoming the easy part.
+
+The harder engineering problem is making an AI-heavy system survive **a year of changing requirements, new features, architecture corrections and large refactors** without turning into a pile of locally plausible decisions that nobody fully understands.
+
+And there is a commercial threshold beyond technical correctness:
+
+> **Can we confidently sell this system while knowing who is responsible for what is inside?**
+
+That is the layer VibeGuard is exploring.
+
+Not another model, prompt, skill or plugin, but a different **engineering model**: delegate implementation where evidence makes delegation safe, preserve experienced human judgement where the system itself is being redefined, and leave enough technical evidence that founders and stakeholders do not have to accept a black box on faith.
+
+VibeGuard puts an experienced engineer above the implementation loop as a persistent **Tech Owner**: the person who owns architecture, security boundaries, refactor direction, irreversible choices and technical sanity while agents handle an increasing share of execution.
 
 ## In 30 seconds
 
@@ -39,7 +51,9 @@ VibeGuard explores what it would look like to put an experienced engineer above 
 
 ![The responsibility gap in AI-built software](assets/vibeguard/diagrams/01-responsibility-gap.svg)
 
-The core product tension is not whether AI can produce useful code. It is whether implementation throughput can increase without silently losing architecture, security, continuity and accountable technical judgement.
+The core product tension is not whether AI can produce useful code. It is whether implementation throughput can increase without silently losing architecture, security, continuity and accountable technical judgement — and whether the resulting system remains something a team can keep changing, refactoring, operating and confidently put in front of paying customers.
+
+![From coding agents to a new engineering model](assets/vibeguard/diagrams/07-engineering-model.svg)
 
 ---
 
@@ -234,9 +248,19 @@ experienced Tech Owner keeps authority over the boundary
 That creates two forms of leverage at once:
 
 1. **agent leverage** — more useful implementation can happen per unit of time;
-2. **senior-engineer leverage** — battle-tested judgement is spent on architecture, security, debt and irreversible trade-offs instead of repetitive implementation review.
+2. **senior-engineer leverage** — battle-tested judgement is spent on architecture, security, refactor boundaries, debt and irreversible trade-offs instead of repetitive implementation review.
 
 And it creates a third value outside engineering: **credible evidence that somebody real is technically responsible**.
+
+That evidence is what makes the difference between:
+
+> "we vibe-coded something that works and nobody really knows what is inside"
+
+and:
+
+> "we use agentic engineering aggressively, but the system has explicit ownership, decision history, risk boundaries and an experienced engineer accountable for its technical direction."
+
+The second is much easier to sell, integrate, maintain and hand over.
 
 For a founder, customer, investor or partner, the useful signal is not "the AI says the code is fine".
 
