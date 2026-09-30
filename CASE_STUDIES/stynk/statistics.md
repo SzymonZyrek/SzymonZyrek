@@ -10,6 +10,8 @@ The rest of the case study explains *why* the system evolved the way it did. Thi
 
 The numbers below intentionally distinguish **repository-derived measurements** from **operator-verified production facts**. The implementation repository is private, so the public case study cannot link directly to proprietary source, but the figures can be demonstrated from the repository and production environment during an interview.
 
+![Stynk CRM — production scale behind the case study](../assets/stynk/diagrams/08-production-scale.svg)
+
 ## At a glance
 
 | | |

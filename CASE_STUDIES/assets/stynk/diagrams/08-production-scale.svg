@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F5F8FC"/>
+  <text x="40" y="58" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">Stynk CRM — production scale behind the case study</text>
+  <text x="40" y="89" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="450" fill="#687B96">One technical owner, real operational users and enough accumulated change to make engineering discipline visible.</text>
+
+  <rect x="40" y="112" width="1520" height="50" rx="13" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.1"/>
+  <text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#0FA978">SCALE SNAPSHOT</text>
+  <text x="190" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">repository-derived measurements + operator-verified production facts</text>
+
+  <rect x="40" y="190" width="420" height="245" rx="18" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.5"/>
+  <text x="65" y="225" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#2F7BF6">HUMAN TECHNICAL OWNERSHIP</text>
+  <text x="65" y="320" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="92" font-weight="800" fill="#10243E">1</text>
+  <text x="150" y="295" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="760" fill="#10243E">end-to-end owner</text>
+  <text x="150" y="327" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="520" fill="#687B96">discovery · UX · architecture · code</text>
+  <text x="150" y="349" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="520" fill="#687B96">deployment · migrations · production support</text>
+  <rect x="65" y="378" width="365" height="34" rx="10" fill="#EAF2FF"/>
+  <text x="82" y="400" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="650" fill="#2F7BF6">Agents participate in execution; ownership stays human.</text>
+
+  <rect x="490" y="190" width="620" height="245" rx="18" fill="#FFFFFF" stroke="#0FA978" stroke-width="1.5"/>
+  <text x="515" y="225" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#0FA978">PRODUCTION REALITY</text>
+  <rect x="515" y="258" width="570" height="96" rx="16" fill="#EAF9F4" stroke="#0FA978" stroke-width="1.1"/>
+  <circle cx="555" cy="306" r="12" fill="#0FA978"/>
+  <text x="584" y="299" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" fill="#10243E">LIVE PRODUCTION</text>
+  <text x="584" y="329" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="520" fill="#687B96">used in day-to-day company operations</text>
+  <text x="515" y="389" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="560" fill="#10243E">Contracts · Jobs · planning · files · payments · commissions</text>
+  <text x="515" y="412" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="560" fill="#10243E">notifications · audit · public-site handoff · ongoing migration</text>
+
+  <rect x="1140" y="190" width="420" height="245" rx="18" fill="#FFFFFF" stroke="#6F56E8" stroke-width="1.5"/>
+  <text x="1165" y="225" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#6F56E8">REAL USERS, NOT DEMO PERSONAS</text>
+  <text x="1165" y="320" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="78" font-weight="800" fill="#10243E">20+</text>
+  <text x="1325" y="299" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="760" fill="#10243E">business users</text>
+  <text x="1325" y="328" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="520" fill="#687B96">office · sales · field</text>
+  <rect x="1165" y="373" width="365" height="39" rx="10" fill="#F1EEFF"/>
+  <text x="1182" y="398" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="650" fill="#6F56E8">4 roles: Admin · Office · Sales Rep · Subcontractor</text>
+
+  <text x="40" y="478" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="740" fill="#10243E">Measured repository footprint</text>
+
+  <rect x="40" y="500" width="355" height="190" rx="18" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.2"/>
+  <text x="65" y="535" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#2F7BF6">CHANGE HISTORY</text>
+  <text x="65" y="608" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="800" fill="#10243E">2,069</text>
+  <text x="65" y="642" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#10243E">commits</text>
+  <text x="65" y="667" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#687B96">reachable from measured develop snapshot</text>
+
+  <rect x="415" y="500" width="355" height="190" rx="18" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.2"/>
+  <text x="440" y="535" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#6F56E8">REVIEW FLOW</text>
+  <text x="440" y="608" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="800" fill="#10243E">334</text>
+  <text x="555" y="608" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" font-weight="760" fill="#687B96">PRs</text>
+  <text x="440" y="642" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#10243E">263 merged</text>
+  <text x="440" y="667" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#687B96">work made observable through branches and checks</text>
+
+  <rect x="790" y="500" width="355" height="190" rx="18" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.2"/>
+  <text x="815" y="535" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#F08A00">VERIFICATION SURFACE</text>
+  <text x="815" y="608" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="800" fill="#10243E">450</text>
+  <text x="815" y="642" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#10243E">test / spec / E2E-shaped files</text>
+  <text x="815" y="667" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#687B96">plus an explicit browser capability denominator</text>
+
+  <rect x="1165" y="500" width="395" height="190" rx="18" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.2"/>
+  <text x="1190" y="535" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#E64B5D">APPLICATION SHAPE</text>
+  <text x="1190" y="608" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="800" fill="#10243E">18</text>
+  <text x="1265" y="608" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="760" fill="#687B96">Django apps</text>
+  <text x="1190" y="642" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#10243E">2,118 tracked files</text>
+  <text x="1190" y="667" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#687B96">modular core, not 18 independently deployed services</text>
+
+  <rect x="40" y="725" width="740" height="62" rx="14" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.1"/>
+  <text x="60" y="749" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#0FA978">BROWSER E2E</text>
+  <text x="60" y="772" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="650" fill="#10243E">41 curated capability targets · 35 mapped to 8 active browser modules</text>
+
+  <rect x="800" y="725" width="760" height="62" rx="14" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.1"/>
+  <text x="820" y="749" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#687B96">DEPLOYMENT SHAPE</text>
+  <text x="820" y="772" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="650" fill="#10243E">Angular + Django/DRF + PostgreSQL + Redis/Celery + nginx · Docker Compose · Linux</text>
+
+  <rect x="40" y="812" width="1520" height="42" rx="12" fill="#10243E"/>
+  <text x="60" y="839" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="760" fill="#FFFFFF">What the numbers establish</text>
+  <text x="245" y="839" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12.5" font-weight="450" fill="#E8EFF7">one accountable owner · real users · accumulated change · production constraints · a system that can still evolve deliberately</text>
+
+  <circle cx="45" cy="877" r="4" fill="#2F7BF6"/>
+  <text x="55" y="881" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">OWNERSHIP / FLOW</text>
+  <circle cx="240" cy="877" r="4" fill="#0FA978"/>
+  <text x="250" y="881" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">PRODUCTION</text>
+  <circle cx="390" cy="877" r="4" fill="#6F56E8"/>
+  <text x="400" y="881" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">USERS / REVIEW</text>
+  <circle cx="570" cy="877" r="4" fill="#F08A00"/>
+  <text x="580" y="881" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">VERIFICATION</text>
+  <circle cx="735" cy="877" r="4" fill="#E64B5D"/>
+  <text x="745" y="881" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">APPLICATION SHAPE</text>
+</svg>
