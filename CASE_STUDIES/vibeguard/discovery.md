@@ -12,6 +12,10 @@ The problem is not that a model cannot produce code.
 
 The problem is that producing code and **understanding the system that code is turning into** are different skills.
 
+And the difference becomes much more expensive over time.
+
+The real test is not whether an agent can build the next feature today. It is whether the system can absorb changing requirements, survive major refactors and still make sense after a year of accumulated product history.
+
 A founder can keep asking for changes and get plausible local implementations while still lacking the experience to notice when:
 
 - the architecture is fragmenting;
@@ -148,6 +152,8 @@ They should say:
 That is not debugging.
 
 That is ownership.
+
+This is also where the idea connects to my broader engineering experience: the hardest long-lived systems are rarely hard because nobody can write another function. They become hard because business concepts move, old assumptions survive in code, integrations accumulate, and somebody has to know when incremental change has crossed the point where the model itself must be rewritten.
 
 ---
 
