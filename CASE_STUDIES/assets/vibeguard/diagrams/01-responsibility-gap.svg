@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="context-stroke"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#F5F8FC"/>
+<text x="40" y="58" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">VibeGuard — the responsibility gap in AI-built software</text>
+<text x="40" y="89" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="450" fill="#687B96">Implementation becomes cheap faster than engineering judgement, continuity and accountability do.</text>
+
+<rect x="40" y="112" width="1520" height="50" rx="13" fill="#FFFFFF" stroke="#D8E3EF" stroke-width="1.1"/>
+<text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#6F56E8">PRODUCT HYPOTHESIS</text>
+<text x="220" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">more people can ship software; fewer can reliably tell whether the system is still sane</text>
+
+<rect x="50" y="205" width="460" height="430" rx="20" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.5"/>
+<text x="78" y="244" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="760" fill="#2F7BF6">What AI expands quickly</text>
+<rect x="80" y="280" width="400" height="66" rx="13" fill="#EAF2FF" stroke="#2F7BF6"/>
+<text x="100" y="308" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="730" fill="#10243E">Implementation bandwidth</text>
+<text x="100" y="331" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">features, refactors, tests, glue code</text>
+<rect x="80" y="365" width="400" height="66" rx="13" fill="#EAF2FF" stroke="#2F7BF6"/>
+<text x="100" y="393" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="730" fill="#10243E">Iteration speed</text>
+<text x="100" y="416" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">hours of work collapse into minutes</text>
+<rect x="80" y="450" width="400" height="66" rx="13" fill="#EAF2FF" stroke="#2F7BF6"/>
+<text x="100" y="478" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="730" fill="#10243E">Access to software creation</text>
+<text x="100" y="501" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">founders and domain experts can build directly</text>
+<text x="80" y="565" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="650" fill="#2F7BF6">Result</text>
+<text x="80" y="590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#10243E">A product can become real before a conventional</text>
+<text x="80" y="612" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#10243E">engineering organization exists around it.</text>
+
+<rect x="565" y="205" width="460" height="430" rx="20" fill="#FFFFFF" stroke="#E64B5D" stroke-width="1.5"/>
+<text x="593" y="244" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="760" fill="#E64B5D">What does not scale automatically</text>
+<rect x="595" y="280" width="400" height="66" rx="13" fill="#FFF0F2" stroke="#E64B5D"/>
+<text x="615" y="308" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="730" fill="#10243E">Architecture judgement</text>
+<text x="615" y="331" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">local fixes can still grow the wrong system</text>
+<rect x="595" y="365" width="400" height="66" rx="13" fill="#FFF0F2" stroke="#E64B5D"/>
+<text x="615" y="393" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="730" fill="#10243E">Security &amp; irreversible choices</text>
+<text x="615" y="416" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">auth, trust boundaries, migrations, data semantics</text>
+<rect x="595" y="450" width="400" height="66" rx="13" fill="#FFF0F2" stroke="#E64B5D"/>
+<text x="615" y="478" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="730" fill="#10243E">Continuity &amp; accountability</text>
+<text x="615" y="501" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">somebody must remember why the system looks this way</text>
+<text x="595" y="565" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="650" fill="#E64B5D">Failure mode</text>
+<text x="595" y="590" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#10243E">The application still works while complexity, debt and</text>
+<text x="595" y="612" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#10243E">unowned technical decisions silently accumulate.</text>
+
+<line x1="1038" y1="420" x2="1090" y2="420" stroke="#6F56E8" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="1110" y="205" width="440" height="430" rx="20" fill="#FFFFFF" stroke="#6F56E8" stroke-width="1.7"/>
+<text x="1138" y="244" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="760" fill="#6F56E8">The missing layer</text>
+<rect x="1140" y="285" width="380" height="110" rx="16" fill="#F2EEFF" stroke="#6F56E8" stroke-width="1.2"/>
+<text x="1330" y="323" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="780" fill="#6F56E8" text-anchor="middle">Tech Owner</text>
+<text x="1330" y="351" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="540" fill="#10243E" text-anchor="middle">persistent human judgement above</text>
+<text x="1330" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="540" fill="#10243E" text-anchor="middle">increasingly autonomous implementation</text>
+<text x="1140" y="440" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#10243E">Owns:</text>
+<text x="1160" y="470" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">• architecture and system coherence</text>
+<text x="1160" y="496" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">• security and trust boundaries</text>
+<text x="1160" y="522" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">• deliberate technical debt</text>
+<text x="1160" y="548" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">• exceptions and irreversible choices</text>
+<text x="1160" y="574" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">• credible technical accountability</text>
+
+<rect x="40" y="685" width="1520" height="108" rx="18" fill="#10243E"/>
+<text x="65" y="724" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="760" fill="#FFFFFF">VibeGuard is exploring the gap between “I can make the product change” and “I can responsibly own the consequences of that change.”</text>
+<text x="65" y="758" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="450" fill="#DDE6F1">The product thesis is not to slow AI down with approvals; it is to keep a real engineer authoritative at the boundaries where tests and model confidence are not enough.</text>
+
+<circle cx="45" cy="850" r="4" fill="#2F7BF6"/><text x="55" y="854" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">AUTOMATION</text>
+<circle cx="185" cy="850" r="4" fill="#E64B5D"/><text x="195" y="854" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">RISK / GAP</text>
+<circle cx="330" cy="850" r="4" fill="#6F56E8"/><text x="340" y="854" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="650" fill="#687B96">HUMAN OWNERSHIP</text>
+</svg>

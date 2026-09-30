@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="context-stroke"/></marker></defs>
+<rect width="1600" height="900" fill="#F5F8FC"/>
+<text x="40" y="58" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">VibeGuard — prototype evidence vs product direction</text>
+<text x="40" y="89" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="450" fill="#687B96">The case study separates what exists, what is simulated and what remains a hypothesis.</text>
+
+<rect x="40" y="112" width="1520" height="50" rx="13" fill="#FFFFFF" stroke="#D8E3EF"/>
+<text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#5E7188">CLAIM BOUNDARY</text>
+<text x="190" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">the prototype is implementation evidence; it is not presented as a production governance platform</text>
+
+<rect x="70" y="220" width="430" height="420" rx="20" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.5"/>
+<text x="95" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#2F7BF6">1 · IMPLEMENTED PROTOTYPE</text>
+<text x="95" y="300" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#10243E">Material exploration</text>
+<text x="95" y="345" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• GitHub repo / branch / file inspection</text>
+<text x="95" y="378" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• server-side GenAI audit</text>
+<text x="95" y="411" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• structured findings + line annotations</text>
+<text x="95" y="444" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• diff / patch interaction</text>
+<text x="95" y="477" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• debug-ticket / PR-review flows</text>
+<text x="95" y="510" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• guardrail / agent-instruction experiments</text>
+<rect x="95" y="555" width="350" height="52" rx="12" fill="#EAF2FF" stroke="#2F7BF6"/>
+<text x="270" y="587" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="740" fill="#2F7BF6" text-anchor="middle">EVIDENCE THAT THE IDEA WAS BUILT AND TESTED</text>
+
+<line x1="500" y1="430" x2="560" y2="430" stroke="#5E7188" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="575" y="220" width="430" height="420" rx="20" fill="#FFFFFF" stroke="#F08A00" stroke-width="1.5"/>
+<text x="600" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#F08A00">2 · FRESH TECH OWNER POC</text>
+<text x="600" y="300" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#10243E">Interaction experiment</text>
+<text x="600" y="345" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• Project Policy surface</text>
+<text x="600" y="378" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• Owner Inbox</text>
+<text x="600" y="411" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• evidence packet + prior decision context</text>
+<text x="600" y="444" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• owner action / decision recording</text>
+<text x="600" y="489" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#E64B5D">SIMULATED TODAY</text>
+<text x="600" y="518" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">mock decision packets · session state · no live ingestion</text>
+<rect x="600" y="555" width="350" height="52" rx="12" fill="#FFF3E4" stroke="#F08A00"/>
+<text x="775" y="587" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="740" fill="#F08A00" text-anchor="middle">TEST WHETHER THE OWNERSHIP MODEL FEELS RIGHT</text>
+
+<line x1="1005" y1="430" x2="1065" y2="430" stroke="#5E7188" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="1080" y="220" width="450" height="420" rx="20" fill="#FFFFFF" stroke="#6F56E8" stroke-width="1.5"/>
+<text x="1105" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#6F56E8">3 · PRODUCT DIRECTION</text>
+<text x="1105" y="300" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#10243E">What would need a real design</text>
+<text x="1105" y="345" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• durable project / policy / decision model</text>
+<text x="1105" y="378" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• GitHub-native event ingestion</text>
+<text x="1105" y="411" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• evidence provenance and audit trail</text>
+<text x="1105" y="444" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• decision memory + policy propagation</text>
+<text x="1105" y="477" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• real authorization / ownership boundaries</text>
+<text x="1105" y="510" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• stakeholder-facing trust / certification layer</text>
+<rect x="1105" y="555" width="375" height="52" rx="12" fill="#F2EEFF" stroke="#6F56E8"/>
+<text x="1292" y="587" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="740" fill="#6F56E8" text-anchor="middle">REWRITE AROUND THE VALIDATED MODEL, NOT THE POC</text>
+
+<rect x="70" y="695" width="1460" height="100" rx="17" fill="#10243E"/>
+<text x="95" y="732" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="760" fill="#FFFFFF">The prototype has already done its most important job: it changed the question.</text>
+<text x="95" y="762" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#DDE6F1">If the product moves forward, the right response is not to preserve every prototype subsystem; it is to rebuild around the Tech Owner model that survived the exploration.</text>
+</svg>

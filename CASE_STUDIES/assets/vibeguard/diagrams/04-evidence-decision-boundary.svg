@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="context-stroke"/></marker></defs>
+<rect width="1600" height="900" fill="#F5F8FC"/>
+<text x="40" y="58" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">VibeGuard — evidence first, judgement where evidence ends</text>
+<text x="40" y="89" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="450" fill="#687B96">The system should not ask a senior engineer questions that deterministic evidence can already answer.</text>
+
+<rect x="40" y="112" width="1520" height="50" rx="13" fill="#FFFFFF" stroke="#D8E3EF"/>
+<text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#0FA978">ATTENTION COMPRESSION</text>
+<text x="235" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">mechanical checks remove noise; the owner receives the unresolved technical decision, not the raw event stream</text>
+
+<rect x="55" y="225" width="270" height="400" rx="18" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.4"/>
+<text x="80" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="760" fill="#2F7BF6">Change volume</text>
+<text x="80" y="292" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">What agents and tools produce</text>
+<rect x="85" y="330" width="210" height="48" rx="11" fill="#EAF2FF" stroke="#2F7BF6"/><text x="190" y="360" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#10243E" text-anchor="middle">code changes</text>
+<rect x="85" y="395" width="210" height="48" rx="11" fill="#EAF2FF" stroke="#2F7BF6"/><text x="190" y="425" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#10243E" text-anchor="middle">test results</text>
+<rect x="85" y="460" width="210" height="48" rx="11" fill="#EAF2FF" stroke="#2F7BF6"/><text x="190" y="490" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#10243E" text-anchor="middle">security signals</text>
+<rect x="85" y="525" width="210" height="48" rx="11" fill="#EAF2FF" stroke="#2F7BF6"/><text x="190" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" fill="#10243E" text-anchor="middle">AI observations</text>
+
+<line x1="325" y1="425" x2="390" y2="425" stroke="#2F7BF6" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="405" y="225" width="380" height="400" rx="18" fill="#FFFFFF" stroke="#0FA978" stroke-width="1.5"/>
+<text x="430" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="760" fill="#0FA978">Evidence compression</text>
+<text x="430" y="292" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">Normalize, correlate and remove what is already known</text>
+<rect x="435" y="330" width="320" height="70" rx="13" fill="#EAF9F4" stroke="#0FA978"/>
+<text x="455" y="360" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="730" fill="#10243E">Deterministic checks</text>
+<text x="455" y="383" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">tests · lint · policy · known security rules</text>
+<rect x="435" y="420" width="320" height="70" rx="13" fill="#EAF9F4" stroke="#0FA978"/>
+<text x="455" y="450" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="730" fill="#10243E">Repository context</text>
+<text x="455" y="473" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">history · existing patterns · relevant ADRs</text>
+<rect x="435" y="510" width="320" height="70" rx="13" fill="#EAF9F4" stroke="#0FA978"/>
+<text x="455" y="540" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="730" fill="#10243E">Model-assisted interpretation</text>
+<text x="455" y="563" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">summarize semantic change and uncertainty</text>
+
+<line x1="785" y1="425" x2="850" y2="425" stroke="#0FA978" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="865" y="225" width="320" height="400" rx="18" fill="#FFFFFF" stroke="#F08A00" stroke-width="1.5"/>
+<text x="890" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="760" fill="#F08A00">Decision packet</text>
+<text x="890" y="292" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">What survives the filter</text>
+<text x="895" y="345" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#10243E">1. Material change</text>
+<text x="915" y="372" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">What changed semantically?</text>
+<text x="895" y="415" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#10243E">2. Boundary crossed</text>
+<text x="915" y="442" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">Why does this need judgement?</text>
+<text x="895" y="485" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#10243E">3. Existing evidence</text>
+<text x="915" y="512" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">What is already verified?</text>
+<text x="895" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#10243E">4. Requested decision</text>
+<text x="915" y="582" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">What exactly must the owner decide?</text>
+
+<line x1="1185" y1="425" x2="1250" y2="425" stroke="#F08A00" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="1265" y="225" width="285" height="400" rx="18" fill="#FFFFFF" stroke="#6F56E8" stroke-width="1.6"/>
+<text x="1290" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="760" fill="#6F56E8">Tech Owner</text>
+<text x="1290" y="292" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">Human judgement, not raw triage</text>
+<rect x="1295" y="335" width="225" height="48" rx="11" fill="#F2EEFF" stroke="#6F56E8"/><text x="1407" y="365" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#10243E" text-anchor="middle">approve</text>
+<rect x="1295" y="400" width="225" height="48" rx="11" fill="#F2EEFF" stroke="#6F56E8"/><text x="1407" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#10243E" text-anchor="middle">request change</text>
+<rect x="1295" y="465" width="225" height="48" rx="11" fill="#F2EEFF" stroke="#6F56E8"/><text x="1407" y="495" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#10243E" text-anchor="middle">allow exception</text>
+<rect x="1295" y="530" width="225" height="48" rx="11" fill="#F2EEFF" stroke="#6F56E8"/><text x="1407" y="560" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="700" fill="#10243E" text-anchor="middle">update policy</text>
+
+<rect x="55" y="690" width="1495" height="100" rx="17" fill="#10243E"/>
+<text x="80" y="727" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="760" fill="#FFFFFF">The human should arrive at a decision, not at a pile of telemetry.</text>
+<text x="80" y="758" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#DDE6F1">That makes the product less like another code-review feed and more like a technical control plane for preserving accountability under high implementation throughput.</text>
+</svg>

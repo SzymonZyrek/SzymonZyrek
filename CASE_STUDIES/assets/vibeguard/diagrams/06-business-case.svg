@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="context-stroke"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#F5F8FC"/>
+<text x="40" y="58" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">VibeGuard — business case for reorganizing agentic engineering</text>
+<text x="40" y="89" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#687B96">Agentic coding expands what is economically buildable; the workflow must change so technical ownership scales with it.</text>
+
+<rect x="40" y="112" width="1520" height="50" rx="13" fill="#FFFFFF" stroke="#D8E3EF"/>
+<text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#6F56E8">BUSINESS THESIS</text>
+<text x="190" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">capture the upside of AI implementation without making senior engineering judgement the new throughput ceiling</text>
+
+<rect x="60" y="215" width="420" height="390" rx="20" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.5"/>
+<text x="88" y="255" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#2F7BF6">1 · OPPORTUNITY</text>
+<text x="88" y="294" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#10243E">More software becomes viable</text>
+<text x="88" y="342" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• lower implementation cost</text>
+<text x="88" y="375" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• faster domain-to-product iteration</text>
+<text x="88" y="408" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• more niche / internal tools make sense</text>
+<text x="88" y="441" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• founders &amp; domain experts can build directly</text>
+<text x="88" y="474" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• many agent workstreams can run in parallel</text>
+<rect x="88" y="525" width="330" height="48" rx="11" fill="#EAF2FF" stroke="#2F7BF6"/>
+<text x="253" y="555" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="760" fill="#2F7BF6">IMPLEMENTATION BANDWIDTH EXPANDS</text>
+
+<line x1="480" y1="410" x2="545" y2="410" stroke="#E64B5D" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="560" y="215" width="420" height="390" rx="20" fill="#FFFFFF" stroke="#E64B5D" stroke-width="1.5"/>
+<text x="588" y="255" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#E64B5D">2 · GLASS CEILING</text>
+<text x="588" y="294" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#10243E">Old review economics break</text>
+<text x="588" y="342" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• senior reading bandwidth stays finite</text>
+<text x="588" y="375" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• local AI fixes can preserve wrong architecture</text>
+<text x="588" y="408" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• security / debt / migration risks accumulate</text>
+<text x="588" y="441" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• every-PR human review becomes a bottleneck</text>
+<text x="588" y="474" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• stakeholders cannot see who owns the risk</text>
+<rect x="588" y="525" width="330" height="48" rx="11" fill="#FFF0F2" stroke="#E64B5D"/>
+<text x="753" y="555" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="760" fill="#E64B5D">JUDGEMENT BECOMES THE BOTTLENECK</text>
+
+<line x1="980" y1="410" x2="1045" y2="410" stroke="#6F56E8" stroke-width="3" marker-end="url(#arrow)"/>
+
+<rect x="1060" y="215" width="480" height="390" rx="20" fill="#FFFFFF" stroke="#6F56E8" stroke-width="1.6"/>
+<text x="1088" y="255" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#6F56E8">3 · REORGANIZED WORKFLOW</text>
+<text x="1088" y="294" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#10243E">Delegate execution, retain authority</text>
+<text x="1088" y="342" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• explicit technical policy / boundaries</text>
+<text x="1088" y="375" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• agents handle safe + verifiable work</text>
+<text x="1088" y="408" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• evidence filters routine implementation noise</text>
+<text x="1088" y="441" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• Tech Owner receives material decisions only</text>
+<text x="1088" y="474" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">• decisions become future policy / context</text>
+<rect x="1088" y="525" width="390" height="48" rx="11" fill="#F2EEFF" stroke="#6F56E8"/>
+<text x="1283" y="555" text-anchor="middle" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="760" fill="#6F56E8">SENIOR EXPERIENCE GAINS LEVERAGE</text>
+
+<rect x="60" y="665" width="1480" height="105" rx="18" fill="#10243E"/>
+<text x="86" y="702" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="760" fill="#FFFFFF">Business value: more useful agentic delivery per unit of scarce senior attention — with visible technical accountability.</text>
+<text x="86" y="735" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#DDE6F1">For founders and stakeholders the practical signal is simple: automation is doing more of the work, but an experienced engineer still owns the material technical decisions — “there is a pilot in this plane.”</text>
+
+<circle cx="70" cy="830" r="4" fill="#2F7BF6"/><text x="82" y="834" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#687B96">MORE BUILDABLE SOFTWARE</text>
+<circle cx="290" cy="830" r="4" fill="#E64B5D"/><text x="302" y="834" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#687B96">TRADITIONAL WORKFLOW CEILING</text>
+<circle cx="555" cy="830" r="4" fill="#6F56E8"/><text x="567" y="834" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#687B96">TECH OWNER LEVERAGE</text>
+<circle cx="775" cy="830" r="4" fill="#0FA978"/><text x="787" y="834" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="11" font-weight="700" fill="#687B96">STAKEHOLDER CONFIDENCE</text>
+</svg>

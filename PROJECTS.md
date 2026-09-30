@@ -23,13 +23,15 @@ Related map in the R&D account:
 https://github.com/ateshgahofmine/HackaTeam/blob/main/PROJECTS.md
 
 ### VibeGuard
-**Status:** active private side project
+**Status:** active private R&D / fresh Tech Owner PoC
 
-Human-in-the-loop code review/debugging prototype for AI-assisted development. The current implementation explores live GitHub inspection, structured AI code audit, diff/review interaction and escalation of difficult work to experienced human developers.
+VibeGuard started as a deliberately fast human-in-the-loop code-review/debugging experiment and evolved toward a broader question: how do you preserve real technical ownership when founders and agents can generate implementation faster than they can reliably understand the resulting system?
 
-See the sanitized [VibeGuard case study](CASE_STUDIES/VIBEGUARD.md) and [recommended screenshot set](CASE_STUDIES/VIBEGUARD_SCREENSHOTS.md).
+The current direction explores a **Tech Owner control loop**: explicit project policy, automated evidence, an Owner Inbox for material boundary crossings, and recorded human decisions around architecture, security, irreversible data choices and technical debt.
 
-The repository remains private while the product direction is still changing.
+See the [VibeGuard case study](CASE_STUDIES/VIBEGUARD.md), [discovery/evolution](CASE_STUDIES/vibeguard/discovery.md), [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md), [prototype boundary](CASE_STUDIES/vibeguard/prototype.md) and [visual tour](CASE_STUDIES/vibeguard/visual-tour.md).
+
+The implementation repository remains private while the product direction is still being explored. The portfolio explicitly distinguishes implemented prototype capabilities from the newer simulated Tech Owner interaction slice.
 
 ### github_manager
 **Repository:** https://github.com/SzymonZyrek/github_manager
@@ -75,7 +77,7 @@ A separate account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, cur
 - **Agent-Native Engineering Runtime — Draft Specification** — larger formal runtime/specification exploration; currently private.
 - **Local Coding Agent** — local llama.cpp coding-agent loop; currently private.
 - **AI Worker** — controlled Task/Action execution and authorization experiment; currently private.
-- **VibeGuard** — human review/debugging layer; currently private; [public case study](CASE_STUDIES/VIBEGUARD.md).
+- **VibeGuard** — Tech Owner / human technical-ownership experiment around AI-built software; currently private; [public case study](CASE_STUDIES/VIBEGUARD.md).
 - **[CodexProject](https://github.com/ateshgahofmine/CodexProject)** and **[Codex2](https://github.com/ateshgahofmine/Codex2)** — historical documentation-driven predecessors.
 
 The important part of this collection is that the projects are allowed to disagree. Hacka, for example, deliberately tries to delete custom infrastructure whenever ordinary GitHub primitives already solve the problem.
