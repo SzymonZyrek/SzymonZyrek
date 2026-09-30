@@ -6,7 +6,7 @@ This page covers the system around the product: application boundaries, durable 
 
 ![Quality gates from data rules to a real browser](../assets/stynk/slides/engineering/01-quality-gates.jpg)
 
-## 3. System architecture
+## System architecture
 
 The application is built as one **coherent business core, modular by domain**.
 
@@ -63,9 +63,7 @@ For example, a lifecycle service can validate a transition, update several relat
 
 ---
 
----
-
-## 4. Background work: Celery as execution, Django as truth
+## Background work: Celery as execution, Django as truth
 
 One architectural rule I care about in this system is that **the task queue is not the business database**.
 
@@ -105,19 +103,17 @@ Redis persistence and broker failure are still treated as real operational conce
 
 ---
 
----
-
 ## Verification as an operational feedback loop
 
 ![Selective CI as an operational feedback loop](../assets/stynk/slides/engineering/02-selective-ci.jpg)
 
 The verification model is layered rather than pretending one kind of test proves everything. Data/domain invariants, API permissions, browser-mode frontend tests, build/ops/security checks and browser E2E answer different questions; CI pushes useful evidence back into the PR.
 
-## 11. Deployment and operations
+## Deployment and operations
 
 ![Operationally simple today, portable by construction](../assets/stynk/slides/engineering/03-deployment-portability.jpg)
 
-The production deployment deliberately fits on one Linux VPS.
+Production currently runs on one Linux VPS because that topology matches the operating model while keeping deployment, debugging and recovery straightforward. The code, state and service seams remain explicit so independent scaling is still available when it solves a measured problem.
 
 That keeps the operational burden proportional to the company while still using clear service boundaries:
 
@@ -150,8 +146,6 @@ The CRM and public website are built/deployed together through nginx while remai
 
 ---
 
----
-
 ## Recovery and governance
 
 ![Operational resilience and disaster recovery](../assets/stynk/slides/engineering/04-resilience-disaster-recovery.jpg)
@@ -160,7 +154,7 @@ The CRM and public website are built/deployed together through nginx while remai
 
 Recovery, audit and authorization are treated as product-operational concerns rather than afterthoughts: backups and restore paths sit outside the application failure they must recover, while role/object permissions and audit evidence remain tied to business operations.
 
-## 12. Engineering the repository for maintainability
+## Engineering the repository for maintainability
 
 A large part of the work is not visible in screenshots.
 
