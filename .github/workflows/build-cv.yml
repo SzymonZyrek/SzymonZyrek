@@ -4,15 +4,23 @@ on:
   push:
     paths:
       - "cv/Szymon_Zyrek_CV.html"
+      - "cv/styles.css"
+      - "cv/build.sh"
+      - "cv/requirements.txt"
       - ".github/workflows/build-cv.yml"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: cv-pdf-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -21,31 +29,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+          cache: pip
+          cache-dependency-path: cv/requirements.txt
 
-      - name: Install renderer and fonts
+      - name: Install render dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y fonts-inter ghostscript poppler-utils
-          python -m pip install --disable-pip-version-check "weasyprint==68.0"
-          test -f /usr/share/fonts/opentype/inter/Inter-Regular.otf
+          python -m pip install --disable-pip-version-check -r cv/requirements.txt
 
-      - name: Render and optimize PDF
-        run: |
-          weasyprint cv/Szymon_Zyrek_CV.html /tmp/Szymon_Zyrek_CV.raw.pdf
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/prepress \
-             -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages=true -dCompressFonts=true \
-             -sOutputFile=Szymon_Zyrek_CV.pdf /tmp/Szymon_Zyrek_CV.raw.pdf
-          test "$(pdfinfo Szymon_Zyrek_CV.pdf | awk '/^Pages:/ {print $2}')" = "2"
-          pdftotext Szymon_Zyrek_CV.pdf - | grep -q "Software / Systems Architect"
+      - name: Build and verify CV
+        run: bash cv/build.sh
 
-      - name: Commit generated PDF
+      - name: Publish generated PDF
         run: |
           if git diff --quiet -- Szymon_Zyrek_CV.pdf; then
             echo "PDF already up to date"
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Szymon_Zyrek_CV.pdf
-          git commit -m "Regenerate CV PDF from portfolio-aligned source"
-          git push
+          git commit -m "Regenerate CV PDF"
+
+          # The branch may have moved because of a documentation-only commit
+          # while rendering. Rebase the generated artifact instead of racing it.
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
