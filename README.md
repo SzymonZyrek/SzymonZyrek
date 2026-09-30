@@ -57,7 +57,7 @@ Most experimental runner/integration infrastructure lives under my R&D account, 
 The projects are less random than the technology list makes them look.
 
 ```text
-game10 / realtime engine + rendering
+Game-10 / realtime engine + rendering
         ↓
 data locality, frame budgets, C++ constraints
         ↓
@@ -74,7 +74,7 @@ ML / model lifecycle / local agents
 HackaTeam + VibeGuard
 ```
 
-The old **[game10 thread](HOBBY_PROJECTS.md#game10-realtime-engine-and-rendering-sandbox)** matters here. Coming from Spring/Angular-style web development, writing a realtime C++ engine made it very obvious that familiar object-heavy patterns are not universal truths: memory layout, predictable work and a frame budget can completely change what “good architecture” means.
+The old **[Game-10](https://github.com/SzymonZyrek/Game-10)** thread matters here. Coming from Spring/Angular-style web development, writing a realtime C++/OpenGL engine made it very obvious that familiar object-heavy patterns are not universal truths: memory layout, predictable work and a frame budget can completely change what “good architecture” means. [Read the archaeology context →](HOBBY_PROJECTS.md#game-10-realtime-engine-and-rendering-sandbox)
 
 That same habit later showed up in **[java_events → cpp_events → JustBuild → FetchDog → Faxus → Meserve](HOBBY_PROJECTS.md)**: rebuild enough of an abstraction to understand the constraints underneath it, then go back to the mature tool with a better model.
 
@@ -107,7 +107,7 @@ The older public repositories are not presented as finished products. They are a
 
 Highlights include:
 
-- **game10** — early C++/OpenGL realtime engine and rendering sandbox; architecture under a frame budget;
+- **[Game-10](https://github.com/SzymonZyrek/Game-10)** — early C++/OpenGL realtime engine and rendering sandbox; architecture under a frame budget;
 - **java_events / cpp_events** — concurrency, dispatch, ownership and translating abstractions across language/runtime boundaries;
 - **JustBuild / FetchDog / Faxus** — build lifecycles, plugins, artifacts, qualifiers, repositories and dependency resolution;
 - **Meserve** — application-container/runtime internals, metadata, class loading, lifecycle, networking and routing;
