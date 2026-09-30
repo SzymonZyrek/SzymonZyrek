@@ -35,6 +35,10 @@ Not another model, prompt, skill or plugin, but a different **engineering model*
 
 VibeGuard puts an experienced engineer above the implementation loop as a persistent **Tech Owner**: the person who owns architecture, security boundaries, refactor direction, irreversible choices and technical sanity while agents handle an increasing share of execution.
 
+This is still a hypothesis, not validated market evidence. But it is not a detached forecast either. It comes from a recurring first-principles pattern in my work: go under an abstraction, rebuild enough of the machinery to expose the real constraints, and only then decide which layer actually needs to exist. Older projects such as [JustBuild](https://github.com/SzymonZyrek/just_build_poc), [FetchDog](https://github.com/SzymonZyrek/fetchdog), [Faxus](https://github.com/SzymonZyrek/faxus) and [Meserve](https://github.com/SzymonZyrek/meserve) document the same habit in build systems, artifact resolution and application runtimes.
+
+[Why I trust the direction despite limited evidence →](vibeguard/discovery.md#why-i-take-this-seriously-despite-not-having-market-proof-yet)
+
 ## In 30 seconds
 
 | | |
