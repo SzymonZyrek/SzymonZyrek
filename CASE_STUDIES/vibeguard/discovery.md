@@ -33,6 +33,51 @@ The original business instinct behind VibeGuard was simple:
 
 The repository became a way to explore what that service might look like.
 
+### Why I take this seriously despite not having market proof yet
+
+This is not evidence that VibeGuard is already a business.
+
+It is the source of my conviction that the problem is structurally real.
+
+A recurring pattern in my older learning projects was to get interested in a system by rebuilding enough of the machinery underneath it until the established abstraction stopped looking magical.
+
+Examples from my public repositories:
+
+- **[JustBuild PoC](https://github.com/SzymonZyrek/just_build_poc)** started from local C++ build scripts and gradually separated project description, lifecycle, toolchain invocation, artifacts and dependencies. I did not know Gradle yet; in retrospect the design was moving into a distinctly Gradle-shaped part of the problem space.
+- **[FetchDog](https://github.com/SzymonZyrek/fetchdog)** extracted artifact acquisition from the build tool and reframed it as logical artifact → concrete representation → provider/cache/resolution.
+- **[Faxus](https://github.com/SzymonZyrek/faxus)** pushed that further into explicit artifact identity, qualifiers, repositories, caches and resolvers.
+- **[Meserve](https://github.com/SzymonZyrek/meserve)** reconstructed enough application-runtime/container machinery — metadata, configuration, lifecycle, class loading, events, HTTP — that framework/application-server abstractions became concrete rather than ceremonial.
+
+Those projects are not proof that I independently invented the mature tools around them, and that is not the claim.
+
+The pattern is simpler:
+
+```text
+bump into an abstraction
+      ↓
+go underneath it
+      ↓
+rebuild enough to expose the real constraints
+      ↓
+recognize the shape of the mature solution
+      ↓
+keep the mental model
+```
+
+VibeGuard feels like the same kind of signal.
+
+I am not looking at agentic coding from the outside and guessing that governance might become fashionable.
+
+I have been using agents, building workflows around them, watching codebases change under repeated AI-assisted iteration, and repeatedly hitting the point where **local implementation capability is no longer the interesting problem**.
+
+The interesting problem is preserving a system-level model while the implementation engine gets faster.
+
+That is why my confidence here is stronger than the prototype evidence.
+
+It is still a hypothesis.
+
+But it is a bottom-up hypothesis formed by working under the abstraction rather than a top-down trend prediction.
+
 ![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
 
 This is the starting asymmetry: implementation bandwidth rises quickly, while engineering judgement, continuity and accountability remain scarce.
