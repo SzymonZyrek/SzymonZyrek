@@ -85,6 +85,8 @@ completion / settlement / archive
 
 The CRM models this as actual lifecycle state rather than a collection of unrelated forms.
 
+![Contract and Job lifecycle orchestration](assets/stynk/architecture/02-lifecycle-orchestration.svg)
+
 For example:
 
 - a contract uploaded by Sales starts in office intake;
@@ -103,11 +105,11 @@ This is the kind of domain logic that made the project much more interesting tha
 
 ## 3. System architecture
 
-The application deliberately remains a **modular monolith**.
+The application is built as one **coherent business core, modular by domain**.
 
-That is an architectural choice, not an unfinished microservice migration.
+Contracts, Jobs, pricing, payments, planning, notifications and audit share one transactional model, while domain apps and service-layer boundaries keep responsibilities explicit.
 
-![Stynk CRM system architecture](assets/stynk/architecture/01-system-overview.svg)
+![Stynk CRM business core](assets/stynk/architecture/01-business-core.svg)
 
 The current production shape is roughly:
 
@@ -152,18 +154,9 @@ The backend is split into Django apps aligned with domain responsibilities such 
 
 The service layer owns business processes; API views are intended to remain relatively thin.
 
-### Why a monolith here?
+The useful property of this shape is that multi-step business transitions remain local and transactional while external/slow concerns still leave through explicit seams.
 
-The technical requirements explicitly favor:
-
-- a small number of technologies;
-- standard approaches;
-- one-person maintainability;
-- straightforward local development;
-- reproducible testing and deployment;
-- one repository containing application code, deployment automation and documentation.
-
-The business has enough complexity to justify strong internal boundaries, but not enough operational scale to justify distributed-system complexity for its own sake.
+For example, a lifecycle service can validate a transition, update several related models, create payment obligations, emit notifications and record audit state as one coherent workflow rather than reconstructing the same business rule across several independently deployed services.
 
 ---
 
@@ -469,7 +462,7 @@ The current implementation supports local storage and Google Drive with encrypte
 
 The biggest architectural evolution in the system is the move from hard-coded Job/pricing types toward a configurable model.
 
-![Studio to canonical runtime](assets/stynk/architecture/04-studio-canonical-runtime.svg)
+![Platform kernel and Stynk System bindings](assets/stynk/architecture/04-platform-system-boundary.svg)
 
 The long-term direction is not to build "a pricing form builder".
 
@@ -488,7 +481,11 @@ A Job can expose Operations as first-class CRM rows while pricing executes throu
 
 Published catalogs are treated as historical evidence: they are immutable rather than silently reinterpreted after configuration changes.
 
-![Versioned pricing and historical compatibility](assets/stynk/architecture/05-versioned-pricing.svg)
+![Capability-based Job and Operation pricing](assets/stynk/architecture/05-capability-pricing.svg)
+
+The pricing path itself is built from typed capabilities: bound Operations can implement `Priced.price()`, receive an explicit typed pricing context and feed the Job's default aggregation convention. Custom pricing materializes that same convention into the normal graph runtime instead of switching to a second hidden engine.
+
+![Versioned and explainable pricing](assets/stynk/architecture/06-versioned-pricing.svg)
 
 The 3.0.1 binding direction intentionally separates:
 
@@ -554,6 +551,8 @@ This is especially useful on long forms where "last HTTP request wins" would be 
 
 Security/operational boundaries also show up in deployment:
 
+![Public website and CRM trust boundary](assets/stynk/architecture/07-public-private-boundary.svg)
+
 - the public website exposes only an allowlisted subset of CRM APIs;
 - private CRM attachments are not exposed through public-site media paths;
 - credentials are kept out of browser-visible configuration;
@@ -565,8 +564,6 @@ Security/operational boundaries also show up in deployment:
 ## 11. Deployment and operations
 
 The production deployment deliberately fits on one Linux VPS.
-
-![Stynk CRM production topology](assets/stynk/architecture/06-production-topology.svg)
 
 That keeps the operational burden proportional to the company while still using clear service boundaries:
 
