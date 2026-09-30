@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Szymon Zyrek - CV</title>
+<style>
+@font-face{font-family:Inter;src:url('file:///usr/share/fonts/opentype/inter/Inter-Regular.otf') format('opentype');font-weight:400}
+@font-face{font-family:Inter;src:url('file:///usr/share/fonts/opentype/inter/Inter-Medium.otf') format('opentype');font-weight:500}
+@font-face{font-family:Inter;src:url('file:///usr/share/fonts/opentype/inter/Inter-SemiBold.otf') format('opentype');font-weight:600}
+@font-face{font-family:Inter;src:url('file:///usr/share/fonts/opentype/inter/Inter-Bold.otf') format('opentype');font-weight:700}
+@font-face{font-family:InterDisplay;src:url('file:///usr/share/fonts/opentype/inter/InterDisplay-SemiBold.otf') format('opentype');font-weight:600}
+@font-face{font-family:InterDisplay;src:url('file:///usr/share/fonts/opentype/inter/InterDisplay-Bold.otf') format('opentype');font-weight:700}
+
+:root{
+  --ink:#162033;
+  --muted:#687386;
+  --faint:#e8edf3;
+  --navy:#193a63;
+  --systems:#2468a6;
+  --systems-bg:#eaf3fb;
+  --product:#138b82;
+  --product-bg:#e8f7f4;
+  --reliability:#b27013;
+  --reliability-bg:#fff5df;
+  --ai:#7752a8;
+  --ai-bg:#f3edfb;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:white;color:var(--ink);font-family:Inter,Arial,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4;margin:0}
+a{color:inherit;text-decoration:none}
+.page{width:210mm;height:297mm;padding:12.5mm 14mm 11.5mm;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+.page:last-child{page-break-after:auto}
+.header{display:grid;grid-template-columns:1fr auto;gap:10mm;align-items:start;border-bottom:1px solid var(--faint);padding-bottom:5.2mm;margin-bottom:4.8mm}
+.name{font-family:InterDisplay,Inter,sans-serif;font-weight:700;font-size:24pt;letter-spacing:-.6px;line-height:1}
+.role{font-family:InterDisplay,Inter,sans-serif;font-weight:600;color:var(--navy);font-size:11.4pt;margin-top:2mm}
+.contact{font-size:7.5pt;line-height:1.6;text-align:right;color:var(--muted);padding-top:.5mm}
+.contact a{border-bottom:.25px solid #b7c0cc}
+.summary{font-size:8.55pt;line-height:1.46;max-width:150mm;margin-top:3mm;color:#344056}
+.summary strong{color:var(--ink)}
+.meta-row{display:flex;gap:2mm;align-items:center;flex-wrap:wrap;margin-top:3.5mm}
+.legend-label{font-size:6.2pt;text-transform:uppercase;letter-spacing:.65px;color:#8a94a5;font-weight:600;margin-right:1mm}
+.tag{font-size:6.05pt;font-weight:600;letter-spacing:.25px;text-transform:uppercase;padding:1.05mm 1.7mm;border-radius:99px;white-space:nowrap}
+.t-systems{color:#1a5588;background:var(--systems-bg)}
+.t-product{color:#08766f;background:var(--product-bg)}
+.t-rel{color:#935b08;background:var(--reliability-bg)}
+.t-ai{color:#694497;background:var(--ai-bg)}
+.section-kicker{font-size:6.6pt;color:#8b95a7;text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin:0 0 2.8mm 0}
+.timeline{position:relative;margin-top:1mm;padding-left:13mm}
+.timeline:before{content:"";position:absolute;left:4.05mm;top:2mm;bottom:3mm;width:.45mm;background:#e1e7ee;border-radius:2px}
+.entry{position:relative;margin-bottom:5.05mm;break-inside:avoid}
+.entry:last-child{margin-bottom:0}
+.node{position:absolute;left:-10.4mm;top:.75mm;width:4.1mm;height:4.1mm;border-radius:50%;background:#fff;border:1.2mm solid var(--navy)}
+.entry-head{display:grid;grid-template-columns:25mm 1fr auto;gap:3mm;align-items:baseline}
+.dates{font-size:7.15pt;font-weight:600;color:#7a8596;white-space:nowrap}
+.company{font-family:InterDisplay,Inter,sans-serif;font-size:10.1pt;font-weight:700;letter-spacing:-.12px}
+.title{font-size:7.35pt;font-weight:500;color:#5f6c7f;text-align:right;white-space:nowrap}
+.body{margin:1.45mm 0 0 28mm;font-size:7.55pt;line-height:1.38;color:#344056}
+.body ul{margin:0;padding-left:3.6mm}
+.body li{margin:0 0 1.05mm 0;padding-left:.5mm}
+.body li:last-child{margin-bottom:0}
+.entry-foot{margin:1.65mm 0 0 28mm;display:flex;justify-content:space-between;gap:3mm;align-items:flex-end}
+.tags{display:flex;gap:1.25mm;flex-wrap:wrap}
+.phases{display:flex;gap:1.25mm;align-items:center;white-space:nowrap}
+.phase{width:4.6mm;height:4.6mm;border:1px solid #d8dee7;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff}
+.phase svg{width:2.65mm;height:2.65mm;stroke:#8b96a7;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.phase.on{border-color:#b9c8d9;background:#f6f9fc}
+.phase.on svg{stroke:var(--navy)}
+.phase-note{font-size:5.7pt;color:#9aa3b1;margin-right:.8mm;text-transform:uppercase;letter-spacing:.35px;font-weight:600}
+.callout{margin:0 0 5mm 13mm;padding:3.2mm 3.7mm;border-left:1.2mm solid var(--navy);background:#f7f9fc;border-radius:0 2mm 2mm 0}
+.callout-title{font-family:InterDisplay,Inter,sans-serif;font-size:9.1pt;font-weight:700;margin-bottom:1.1mm}
+.callout-copy{font-size:7.4pt;line-height:1.4;color:#3e4a5c}
+.callout-links{font-size:6.7pt;color:var(--navy);font-weight:600;margin-top:1.7mm}
+.callout-links a{border-bottom:.3px solid #9db1c7;margin-right:2mm}
+.split-bottom{display:grid;grid-template-columns:1.15fr .85fr;gap:6mm;margin-top:5mm;padding-top:4.2mm;border-top:1px solid var(--faint)}
+.small-head{font-size:6.5pt;text-transform:uppercase;letter-spacing:.85px;font-weight:700;color:#7c8797;margin-bottom:1.8mm}
+.small-copy{font-size:7.1pt;line-height:1.42;color:#465164}
+.tech{display:flex;flex-wrap:wrap;gap:1.25mm}
+.tech span{font-size:6.2pt;padding:.9mm 1.3mm;border:1px solid #dce2e9;border-radius:1.3mm;color:#4f5a6c;background:#fff}
+.footer{position:absolute;left:14mm;right:14mm;bottom:5.6mm;display:flex;justify-content:space-between;font-size:5.8pt;color:#a0a8b5}
+.footer .thread{color:#7d8797}
+.current-banner{display:flex;align-items:center;gap:2.2mm;margin:0 0 3.1mm 13mm}
+.current-banner .bar{height:1px;background:#dfe5ec;flex:1}
+.current-banner strong{font-size:6.5pt;letter-spacing:.9px;text-transform:uppercase;color:#6f7b8c}
+.rnd{margin-left:13mm;border:1px solid #e2e0ea;background:linear-gradient(180deg,#fcfbfe 0%,#faf9fd 100%);border-radius:2mm;padding:3.1mm 3.5mm}
+.rnd-head{display:grid;grid-template-columns:1fr auto;gap:3mm;align-items:baseline}
+.rnd-title{font-family:InterDisplay,Inter,sans-serif;font-size:9.8pt;font-weight:700}
+.rnd-sub{font-size:6.8pt;color:#7b7487;text-align:right}
+.rnd-grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:1.8mm}
+.rnd-item{font-size:7.15pt;line-height:1.4;color:#40495a}
+.rnd-item strong{color:#252c38}
+.rnd .entry-foot{margin-left:0;margin-top:2mm}
+.linkline{font-size:6.4pt;color:var(--navy);font-weight:600;margin-top:1.6mm}
+.linkline a{border-bottom:.3px solid #a8b8c9;margin-right:2mm}
+</style>
+</head>
+<body>
+<!--
+Visual grammar preserved from the accepted v0.10 concept:
+- timeline direction = professional growth (oldest -> newest)
+- icons = work phase: discover, design, build, operate, evolve
+- colored text tags = scan aids for technical areas, not status/rank
+  blue systems/architecture; teal product/UX; amber reliability/security; purple AI/delivery
+-->
+<section class="page">
+<header class="header">
+<div>
+<div class="name">Szymon Żyrek</div>
+<div class="role">Software / Systems Architect · Senior Software Engineer</div>
+<div class="summary"><strong>12+ years building and debugging production systems</strong> across financial platforms, embedded/storage, cloud/distributed systems and full-stack products. I work where requirements, domain modelling, architecture, implementation, verification and operations stay connected.</div>
+<div class="meta-row">
+<span class="legend-label">Technical-area tags</span>
+<span class="tag t-systems">systems / architecture</span>
+<span class="tag t-product">product / UX</span>
+<span class="tag t-rel">reliability / security</span>
+<span class="tag t-ai">AI / delivery</span>
+</div>
+</div>
+<div class="contact">
+      Tricity, Poland<br/>
+<a href="mailto:stynkdev@gmail.com">stynkdev@gmail.com</a><br/>
+<a href="mailto:szyrek@stynk.eu">szyrek@stynk.eu</a><br/>
+<a href="https://github.com/SzymonZyrek">github.com/SzymonZyrek</a>
+</div>
+</header>
+<div class="section-kicker">Career · growth through changing constraints</div>
+<div class="timeline">
+<article class="entry">
+<div class="node"></div>
+<div class="entry-head">
+<div class="dates">2013–2021</div>
+<div class="company">Misys → Finastra</div>
+<div class="title">Junior → Senior → Expert Software Engineer</div>
+</div>
+<div class="body"><ul>
+<li>Started in <strong>TopOffice</strong>, learning to reconstruct a heterogeneous C++ / Java EE system from behavior, failures and debugger evidence; grew from local fixes into cross-product ownership.</li>
+<li>Modernized <strong>CMR persistence from DataXtend ORM to JPA</strong> without freezing product work; built <strong>UserManagement</strong> and a shared auth core in C reused by C++, Java via JNI and Objective-C/GNUstep to keep identity behavior in one implementation.</li>
+<li>Helped turn CMR/KGR/ALM capabilities into an API-driven platform: <strong>OpenAPI contracts → shared identity/config → Docker Compose integration → MisysBoard MVP → FusionFabric</strong>.</li>
+</ul></div>
+<div class="entry-foot">
+<div class="tags">
+<span class="tag t-systems">integration</span><span class="tag t-systems">platform architecture</span><span class="tag t-rel">identity / security</span>
+</div>
+<div class="phases"><span class="phase-note">phases</span>
+<span class="phase on" title="discover"><svg viewbox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 15.5A7 7 0 1 1 15.5 15.5C14.6 16.4 14 17 14 18h-4c0-1-.6-1.6-1.5-2.5Z"></path></svg></span>
+<span class="phase on" title="design"><svg viewbox="0 0 24 24"><path d="m4 20 7-7M10 4l10 10M14 4l6 6M4 14l6 6M8 10l6 6"></path></svg></span>
+<span class="phase on" title="build"><svg viewbox="0 0 24 24"><path d="M14 5l5 5M12 7l5 5M4 20l7-7M3 21l4-1-3-3-1 4Z"></path></svg></span>
+<span class="phase" title="operate"><svg viewbox="0 0 24 24"><rect height="6" rx="1" width="16" x="4" y="4"></rect><rect height="6" rx="1" width="16" x="4" y="14"></rect><path d="M8 7h.01M8 17h.01"></path></svg></span>
+<span class="phase on" title="evolve"><svg viewbox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6M20 7a9 9 0 0 0-15-2M4 17a9 9 0 0 0 15 2"></path></svg></span>
+</div>
+</div>
+</article>
+<article class="entry">
+<div class="node"></div>
+<div class="entry-head">
+<div class="dates">2021–2022</div>
+<div class="company">Intel</div>
+<div class="title">Firmware Engineer</div>
+</div>
+<div class="body"><ul>
+<li>Worked near the hardware/software boundary on <strong>NAND/storage-driver software and automated verification</strong>, where timing, state and failure assumptions are observable rather than abstract.</li>
+<li>Internal test/tooling work reinforced a habit that stayed with me: treat verification infrastructure as a product, not disposable scaffolding.</li>
+</ul></div>
+<div class="entry-foot">
+<div class="tags"><span class="tag t-systems">embedded / storage</span><span class="tag t-rel">verification</span></div>
+<div class="phases"><span class="phase-note">phases</span>
+<span class="phase" title="discover"><svg viewbox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 15.5A7 7 0 1 1 15.5 15.5C14.6 16.4 14 17 14 18h-4c0-1-.6-1.6-1.5-2.5Z"></path></svg></span>
+<span class="phase" title="design"><svg viewbox="0 0 24 24"><path d="m4 20 7-7M10 4l10 10M14 4l6 6M4 14l6 6M8 10l6 6"></path></svg></span>
+<span class="phase on" title="build"><svg viewbox="0 0 24 24"><path d="M14 5l5 5M12 7l5 5M4 20l7-7M3 21l4-1-3-3-1 4Z"></path></svg></span>
+<span class="phase on" title="operate"><svg viewbox="0 0 24 24"><rect height="6" rx="1" width="16" x="4" y="4"></rect><rect height="6" rx="1" width="16" x="4" y="14"></rect><path d="M8 7h.01M8 17h.01"></path></svg></span>
+<span class="phase on" title="evolve"><svg viewbox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6M20 7a9 9 0 0 0-15-2M4 17a9 9 0 0 0 15 2"></path></svg></span>
+</div>
+</div>
+</article>
+<article class="entry">
+<div class="node"></div>
+<div class="entry-head">
+<div class="dates">2022–2023</div>
+<div class="company">Ciklum / EverC</div>
+<div class="title">Full Stack Engineer · MerchantView</div>
+</div>
+<div class="body"><ul>
+<li>Fraud/risk product work in <strong>Groovy/Grails</strong> during an organizational transition, combining application development with stabilization and hands-on production ownership.</li>
+<li><strong>AWS, Terraform, Kubernetes, Grafana, alerting and on-call</strong> made the operational feedback loop part of everyday engineering rather than a separate platform concern.</li>
+</ul></div>
+<div class="entry-foot">
+<div class="tags"><span class="tag t-product">risk product</span><span class="tag t-systems">cloud / platform</span><span class="tag t-rel">operations</span></div>
+<div class="phases"><span class="phase-note">phases</span>
+<span class="phase" title="discover"><svg viewbox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 15.5A7 7 0 1 1 15.5 15.5C14.6 16.4 14 17 14 18h-4c0-1-.6-1.6-1.5-2.5Z"></path></svg></span>
+<span class="phase" title="design"><svg viewbox="0 0 24 24"><path d="m4 20 7-7M10 4l10 10M14 4l6 6M4 14l6 6M8 10l6 6"></path></svg></span>
+<span class="phase on" title="build"><svg viewbox="0 0 24 24"><path d="M14 5l5 5M12 7l5 5M4 20l7-7M3 21l4-1-3-3-1 4Z"></path></svg></span>
+<span class="phase on" title="operate"><svg viewbox="0 0 24 24"><rect height="6" rx="1" width="16" x="4" y="4"></rect><rect height="6" rx="1" width="16" x="4" y="14"></rect><path d="M8 7h.01M8 17h.01"></path></svg></span>
+<span class="phase on" title="evolve"><svg viewbox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6M20 7a9 9 0 0 0-15-2M4 17a9 9 0 0 0 15 2"></path></svg></span>
+</div>
+</div>
+</article>
+<article class="entry">
+<div class="node"></div>
+<div class="entry-head">
+<div class="dates">2023–2024</div>
+<div class="company">Nordea</div>
+<div class="title">Full-stack Developer</div>
+</div>
+<div class="body"><ul>
+<li>Built a <strong>Java + Angular financing capability</strong> inside a larger microservice/microfrontend banking ecosystem.</li>
+<li>The useful architecture lesson was organizational: independent teams can differ internally when <strong>contracts, security/quality gates, dependencies and release expectations</strong> are explicit and enforceable.</li>
+</ul></div>
+<div class="entry-foot">
+<div class="tags"><span class="tag t-product">banking product</span><span class="tag t-systems">distributed contracts</span><span class="tag t-rel">security / quality</span></div>
+<div class="phases"><span class="phase-note">phases</span>
+<span class="phase" title="discover"><svg viewbox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 15.5A7 7 0 1 1 15.5 15.5C14.6 16.4 14 17 14 18h-4c0-1-.6-1.6-1.5-2.5Z"></path></svg></span>
+<span class="phase on" title="design"><svg viewbox="0 0 24 24"><path d="m4 20 7-7M10 4l10 10M14 4l6 6M4 14l6 6M8 10l6 6"></path></svg></span>
+<span class="phase on" title="build"><svg viewbox="0 0 24 24"><path d="M14 5l5 5M12 7l5 5M4 20l7-7M3 21l4-1-3-3-1 4Z"></path></svg></span>
+<span class="phase" title="operate"><svg viewbox="0 0 24 24"><rect height="6" rx="1" width="16" x="4" y="4"></rect><rect height="6" rx="1" width="16" x="4" y="14"></rect><path d="M8 7h.01M8 17h.01"></path></svg></span>
+<span class="phase on" title="evolve"><svg viewbox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6M20 7a9 9 0 0 0-15-2M4 17a9 9 0 0 0 15 2"></path></svg></span>
+</div>
+</div>
+</article></div>
+<div class="callout">
+<div class="callout-title">The thread so far</div>
+<div class="callout-copy">Legacy debugging taught me to reconstruct systems I did not yet understand; platform integration moved the focus to stable boundaries; hardware and production operations made verification and runtime behavior concrete. The next roles add organizational contracts, distributed integration and finally full product ownership.</div>
+</div>
+<div class="footer"><span>CV · Szymon Żyrek</span><span class="thread">01 / 02 · systems → platform → organizational contracts</span></div>
+</section>
+<section class="page">
+<header class="header" style="padding-bottom:4.2mm;margin-bottom:4.2mm">
+<div>
+<div class="name" style="font-size:17pt">Szymon Żyrek</div>
+<div class="role" style="font-size:9.5pt">Software / Systems Architect · Senior Software Engineer</div>
+</div>
+<div class="contact" style="padding-top:0">
+<a href="https://github.com/SzymonZyrek/SzymonZyrek">Portfolio</a> · <a href="https://github.com/SzymonZyrek/SzymonZyrek/blob/main/CAREER.md">career history</a><br/>
+<a href="mailto:stynkdev@gmail.com">stynkdev@gmail.com</a> · <a href="mailto:szyrek@stynk.eu">szyrek@stynk.eu</a>
+</div>
+</header>
+<div class="section-kicker">Career · distributed systems → end-to-end ownership</div>
+<div class="timeline">
+
+<article class="entry">
+<div class="node"></div>
+<div class="entry-head">
+<div class="dates">2024–2025</div>
+<div class="company">Hapag-Lloyd</div>
+<div class="title">Full Stack Engineer</div>
+</div>
+<div class="body"><ul>
+<li><strong>Java/Jakarta EE</strong> systems in shipping/logistics, including event-driven integration, operational data and platform services.</li>
+<li>Worked with asynchronous events, replicated/configuration state and independently evolving services - another reminder that distributed systems are largely about <strong>contracts, ownership and failure handling</strong>.</li>
+</ul></div>
+<div class="entry-foot">
+<div class="tags"><span class="tag t-systems">event-driven</span><span class="tag t-systems">integration</span><span class="tag t-rel">failure handling</span></div>
+<div class="phases"><span class="phase-note">phases</span>
+<span class="phase" title="discover"><svg viewbox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 15.5A7 7 0 1 1 15.5 15.5C14.6 16.4 14 17 14 18h-4c0-1-.6-1.6-1.5-2.5Z"></path></svg></span>
+<span class="phase on" title="design"><svg viewbox="0 0 24 24"><path d="m4 20 7-7M10 4l10 10M14 4l6 6M4 14l6 6M8 10l6 6"></path></svg></span>
+<span class="phase on" title="build"><svg viewbox="0 0 24 24"><path d="M14 5l5 5M12 7l5 5M4 20l7-7M3 21l4-1-3-3-1 4Z"></path></svg></span>
+<span class="phase on" title="operate"><svg viewbox="0 0 24 24"><rect height="6" rx="1" width="16" x="4" y="4"></rect><rect height="6" rx="1" width="16" x="4" y="14"></rect><path d="M8 7h.01M8 17h.01"></path></svg></span>
+<span class="phase" title="evolve"><svg viewbox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6M20 7a9 9 0 0 0-15-2M4 17a9 9 0 0 0 15 2"></path></svg></span>
+</div>
+</div>
+</article>
+<article class="entry">
+<div class="node"></div>
+<div class="entry-head">
+<div class="dates">2025–present</div>
+<div class="company">Independent / consulting · Stynk CRM</div>
+<div class="title">End-to-end product &amp; system ownership</div>
+</div>
+<div class="body"><ul>
+<li>Started from a deceptively small request - <strong>capture data from a paper contract</strong> - and let real use expose the domain. The system expanded into a role-aware operating layer for sales, contracts, jobs, planning, files, payments, commissions, notifications, audit and the public website.</li>
+<li>Own the full loop: <strong>requirements and domain modelling → UX → Angular/Django/PostgreSQL implementation → tests/CI → Docker/nginx/Linux deployment → production support</strong>. The repository is now roughly 130k LOC with ~1,600 tests.</li>
+<li>Repeated pricing/service variation exposed an ownership mistake in hard-coded rules. The current architecture moves toward <strong>typed dynamic models, Studio-authored configuration and versioned pricing semantics</strong> so the platform owns execution guarantees while the business can own more of the model it changes.</li>
+</ul></div>
+<div class="entry-foot">
+<div class="tags"><span class="tag t-product">discovery / domain / UX</span><span class="tag t-systems">architecture</span><span class="tag t-rel">production ownership</span><span class="tag t-ai">agent-assisted delivery</span></div>
+<div class="phases"><span class="phase-note">all phases</span>
+<span class="phase on" title="discover"><svg viewbox="0 0 24 24"><path d="M9 18h6M10 22h4M8.5 15.5A7 7 0 1 1 15.5 15.5C14.6 16.4 14 17 14 18h-4c0-1-.6-1.6-1.5-2.5Z"></path></svg></span>
+<span class="phase on" title="design"><svg viewbox="0 0 24 24"><path d="m4 20 7-7M10 4l10 10M14 4l6 6M4 14l6 6M8 10l6 6"></path></svg></span>
+<span class="phase on" title="build"><svg viewbox="0 0 24 24"><path d="M14 5l5 5M12 7l5 5M4 20l7-7M3 21l4-1-3-3-1 4Z"></path></svg></span>
+<span class="phase on" title="operate"><svg viewbox="0 0 24 24"><rect height="6" rx="1" width="16" x="4" y="4"></rect><rect height="6" rx="1" width="16" x="4" y="14"></rect><path d="M8 7h.01M8 17h.01"></path></svg></span>
+<span class="phase on" title="evolve"><svg viewbox="0 0 24 24"><path d="M20 7h-6V1M4 17h6v6M20 7a9 9 0 0 0-15-2M4 17a9 9 0 0 0 15 2"></path></svg></span>
+</div>
+</div>
+<div class="linkline">
+<a href="https://github.com/SzymonZyrek/SzymonZyrek/blob/main/CASE_STUDIES/STYNK_CRM.md">Stynk case study ↗</a>
+<a href="https://github.com/SzymonZyrek/SzymonZyrek/blob/main/CASE_STUDIES/stynk/visual-tour.md">visual tour ↗</a>
+</div>
+</article>
+</div>
+<div class="current-banner"><strong>Current R&amp;D · extending the same ownership question into agentic engineering</strong><div class="bar"></div></div>
+<div class="rnd">
+<div class="rnd-head"><div class="rnd-title">HackaTeam + VibeGuard</div><div class="rnd-sub">active R&amp;D / prototypes · not presented as production products</div></div>
+<div class="rnd-grid">
+<div class="rnd-item"><strong>Execution side — HackaTeam.</strong> GitHub-native agent loops, documentation-first context, CI/evidence feedback, local/hosted execution and state-driven work selection. The goal is not “LLM writes code”; it is to make delegated engineering observable and bounded.</div>
+<div class="rnd-item"><strong>Ownership side — VibeGuard.</strong> A Tech Owner control-loop experiment: routine evidence and policy below the boundary; explicit human authority for architecture, security, irreversible semantics, exceptions and decision memory above it.</div>
+</div>
+<div class="entry-foot">
+<div class="tags"><span class="tag t-ai">agents / delivery</span><span class="tag t-systems">workflow architecture</span><span class="tag t-rel">evidence / boundaries</span></div>
+<div class="linkline" style="margin-top:0"><a href="https://github.com/ateshgahofmine/HackaTeam">HackaTeam ↗</a><a href="https://github.com/SzymonZyrek/SzymonZyrek/blob/main/CASE_STUDIES/VIBEGUARD.md">VibeGuard case study ↗</a></div>
+</div>
+</div>
+<div class="split-bottom">
+<div>
+<div class="small-head">Technology range</div>
+<div class="tech">
+<span>Java / Jakarta EE / Spring</span><span>C / C++</span><span>Objective-C / GNUstep</span><span>Python / Django</span><span>TypeScript / Angular / React</span><span>Groovy / Grails</span><span>PostgreSQL / JPA</span><span>OpenAPI / REST</span><span>OAuth / OIDC</span><span>Docker / Kubernetes</span><span>Terraform</span><span>Linux</span><span>Azure / AWS / GCP</span><span>GitHub Actions</span><span>MCP / local LLM tooling</span>
+</div>
+</div>
+<div>
+<div class="small-head">Education &amp; evidence</div>
+<div class="small-copy"><strong>University of Gdansk</strong><br/>Bachelor's degree · Computer Science · 2012–2015</div>
+<div class="small-copy" style="margin-top:2.4mm">Portfolio includes commercial engineering history, Stynk and VibeGuard case studies, ML experiments and older public “engineering archaeology” projects showing how I learn abstractions by rebuilding them.</div>
+<div class="linkline"><a href="https://github.com/SzymonZyrek/SzymonZyrek">github.com/SzymonZyrek ↗</a></div>
+</div>
+</div>
+<div class="footer"><span>CV · Szymon Żyrek</span><span class="thread">02 / 02 · contracts → product ownership → agentic systems</span></div>
+</section>
+</body>
+</html>
