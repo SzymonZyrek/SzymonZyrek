@@ -72,6 +72,10 @@ These experiments are allowed to disagree with each other. Part of the fun is tr
 
 These are not maintained as current products. They are simply older things I built while learning, experimenting or trying to make my own work easier.
 
+A useful way to read several of them is as one evolving investigation rather than unrelated toys: Java concurrency experiments led into a C++ translation attempt; C++ compilation/linking pain led into build automation; build automation exposed dependency and artifact-resolution concerns; those concerns became FetchDog and then Faxus. Meserve explored the same "go underneath the abstraction" habit on the application-runtime/container side.
+
+That progression also overlapped with early commercial debugging in large Java EE/C++ systems, where learning to reconstruct unfamiliar mechanisms from failures, logs, stack traces, tests and debugger evidence became a practical skill rather than a purely academic exercise.
+
 ### Concurrency and events
 - [java_events](https://github.com/SzymonZyrek/java_events)
 - [cpp_events](https://github.com/SzymonZyrek/cpp_events)
