@@ -1,6 +1,6 @@
 # VibeGuard — visual tour
 
-[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
+[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
 
 This is the shortest visual path through VibeGuard for now.
 
@@ -83,6 +83,32 @@ The intended interface compresses implementation activity into a decision packet
 
 ---
 
+## Business case
+
+### More buildable software, a new review ceiling
+
+![Business case for reorganizing agentic engineering](../assets/vibeguard/diagrams/06-business-case.svg)
+
+The commercial thesis is not merely that AI makes existing engineering cheaper.
+
+It may make **more software worth building at all**.
+
+That pushes agentic engineering into more real-world domains and creates a corresponding workflow problem: implementation bandwidth can expand far faster than senior technical judgement.
+
+VibeGuard's proposed answer is to reorganize work around:
+
+- safe delegation;
+- automated evidence;
+- selective escalation;
+- experienced engineers operating at decision boundaries;
+- visible technical accountability for stakeholders.
+
+The goal is to let agentic workflows push beyond assumptions inherited from traditional development without making either uncontrolled autonomy or manual senior review the limiting factor.
+
+[Read the business case →](business-case.md)
+
+---
+
 ## Prototype & architecture
 
 ### Keep implemented evidence separate from the product claim
@@ -123,6 +149,7 @@ A real product would need a fresh architecture around durable policy, evidence p
 | **Discovery evolution** | How did the product move from rescue/debugging to ongoing ownership? |
 | **Tech Owner control loop** | Where should agents remain autonomous and where should a human stay authoritative? |
 | **Evidence / decision boundary** | How do we avoid turning the senior engineer into a manual PR queue? |
+| **Business case** | Why can agentic engineering expand the addressable software problem space, and where does the traditional workflow become the ceiling? |
 | **Prototype / product boundary** | What has actually been built, what is simulated, and what remains a future design? |
 
 This structure intentionally mirrors the Stynk case study: overview first, then discovery, model, engineering/prototype boundary and a visual synthesis. The difference is that VibeGuard's strongest evidence today is conceptual evolution rather than production scale.
