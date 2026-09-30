@@ -2,467 +2,460 @@
 
 This document is the narrative source of truth for the architecture slide set.
 
-The SVGs should be visual projections of this document, not the place where architectural reasoning is invented. Each slide should explain a real tension: what problem existed, where the boundary was placed, what alternatives were deliberately not chosen, what cost the decision creates, how risk is contained, and what evidence would justify changing the decision later.
+The portfolio story is intentionally **capability-first**. Each slide starts from something the system can do reliably or safely, then shows the architectural mechanism that makes it possible. Trade-offs still matter, but they are supporting context rather than the headline.
 
-The private Stynk repository remains the source of truth for implementation details. This portfolio document intentionally avoids proprietary source code, credentials, customer data and business-specific configuration.
-
-## Evidence discipline
-
-- **Repo fact** — directly reflected in current Stynk architecture/documentation.
-- **Architectural interpretation** — the reasoning that best explains why those facts form a coherent architecture.
-- **Industry framing** — established concepts used to sharpen the explanation, not to replace project evidence.
-
-The slides themselves should not carry those labels; they are here to keep the content precise.
+The private Stynk repository remains the implementation source of truth. This portfolio material avoids proprietary source code, credentials, customer data and private business configuration.
 
 ---
 
-# 1. One coherent application. Boundaries only where responsibility or failure mode changes.
+# 1. One coherent business core, modular by domain
 
 ## Core thesis
 
-Stynk is deliberately kept as one main application boundary because the difficult coupling is business consistency, not network scale. Separate runtime boundaries appear only where they provide a concrete benefit: durable state, transport, background execution, public exposure or external effects.
+Contracts, Jobs, pricing, payments, planning, notifications and audit belong to one connected business workflow. Stynk keeps them inside one transactional application while making responsibility boundaries explicit in modules and services.
 
-## On-slide narrative
+## What the slide should show
 
-- **Repo fact:** one Angular SPA and one Django/DRF application, backed by PostgreSQL and fronted by nginx.
-- **Repo fact:** background execution is separated into broker/workers, while PostgreSQL remains the durable source of business state.
-- **Repo fact:** the public website shares nginx infrastructure but exposes only an allowlisted API surface; private CRM attachments are not exposed through it.
-- **Architectural interpretation:** boundaries are not drawn around technologies for their own sake. They are drawn where ownership of truth, security exposure or failure behaviour changes.
+- Angular/REST at the edge.
+- Thin API layer.
+- Domain modules for contracts, jobs, pricing, payments, planning, materials/equipment, attachments, notifications and audit.
+- Service layer orchestrating business workflows across modules.
+- PostgreSQL as one business source of truth.
+- Narrow seams to background execution, files and public integrations.
 
-## WHY THIS DECISION
+## Why this architecture is useful
 
-The original problem was operational fragmentation: contracts, planning, pricing, payments, files and hand-offs had to become one auditable workflow. Splitting that workflow into independent services would add network and consistency problems before there was evidence that independent deployment or scaling was the limiting factor.
+A contract lifecycle transition can atomically update related business state instead of coordinating several remote services.
 
-The governing rule is: **keep tightly coupled business state inside one consistency boundary; push only genuinely different failure modes behind explicit seams.**
+The codebase still has boundaries:
+- views translate HTTP;
+- services own workflows;
+- models own durable domain state;
+- selectors/read paths stay separate where useful;
+- background/external work leaves through explicit seams.
 
-That is why PostgreSQL owns business truth, nginx owns the internet-facing boundary, Redis transports work rather than defining it, and Celery performs work that should not block the request lifecycle.
+This gives Stynk **transactional workflows without giving up modularity**.
 
-## ALTERNATIVES NOT CHOSEN
+## Portfolio message
 
-- **Everything synchronous:** simpler initially, but user requests would inherit latency and availability from SMTP, OCR and other external systems.
-- **Service-per-domain decomposition:** visually clean, but would turn local transactions into distributed coordination without a demonstrated need for independent scaling or release cadence.
-- **Queue as business state:** less application code, weaker recovery and audit semantics.
+The interesting choice is not “monolith instead of microservices”. It is that the deployable shape follows the shape of the business: tightly coupled lifecycle state stays local, while genuinely different responsibilities get clear seams.
 
-## TRADE-OFF / WHAT WE ACCEPT
+## Diagram direction
 
-The application and primary database remain shared failure and scaling boundaries. This is not high availability. The payoff is lower operational complexity, local transactions, reproducible development and a smaller number of things that can disagree about current business state.
+Show a central “Business core” with domain modules around a service layer and one PostgreSQL source of truth. Around the outside show frontend/API, background execution, files and public integrations as explicit boundaries.
 
-## CHANGE TRIGGER
+Bottom bar:
 
-Revisit the application boundary when there is measured, sustained evidence for independent scaling, separate ownership/release cadence, hard isolation/compliance, repeated shared-deployment bottlenecks, or reliability requirements that cannot be met inside the current failure boundary.
-
-## Diagram brief
-
-Draw ownership of responsibility rather than a technology inventory:
-
-`User surface → edge boundary → application consistency boundary → durable truth`
-
-Then branch into:
-
-`durable work → transport → execution → external effect`
-
-The visual message: async execution leaves the request lifecycle **without leaving business truth behind**.
+**What this buys us:** atomic lifecycle changes · one business truth · simple local debugging · clear extraction seams
 
 ---
 
-# 2. Modularity first. Network decomposition only after it earns its cost.
+# 2. Business state drives the workflow
 
 ## Core thesis
 
-The backend is intentionally a modular monolith: domain boundaries are explicit in code and service ownership, while shared transactions stay local. Microservices are not rejected in principle; they are deferred until the system develops a reason to pay their operational and consistency cost.
+In Stynk, status changes are not cosmetic labels. Lifecycle transitions are orchestration points that update payments, planning, commissions, notifications and audit state.
 
-## On-slide narrative
+## Concrete examples from the current domain
 
-- **Repo fact:** Django apps are organised around domain responsibilities and business workflows belong in service-layer code rather than endpoint handlers.
-- **Repo fact:** production uses one PostgreSQL database.
-- **Architectural interpretation:** current cross-domain workflows benefit from local ACID transactions more than from network isolation.
-- **Architectural interpretation:** with one primary technical owner, independent services would create infrastructure autonomy without organisational autonomy.
+### Contract becomes BINDING
 
-## WHY THIS DECISION
+The lifecycle service:
+- creates client payment obligations;
+- creates sales-rep commission obligations;
+- updates the contract state;
+- emits notifications;
+- records the transition.
 
-The hard part of Stynk is not moving JSON between processes. It is keeping contracts, jobs, pricing, payments, audit and lifecycle effects mutually consistent.
+### First Job actually starts
 
-A modular monolith gives both:
+The system:
+- moves the Contract execution phase forward;
+- gives the client prepayment obligation its real due date;
+- updates operational visibility;
+- can emit urgent reminders if payment remains unresolved.
 
-1. **strong internal boundaries** — domain modules, service ownership, explicit async seams;
-2. **one transactional boundary** where workflows genuinely need atomic changes.
+### Last Job completes + final payment settles
 
-This avoids confusing architectural modularity with network topology.
+The system:
+- completes the execution path;
+- makes final-payment/commission consequences explicit;
+- updates history and notifications.
 
-## ALTERNATIVES NOT CHOSEN
+## Architectural shape
 
-- **Large unstructured monolith:** one deployment boundary is useful; unrestricted cross-module coupling is not.
-- **Microservices by domain noun:** would introduce distributed transactions, API versioning, partial failure, contract testing and observability immediately.
-- **Premature extraction for hypothetical scale:** spends complexity before a bottleneck exists and makes local reproduction harder.
+Lifecycle services are the orchestration boundary. They own:
+- transition validation;
+- multi-model updates;
+- transactional consistency;
+- explicit side effects;
+- audit/notification emission.
 
-## TRADE-OFF / WHAT WE ACCEPT
+The UI does not independently recreate those rules.
 
-The process boundary does not physically enforce module discipline. Bad imports and leaky abstractions are still possible. The architecture therefore depends on code structure, service ownership, tests and review rather than pretending that network calls automatically create good boundaries.
+## Portfolio message
 
-## CHANGE TRIGGER
+This is the layer where a CRUD application becomes an operational system: **business events propagate through one controlled workflow instead of being reconstructed independently by screens, cron jobs and ad-hoc handlers.**
 
-Consider extraction when multiple independent signals persist: a materially different scaling profile, separate ownership/release cadence, required physical isolation, the shared database becoming the limiting coupling, or shared deployment being measurably more expensive than the extracted boundary.
+## Diagram direction
 
-Do not invent numeric thresholds in the slide. The important point is that the decision is **falsifiable and evidence-driven**.
+Use a horizontal Contract/Job state flow. Under selected transitions, fan out to Payments, Planning, Notifications, Materials/Equipment and Audit.
 
-## Diagram brief
+Bottom bar:
 
-Use a balance diagram:
-
-- left: forces keeping the boundary together — shared transactions, one operational owner, local reproducibility, one source of truth;
-- centre: internal seams — API, service layer, domain modules, async/integration boundaries;
-- right: forces that would justify extraction — independent scaling, ownership/release independence, hard isolation, measured bottleneck.
+**Design principle:** one semantic transition → all related business effects
 
 ---
 
-# 3. Durable intent first. Queue delivery second.
+# 3. Durable automation that survives transport failure
 
 ## Core thesis
 
-Celery and Redis execute and transport work; they do not decide whether business work exists. That decision is persisted transactionally in PostgreSQL so a broker outage or process crash cannot erase committed intent.
+Background work is anchored in durable application state before it reaches the queue. Redis transports work; Celery executes it; PostgreSQL remembers that the work exists.
 
-## On-slide narrative
+## Execution path
 
-- **Repo fact:** durable Django models represent work state and generic `DomainWorkItem` records outbox-style work.
-- **Repo fact:** identifiers are enqueued only after the business transaction commits.
-- **Repo fact:** Redis is explicitly a broker, not a source of business truth.
-- **Repo fact:** Celery Beat reconciles pending durable work after failures.
-- **Repo fact:** the Celery result backend is disabled.
-- **Architectural interpretation:** this is a deliberate answer to the database/broker dual-write problem.
+1. Business transaction updates domain state.
+2. A durable `DomainWorkItem` is persisted with the transaction.
+3. After commit, only the identifier is enqueued.
+4. Redis transports the message.
+5. The correct worker reloads durable state and executes.
+6. Celery Beat reconciles pending work after delivery failures.
 
-## WHY THIS DECISION
+## Worker isolation
 
-Two failure windows matter:
+Normal application queues:
+- default;
+- notifications;
+- maintenance.
 
-- **publish before commit:** an external effect can happen for a transaction that later rolls back;
-- **commit before publish:** the database can commit and the process can die before the broker receives the task.
+Isolated heavy/external queues:
+- OCR;
+- AI.
 
-`after_commit` solves only the first window. A durable work record solves the second: after commit, the system still has evidence that the work must happen even if enqueue fails.
+This keeps document-processing latency and provider failure away from ordinary application work.
 
-The semantic guarantee is not exactly-once delivery. It is:
+## Why this architecture is useful
 
-**committed work intent survives transport failure, and retries are designed not to create a second business effect.**
+- committed intent remains inspectable even if Redis is unavailable;
+- request latency does not inherit OCR/SMTP/provider latency;
+- retries operate against durable state;
+- scheduled reconciliation can recover work after broker/process failure;
+- queue payloads carry identifiers rather than sensitive business truth.
 
-## WHAT THIS DOES NOT GUARANTEE
+## Portfolio message
 
-- arbitrary raw Celery messages without a durable outbox record are not magically recoverable;
-- external effects still require idempotency or deduplication;
-- Redis persistence improves operations but does not make Redis the source of record;
-- at-least-once execution must not be presented as exactly-once business effects.
+The strength is not “using Celery”. The strength is **separating durable responsibility from transport and execution**.
 
-## TRADE-OFF / WHAT WE ACCEPT
+## Diagram direction
 
-The design adds durable work states, retries, reconciliation, idempotency and locking/lease logic. That is more machinery than `task.delay()`, but the extra state is what makes failures inspectable and recoverable.
+Main pipeline:
 
-## CHANGE TRIGGER
+`Business transaction + DomainWorkItem → COMMIT → Redis → Worker → external effect`
 
-Revisit the mechanism if event volume makes reconciliation a bottleneck, ordering becomes stronger than the current work-item model, multiple independent consumers need a durable event log, or cross-system integration requires replayable domain events.
+Recovery loop:
 
-## Diagram brief
+`Beat / reconciler → pending DomainWorkItem → re-enqueue`
 
-Make the failure gap visible:
+Second lane: normal workers vs isolated OCR/AI workers.
 
-`Business mutation + DomainWorkItem → COMMIT → enqueue ID → Redis → worker → external effect`
+Bottom bar:
 
-Add recovery:
-
-`Beat/reconciler → pending DomainWorkItem → re-enqueue`
-
-Visually emphasise that **PostgreSQL spans the failure gap; Redis does not**.
+**Result:** responsive requests · recoverable async work · isolated heavy processing · inspectable retries
 
 ---
 
-# 4. When variation became the domain, hard-coded types stopped being the right abstraction.
+# 4. Generic model kernel, Stynk-specific system bindings
 
 ## Core thesis
 
-Stynk is being generalised in place because service shapes and pricing behaviour accumulated enough variation that hard-coded enums, special cases and per-form logic stopped representing the business cleanly. The answer is a versioned model/runtime layer — but only for the part of the system that actually varies.
+The generalisation work extracts reusable modelling/runtime semantics without hiding the Stynk domain behind a universal framework.
 
-## On-slide narrative
+## Generic Platform kernel
 
-- **Repo fact:** Platform work defines a generic language for types, values, references, interfaces, behaviour, revisions and runtime resolution.
-- **Repo fact:** Stynk is intended to become one System defined and executed through that Platform.
-- **Repo fact:** this is foundation/transition work, not a claim that the whole CRM has already been replaced.
-- **Repo fact:** Job/Operation integration remains Stynk-owned binding logic rather than a primitive in the generic kernel.
+Reusable concepts include:
+- typed values and TypeRefs;
+- Composite and Variant definitions;
+- identity and references;
+- Interfaces, Functions and Methods;
+- Events, Triggers and StateMachines;
+- immutable ModelRevisions;
+- ModelContext resolution;
+- RuntimeObjects and callable execution.
 
-## WHY THIS DECISION
+## Stynk System layer
 
-There is a threshold where another enum, another conditional, another custom form and another pricing branch stops being simple. The problem becomes the existence of many legitimate variants.
+Stynk keeps domain-specific semantics where they belong:
+- which Composite may act as a CRM Job;
+- which Operations are allowed for that Job;
+- Contract/VAT/pricing context;
+- CRM lifecycle integration;
+- application-specific authoring surfaces.
 
-At that point variation deserves first-class representation: types, fields, references, interfaces, executable behaviour, versioned revisions and deterministic runtime resolution.
+## Why this architecture is useful
 
-But stable Stynk workflows still belong in application code. Making everything generic would trade scattered special cases for a universal meta-framework.
+The same runtime primitives can serve more than pricing or more than one domain, while the Platform core stays free of concepts such as “roof job”, “contract” or “subcontractor”.
 
-## ALTERNATIVES NOT CHOSEN
+At the same time Stynk remains readable as a business application rather than becoming a pile of generic metadata.
 
-- **Continue hard-coding variants:** low immediate cost, rising change cost and duplicated domain knowledge.
-- **Loose JSON/form builder:** useful for forms, too weak once identity, references, behaviour and versioned execution matter.
-- **Turn the entire CRM into a workflow engine:** maximum flexibility, maximum cognitive cost, and no reason to generalise stable logic.
+## Portfolio message
 
-## TRADE-OFF / WHAT WE ACCEPT
+The reusable boundary is driven by **semantic reuse**: generic execution primitives go into the kernel; business roles stay in system bindings.
 
-A model language is infrastructure. It introduces revision lifecycle, validation, diagnostics, identity semantics, type resolution, publishing rules, runtime execution and authoring UX.
+## Diagram direction
 
-Complexity has not disappeared. It has moved from **many scattered special cases** into **one explicit modelling subsystem**.
+Two layers:
 
-## CHANGE TRIGGER
+**Platform kernel**
+Type system · identity · references · callable runtime · events/state machines · versioning
 
-The Platform boundary should expand only when another domain problem demonstrates the same reusable semantics. If a behaviour exists only for Stynk and has no credible generic use, it should remain a Stynk binding.
+↓ generic runtime contracts
 
-The trigger is **repeated semantic reuse**, not architectural ambition.
+**Stynk System**
+Job bindings · Operation bindings · pricing context · CRM lifecycle · UI adapters
 
-## Diagram brief
+Bottom bar:
 
-Make the boundary itself the subject:
-
-**Generic Platform:** TypeRef, Composite, Variant, Interface, Callable, Identity/References, Revision/ModelContext.
-
-**Stynk System:** Job, Operation, contract/pricing context, CRM workflows.
-
-Studio is an authoring surface feeding versioned definitions; it is not the Platform itself.
+**Extensibility without domain leakage:** generic runtime below, explicit business semantics above
 
 ---
 
-# 5. Pricing may evolve. A historical Job must not change meaning.
+# 5. Jobs are composed from reusable typed capabilities
 
 ## Core thesis
 
-Once pricing becomes configurable executable policy, versioning is not optional. Every priced Job must retain the semantic context that produced its price, while new policy can evolve independently.
+The target Job model replaces hard-coded Job/Operation type hierarchies with canonical Composites plus explicit Stynk bindings and reusable capabilities.
 
-## On-slide narrative
+## Model
 
-- **Repo fact:** published catalogs are immutable.
-- **Repo fact:** historical Jobs and pricing snapshots are not recalculated during migration.
-- **Repo fact:** binding-enabled canonical pricing is selected explicitly; invalid canonical bindings fail rather than silently falling back to legacy pricing.
-- **Repo fact:** default Job pricing and override pricing execute through the same graph runtime.
-- **Repo fact:** Operation pricing uses a typed `pricing_context` input rather than injecting undeclared fields into the receiver.
-- **Repo fact:** old runtime/catalog formats remain readable through explicit compatibility paths while history depends on them.
+Any suitable canonical Composite can be bound as a Stynk Job.
 
-## WHY THIS DECISION
+Allowed Operations are relationships in the Stynk binding layer rather than special fields embedded into the generic type system.
 
-A pricing function is not just code returning a number. It is policy evaluated against a particular model, catalog/rate set, allowed operations, algorithm and contract/VAT context.
+An Operation can implement:
 
-If historical data is later evaluated against whatever is current now, the system changes the meaning of the past.
+`stynk.interface.priced.price(...)`
 
-Therefore preserve both:
+The default Job pricing convention is then:
 
-1. **the produced business result** — persisted price snapshot;
-2. **the semantic frame that produced it** — pinned model/catalog identity and compatibility path.
+`self.operations → Operation.Priced.price() → aggregate PricingResults`
 
-## THE MOST IMPORTANT DESIGN CHOICES
+## Typed execution context
 
-### Published means immutable
+Operation pricing can use:
+- its own canonical value;
+- parent Job projection;
+- catalog constants/rates;
+- curated Contract/VAT data.
 
-Later edits create a new revision rather than mutating historical evidence.
+Those dependencies arrive through a typed `pricing_context` input.
 
-### Canonical failure is not a reason to try legacy logic
+The Operation receiver stays exactly the value declared by its Composite.
 
-Once a Job is on the binding-enabled path, an invalid binding or graph is an error. This prevents a new runtime from silently producing an old-semantic price whenever the new path breaks.
+## Customisation
 
-### Default and custom pricing share one execution model
+Default pricing is generated as a normal callable graph.
 
-The default policy is conceptually `operations → Operation.Priced.price() → domain aggregation`. Customisation materialises that same logic into the graph editor. There is no separate Python truth for defaults and graph truth for overrides.
+Choosing “customise” materialises that same logic into the existing graph editor, where the user can:
+- filter Operations;
+- add minima/discounts/transport;
+- replace aggregation;
+- completely replace the default pricing path.
 
-### Runtime values must not lie about their declared type
+There is no separate hidden pricing engine for custom logic.
 
-Operation pricing needs parent Job, catalog constants and curated contract/VAT context. The design exposes this through a typed `pricing_context` input rather than secretly extending `self` with undeclared fields.
+## Why this architecture is useful
 
-## ALTERNATIVES NOT CHOSEN
+- new Job/Operation shapes are modeled instead of hard-coded;
+- Operations carry reusable behavior through Interfaces;
+- default conventions remain simple;
+- advanced users can override the convention without changing runtime semantics;
+- Studio and backend reason about the same typed method signatures.
 
-- **Always recalculate with latest rules:** simple, historically wrong.
-- **Store only the final total:** preserves the number but weakens provenance and explainability.
-- **Silent canonical → legacy fallback:** improves superficial availability while destroying semantic certainty.
-- **Separate implementation for default pricing:** creates two pricing languages that can drift.
-- **Augment the receiver with undeclared context fields:** convenient, but makes runtime data violate its declared model.
+## Portfolio message
 
-## TRADE-OFF / WHAT WE ACCEPT
+This is the point where dynamic configuration becomes **polymorphic domain behaviour**, not just configurable fields.
 
-Compatibility code must live longer, multiple historical representations may coexist, and publishing/migration need stricter validation. The architecture intentionally pays that cost because **historical meaning is business data**.
+## Diagram direction
 
-## CHANGE TRIGGER
+`Composite → Stynk Job binding`
 
-Compatibility code can be retired only when no persisted historical data requires its semantics. A future pricing runtime should replace this one only if it preserves deterministic revision resolution, historical readability, snapshot provenance, explicit failure semantics and equivalent-or-better authoring/validation guarantees.
+Job contains relational Operations.
 
-## Diagram brief
+Each Operation:
 
-Use a time-oriented diagram.
+`canonical value + typed pricing_context → Priced.price()`
 
-Top lane: `Published catalog + ModelRevision → New Job → canonical pricing → persisted snapshot`
+Then:
 
-Bottom lane: `Historical Job → pinned historical semantics → explicit compatibility reader`
+`map all Operations → aggregate → Job PricingResult`
 
-Between them place the invariant:
+Side branch:
 
-**new code may evolve; old business meaning may not.**
+`Default graph → Customise → same graph runtime`
 
-Add one technical callout: `Operation self + typed pricing_context → Priced.price()`.
+Bottom bar:
+
+**One model:** convention for the common case, graph composition for the exceptional case
 
 ---
 
-# 6. Keep production simple enough to operate; keep recovery outside the thing it must recover.
+# 6. Every price remains reproducible and explainable
 
 ## Core thesis
 
-The current production topology deliberately favours operational simplicity and recoverability over premature high availability. One VPS is a real availability constraint, but critical recovery mechanisms do not depend on the application components they are supposed to restore.
+A configurable price is not just a number. Stynk preserves the published model, catalog semantics, result snapshot and execution explanation that produced it.
 
-## On-slide narrative
+## Publication model
 
-- **Repo fact:** production runs on a single VPS/dedicated server with Docker Compose.
-- **Repo fact:** nginx is internet-facing; Django, PostgreSQL, Redis, workers and Beat run behind it.
-- **Repo fact:** host-level watchdogs, backups, certificate renewal and OS maintenance remain outside Django/Celery.
-- **Repo fact:** an optional separate backup server exists and database backups use `pg_dump`.
-- **Repo fact:** host mail remains outside the CRM Compose/service boundary.
+Draft configuration may change.
 
-## WHY THIS DECISION
+Published catalogs/model revisions are immutable.
 
-A production platform is not free. Multi-node orchestration may reduce some availability risks, but it also adds networking, storage, observability, deployment and recovery systems that must be operated correctly.
+A Job is evaluated against pinned semantics.
 
-For one primary technical owner, a topology that is easy to understand and rebuild has direct reliability value.
+The persisted pricing result keeps the business outcome, while components/trace can explain how that outcome was calculated.
 
-The key distinction is:
+## Runtime evidence
 
-**high availability keeps serving through failure; recoverability restores service after failure.**
+A pricing result can expose:
+- net/gross/VAT totals;
+- components;
+- rates/constants used;
+- execution trace;
+- model/catalog identity.
 
-The current design prioritises recoverability.
+Simulation uses the real interpreter without writing a real Contract.
 
-## FAILURE-BOUNDARY LOGIC
+## Historical behavior
 
-- Django restart → business data remains in PostgreSQL.
-- Redis outage → durable work intent remains in PostgreSQL.
-- OCR/AI failure → isolated worker boundary protects the normal queue.
-- application containers unhealthy → host-level supervision still exists.
-- Celery/Beat down → host backups and certificate maintenance do not disappear.
-- VPS lost → recovery depends on off-host backup and reproducible deployment, not on containers lost with the host.
+Later configuration changes create new revisions.
 
-## TRADE-OFF / WHAT WE ACCEPT
+They do not silently reinterpret old Jobs.
 
-The VPS is a single online failure domain. There can be downtime while restoring or replacing the host. This is an explicit constraint, not something to hide behind the word production.
+Historical data remains readable against the semantics under which it was created.
 
-## CHANGE TRIGGER
+## Why this architecture is useful
 
-Move toward stronger redundancy when required RTO/RPO cannot be met by tested recovery, host failures create unacceptable business impact, resource saturation is sustained, zero/near-zero downtime releases become a requirement, or independent database/worker nodes solve a measured problem.
+- pricing changes can be deployed without rewriting history;
+- users can inspect how a result was produced;
+- Studio simulation and production execution share semantics;
+- audit/history remains meaningful after the model evolves.
 
-Do not publish invented SLA numbers. Add measured RTO/RPO only after restore drills provide them.
+## Portfolio message
 
-## Diagram brief
+Versioning is not administrative overhead here. It is what makes **executable business policy safe to change**.
 
-Make blast radius explicit.
+## Diagram direction
 
-Inside one VPS boundary: nginx, Django, PostgreSQL, Redis, normal worker, OCR/AI worker, Beat.
+Timeline:
 
-Outside the application failure boundary: systemd/watchdog, backups, certificate maintenance, host mail boundary, off-site backup box.
+`Draft → validate → Published Revision R17 → Job → price() → snapshot + components + trace`
 
-The slide should answer: **what still exists when the app is broken?**
+Later:
+
+`Revision R18` handles new work.
+
+Old Job remains pinned to R17.
+
+Bottom bar:
+
+**Safe evolution:** new rules move forward; historical meaning stays reproducible
 
 ---
 
-# 7. Prove the replacement path before deleting the old one.
+# 7. Public website and CRM share infrastructure, not trust
 
 ## Core thesis
 
-Stynk is being generalised in place, not rewritten. New model/runtime paths are introduced additively, historical semantics remain readable, adoption is explicit, and there is a deliberate point after which rollback changes from downgrade to fix-forward.
+Stynk keeps deployment simple while enforcing a strict boundary between public website traffic and authenticated CRM data.
 
-## On-slide narrative
+## CRM side
 
-- **Repo fact:** new binding schema and runtime paths are introduced additively.
-- **Repo fact:** published historical catalogs are never rewritten in place.
-- **Repo fact:** dynamic-v1 and earlier canonical representations remain readable while persisted data depends on them.
-- **Repo fact:** conversion is designed to be all-or-nothing and idempotent.
-- **Repo fact:** semantic identity/slot is preserved during conversion where applicable.
-- **Repo fact:** first activation of a binding-bearing catalog is an explicit no-downgrade boundary.
+- session authentication;
+- CSRF protection;
+- role/object-level authorization;
+- private attachments delivered through permission-checked Django views;
+- financial and role-specific data filtered at API level.
 
-## WHY THIS DECISION
+## Public side
 
-A rewrite would need to solve the new model, old-data migration, functional parity, pricing equivalence, deployment, rollback and historical semantics at once. That maximises blast radius precisely when the system already carries production history.
+The public website shares the nginx edge but receives only explicitly reviewed public surfaces.
 
-Instead, the migration follows an expand/adopt/contract shape:
+Current examples include:
+- contact / inquiry endpoints;
+- sales-region/public configuration endpoints;
+- reviewed public realizations;
+- derived public media only.
 
-- **expand:** add new schema/runtime without invalidating old reads;
-- **adopt:** route new authoring and runtime through the canonical path;
-- **observe and prove:** validate pricing, persistence and compatibility;
-- **contract:** remove old creation/write paths only after the replacement is real;
-- **retain:** keep historical readers while historical records still require them.
+Everything else under the CRM API is denied from the public host.
 
-## IMPORTANT INVARIANTS
+## Edge controls
 
-### Additive first
+nginx owns:
+- hostname routing;
+- TLS;
+- security headers;
+- upload limits;
+- rate limiting on public forms;
+- public API allowlisting.
 
-The first release carrying the new model does not delete old readers.
+Private CRM attachments are never exposed as generic static media.
 
-### Conversion fails as a unit
+## Why this architecture is useful
 
-If conversion would leave unresolved references, incompatible rules or collisions, it reports blockers and writes nothing.
+One deployment can host both the company website and the CRM without treating them as one trust zone.
 
-### Identity survives representation changes
+The public site can reuse selected CRM-backed data while the default remains closed.
 
-Where a canonical resource changes representation, semantic identity is preserved rather than inventing a new conceptual object.
+## Portfolio message
 
-### Do not infer semantics that are not knowable
+The architecture optimises for **explicit exposure**: public access is granted endpoint by endpoint and artifact by artifact, rather than by sharing the internal application surface.
 
-An arbitrary old Job pricing graph is not heuristically decomposed into Operation-level pricing. If meaning cannot be proven, preserve the old meaning rather than manufacturing a new one.
+## Diagram direction
 
-### Adoption creates a real compatibility boundary
+One nginx edge, two host lanes:
 
-Once a binding-bearing catalog is published or activated, code older than the first compatible reader is no longer a safe downgrade target.
+**stynk.eu**
+→ static site
+→ allowlisted public APIs
+→ derived public media
 
-Rollback becomes: stop further adoption, keep the compatibility reader, publish a later safe revision if necessary, and fix forward.
+**CRM host**
+→ authenticated Angular SPA
+→ full DRF API subject to role/object permissions
+→ protected attachments
 
-## ALTERNATIVES NOT CHOSEN
+Bottom bar:
 
-- **Big-bang rewrite:** cleaner target state, much wider failure surface.
-- **Destructive migration in place:** simpler schema after migration, but risks rewriting historical meaning.
-- **Silent fallback forever:** makes rollout look robust while obscuring which semantics produced a result.
-- **Heuristic conversion of arbitrary logic:** false confidence when original intent cannot be reconstructed safely.
-
-## TRADE-OFF / WHAT WE ACCEPT
-
-For a period, several representations and readers coexist. That creates more code and more testing work. The key is that coexistence is **named, bounded and directional**.
-
-## CHANGE TRIGGER
-
-Delete compatibility paths only when no persisted history depends on them. Promote more business configuration into the canonical runtime only after the replacement path has been proven through real persisted Jobs and pricing snapshots.
-
-Migration ends by **removing obsolete responsibilities**, not by achieving a cosmetically legacy-free codebase.
-
-## Diagram brief
-
-Use a migration timeline with gates:
-
-`Hard-coded / dynamic-v1 → canonical model available → binding path proven → first binding catalog activated → fix-forward era`
-
-Across the timeline show: immutable published history, pinned revisions, preserved snapshots and explicit compatibility readers.
-
-Highlight the activation point as **NO-DOWNGRADE BOUNDARY**.
+**Shared infrastructure, separate trust:** public by explicit allowlist; private by default
 
 ---
 
 # Cross-slide narrative
 
-The seven slides should feel like one argument:
+The architecture story should read as one coherent system:
 
-1. **System boundary:** keep one coherent application until a responsibility or failure mode earns separation.
-2. **Modular monolith:** preserve local consistency while enforcing internal domain seams.
-3. **Durable async:** when execution leaves the request, durable responsibility stays in PostgreSQL.
-4. **Canonical runtime:** generalise only the part of the domain whose variability has become structural.
-5. **Versioned pricing:** once policy is executable configuration, historical semantics must be pinned.
-6. **Production topology:** keep operations proportional to the system and put recovery outside the failure it must recover.
-7. **Evolution:** introduce new semantics additively, prove them, then cross an explicit adoption boundary.
+1. **One business core** keeps connected domain state transactional.
+2. **Lifecycle services** turn business transitions into coordinated system effects.
+3. **Durable async** moves slow/external work out of the request path without losing intent.
+4. **The Platform kernel** extracts only genuinely reusable semantics.
+5. **Capabilities and bindings** let new Job/Operation models carry behavior without hard-coded class trees.
+6. **Versioned execution** makes configurable pricing safe, explainable and historically reproducible.
+7. **Trust boundaries** let public and internal products share infrastructure safely.
 
-The recurring principle is:
+The recurring principle is positive:
 
-> **Add complexity only when it creates a boundary with a clear semantic or operational purpose; once that boundary exists, make its failure behaviour explicit.**
+> **Keep business semantics explicit, make execution deterministic, and introduce a boundary when it creates a concrete capability.**
 
 # Rules for the next SVG pass
 
-- one thesis per slide;
-- one primary diagram;
-- one decision/trade-off panel;
-- one explicit change trigger;
-- no generic technology inventory unless the technology itself explains a boundary;
-- no decorative tags that do not carry semantic meaning;
-- no invented scale, SLA, benchmark or migration-completeness claims;
-- no suggestion that Platform has already replaced all production CRM paths;
-- no implication that Redis/Celery provides exactly-once semantics;
-- no framing of compatibility code as accidental debt while it still preserves historical meaning.
-
-The strongest slides should read like compact Architecture Decision Records rather than component maps.
+- Lead with what the architecture enables, not what it lacks.
+- Prefer concrete system behavior over abstract architecture vocabulary.
+- Use “why this is useful” framing rather than defensive comparison.
+- Show one primary mechanism per slide.
+- Use real Stynk concepts: Contract, Job, Operation, DomainWorkItem, ModelRevision, pricing trace, public API allowlist.
+- Keep caveats in secondary copy unless they are the actual engineering insight.
+- Match the visual tone of the wider portfolio: light surfaces, crisp cards, semantic accent colors, strong headings and bottom-line takeaways.
+- Avoid a slide whose main thesis is infrastructure modesty (“one VPS”) or architectural non-choice (“not microservices”).
+- Avoid generic component inventories that could describe any Django application.
