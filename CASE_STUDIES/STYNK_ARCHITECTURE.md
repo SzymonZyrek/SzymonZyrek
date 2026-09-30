@@ -4,6 +4,20 @@ These diagrams are a sanitized visual companion to the [Stynk CRM case study](ST
 
 They are based on the current private-project architecture, but intentionally omit source code, credentials, client data and proprietary business configuration. The point is to show the engineering decisions and boundaries rather than publish an implementation blueprint.
 
+
+### Visual language
+
+The color palette is semantic rather than decorative and stays consistent across the set:
+
+- **cyan** — user/configuration/authoring surfaces;
+- **purple** — application and model/runtime logic;
+- **green** — durable state and historical truth;
+- **amber** — asynchronous execution and operational boundaries;
+- **blue** — transport/interface boundaries;
+- **red** — legacy compatibility, risk or intentionally retained historical paths.
+
+Each diagram also includes the architectural decision it is meant to explain: the constraint or force behind the choice and the consequence/trade-off of taking that path.
+
 ## 1. System at a glance
 
 ![Stynk CRM system overview](assets/stynk/architecture/01-system-overview.svg)
@@ -14,7 +28,7 @@ A deliberately modular monolith: Angular and Django/DRF share one deployable app
 
 ![Stynk CRM modular monolith](assets/stynk/architecture/02-modular-monolith.svg)
 
-The system keeps complexity in domain/service boundaries rather than distributing it across network services. Contracts, Jobs, pricing, payments, sales visits, attachments, OCR and audit live as distinct modules but share one transactional model.
+The slide makes the trade-off explicit: the system needs strong domain boundaries and shared transactions, but current scale, solo ownership and deployment constraints do not justify the operational tax of distributed services. It also records what would actually justify a later split: independent scaling, ownership/release cadence, hard isolation or a measured bottleneck.
 
 ## 3. Reliable background work
 
