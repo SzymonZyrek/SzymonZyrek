@@ -28,7 +28,7 @@ production support and iteration
 
 This document describes the architecture and selected workflows without publishing client source code, credentials, personal data or proprietary business configuration.
 
-See also: [recommended screenshots for this case study](STYNK_SCREENSHOTS.md).
+See also: [recommended screenshots for this case study](STYNK_SCREENSHOTS.md) and the [architecture slide gallery](STYNK_ARCHITECTURE.md).
 
 ---
 
@@ -480,7 +480,7 @@ It is to let the system describe more of its own business model using:
 
 A Job can expose Operations as first-class CRM rows while pricing executes through a pinned model/catalog context.
 
-Published catalogs are treated as historical evidence: they are immutable rather than silently reinterpreted after configuration changes.
+Published catalogs are treated as historical evidence: they are immutable rather than silently reinterpreted after configuration changes.\n\n![Versioned pricing and historical compatibility](assets/stynk/architecture/05-versioned-pricing.svg)
 
 The 3.0.1 binding direction intentionally separates:
 
