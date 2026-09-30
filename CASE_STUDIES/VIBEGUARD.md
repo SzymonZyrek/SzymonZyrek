@@ -36,6 +36,10 @@ VibeGuard explores what it would look like to put an experienced engineer above 
 
 **Recurring pattern:** let AI carry more implementation bandwidth, but move human attention upward toward decisions whose cost cannot be reduced to "did the tests pass?".
 
+![The responsibility gap in AI-built software](assets/vibeguard/diagrams/01-responsibility-gap.svg)
+
+The core product tension is not whether AI can produce useful code. It is whether implementation throughput can increase without silently losing architecture, security, continuity and accountable technical judgement.
+
 ---
 
 ## The story
@@ -97,9 +101,15 @@ But:
 
 > **Where should a human remain authoritative while AI keeps moving faster?**
 
+![From AI rescue to persistent technical ownership](assets/vibeguard/diagrams/02-discovery-evolution.svg)
+
+The important result of the prototype is therefore not a fixed feature list. It is the sequence of product assumptions that became too small.
+
 ### 3. The human role moved from debugger to Tech Owner
 
 The current PoC reframes the human from an emergency coder into a persistent owner of technical judgement.
+
+![Tech Owner control loop](assets/vibeguard/diagrams/03-tech-owner-control-loop.svg)
 
 The control loop is:
 
@@ -256,6 +266,8 @@ Tech Owner PoC
 
 The code is evidence that the idea was explored materially, not proof of a production-ready platform.
 
+![Prototype evidence vs product direction](assets/vibeguard/diagrams/05-prototype-product-boundary.svg)
+
 [Prototype & source boundary →](vibeguard/prototype.md)
 
 ---
@@ -265,7 +277,7 @@ The code is evidence that the idea was explored materially, not proof of a produ
 | If you have… | Read / view |
 |---|---|
 | **30 seconds** | This page. |
-| **3–5 minutes** | [Visual tour](vibeguard/visual-tour.md) — the three Tech Owner surfaces and recommended demo captures. |
+| **3–5 minutes** | [Visual tour](vibeguard/visual-tour.md) — conceptual diagrams for the responsibility gap, discovery path, ownership loop and prototype boundary. |
 | **5 minutes** | [Discovery & evolution](vibeguard/discovery.md) — AI Studio prototype → rescue marketplace → review layer → persistent Tech Owner. |
 | **5–10 minutes** | [Tech Owner model](vibeguard/ownership-model.md) — what remains human-owned and why. |
 | **5–10 minutes** | [Prototype & architecture](vibeguard/prototype.md) — what really exists, what is simulated and what a production rewrite would need. |
