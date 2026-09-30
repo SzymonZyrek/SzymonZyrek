@@ -4,6 +4,8 @@ This is the wider map behind the shorter profile README.
 
 The repositories are intentionally not presented as if every experiment were one polished product. Some are active systems, some are current R&D, some are competing architectural hypotheses, and some are historical learning artifacts.
 
+For employer-owned systems that cannot be represented by source repositories, see **[CAREER.md](CAREER.md)** for the product-level commercial engineering history.
+
 ## 1. Current / production-oriented work
 
 ### Stynk CRM
