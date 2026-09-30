@@ -8,7 +8,7 @@ This page focuses on the point where changing the business offer stopped being p
 
 The important boundary is intentional: reusable modelling/runtime semantics belong to the generic Platform layer; construction-specific meaning remains explicit in Stynk System bindings.
 
-## 8. Config Studio and the move away from hard-coded pricing
+## Config Studio and the move away from hard-coded pricing
 
 The biggest architectural evolution in the system is the move from hard-coded Job/pricing types toward a configurable model.
 
@@ -61,9 +61,7 @@ This is also where the codebase is being generalized into a reusable technical s
 
 ---
 
----
-
-## 9. Event / automation architecture under the Studio layer
+## Event / automation architecture under the Studio layer
 
 The generalized platform work goes beyond pricing.
 
