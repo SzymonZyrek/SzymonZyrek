@@ -59,6 +59,66 @@ The core product tension is not whether AI can produce useful code. It is whethe
 
 ![From coding agents to a new engineering model](assets/vibeguard/diagrams/07-engineering-model.svg)
 
+
+---
+
+## Where this sits in the longer arc
+
+VibeGuard is new, speculative and deliberately much less proven than Stynk.
+
+What makes it interesting to me is not that it happens to involve AI. It is that it continues a recurring engineering move that shows up across otherwise unrelated projects:
+
+| Stage | Local problem | Abstraction move |
+|---|---|---|
+| **Early developer tools** | Every machine/environment is different and wastes setup/debugging time. | Normalize host variance behind portable tools and a familiar working layer. |
+| **JustBuild / FetchDog / Faxus / Meserve** | Established tools expose useful abstractions, but their internal boundaries are still opaque. | Rebuild enough machinery to separate lifecycle, plugins, artifacts, providers, identity, resolution and runtime responsibilities. |
+| **Stynk** | People manually synchronize business state and changing business rules leak into developer-owned code. | Move mechanical coordination into the system, then move changing business-model ownership back toward the client through configurable models and rules. |
+| **VibeGuard** | Agentic implementation can scale faster than senior engineers can manually review every change. | Move routine verification and routing into evidence-driven automation while keeping architecture, security, irreversible semantics and policy changes under explicit human ownership. |
+
+The technologies are different. The recurring question is not:
+
+> How do I automate the human away?
+
+It is closer to:
+
+> **Which part is mechanical enough to move below the abstraction boundary, and which decisions still change the meaning of the system and therefore need an accountable owner?**
+
+Stynk provides the clearest practical precedent.
+
+Early in that project, the company owner was effectively the **human message bus**: information moved because he remembered who needed to know what. The useful architectural move was not to remove him from the business. It was to remove him from mechanical synchronization so that his attention could move upward toward decisions only the business owner should make.
+
+VibeGuard asks the analogous question about software engineering.
+
+If coding agents multiply implementation throughput but a senior engineer still has to read every generated diff, the senior engineer becomes the new message bus — a high-value human reduced to routing and repetitive verification.
+
+The Tech Owner model is an attempt to move that bottleneck upward:
+
+~~~text
+implementation traffic
+        ↓
+automated evidence / policy / filtering
+        ↓
+material uncertainty only
+        ↓
+Tech Owner
+        ↓
+architecture / security / irreversible choices / policy
+~~~
+
+There is another parallel.
+
+In Stynk, repeated pricing and service changes eventually exposed an ownership mistake: business variability lived in developer-owned code. The architectural response was to make the platform own execution guarantees while the business increasingly owns the model it changes.
+
+VibeGuard explores the same separation in engineering terms:
+
+- agents and tooling may own repeatable execution;
+- automated systems may own evidence collection and mechanical checks;
+- the **Tech Owner owns the technical model, its boundaries and the accepted exceptions**.
+
+That does not prove VibeGuard is a product.
+
+It explains why it is the next experiment I currently care about: after learning to move operational and business variability to the correct side of an abstraction boundary, I now want to test whether the same principle can make agentic software delivery scale without turning either the AI or the supervising engineer into the wrong kind of owner.
+
 ---
 
 ## The story
