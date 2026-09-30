@@ -1,36 +1,85 @@
 # VibeGuard — visual tour
 
-[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
+[← Case study overview](../VIBEGUARD.md) · [Evidence](evidence.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Prototype](prototype.md)
 
-This is the shortest visual path through VibeGuard for now.
+This is the shortest visual path through the idea.
 
-The Stynk case study uses a mix of product screenshots and architecture diagrams because there is a production system to show. VibeGuard is at a different stage: the useful artifact today is the **product model**. The diagrams therefore carry the story first; screenshots can be added later without blocking the case study.
+VibeGuard is still R&D, so the strongest artifacts today are the **problem model, evidence, control loop and claim boundary** rather than polished product screenshots.
 
-## Product thesis
-
-### The responsibility gap in AI-built software
+## 1. The responsibility gap
 
 ![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
 
-AI expands implementation bandwidth, iteration speed and access to software creation much faster than it expands architecture judgement, continuity or accountability.
+AI expands implementation bandwidth faster than it expands architecture judgement, continuity or accountability.
 
-The product hypothesis is the missing layer between those two curves: a persistent Tech Owner who remains responsible for the technical system while agents perform more of the implementation.
+The product question is not whether an LLM can write code.
 
-[Read discovery & evolution →](discovery.md)
+It is:
+
+> **Who owns the technical system when implementation itself is increasingly delegated?**
 
 ---
 
-## Discovery & evolution
+## 2. The engineering model
 
-### The product question moved upward
+![From coding agents to a new engineering model](../assets/vibeguard/diagrams/07-engineering-model.svg)
+
+Models, skills and plugins improve local implementation capability.
+
+The harder layer is keeping an AI-heavy system coherent through changing requirements, large refactors, migrations, security decisions and another year of product history.
+
+That is the layer VibeGuard is aimed at.
+
+---
+
+## 3. External evidence: the premise is real
+
+![Evidence landscape](../assets/vibeguard/diagrams/08-evidence-landscape.svg)
+
+The research pass does **not** validate VibeGuard demand.
+
+It does support the premise:
+
+- AI-assisted development is already mainstream;
+- AI-native repository/tooling activity is growing quickly;
+- overall software-change volume is rising;
+- trust drops sharply around consequential work;
+- AI-agent skills are appearing in labor-market demand.
+
+[Research snapshot & sources →](evidence.md)
+
+---
+
+## 4. The proposed delegation boundary
+
+![Delegation boundary](../assets/vibeguard/diagrams/09-delegation-boundary.svg)
+
+This slide is explicitly an inference, not a survey result.
+
+The proposed split is:
+
+~~~text
+reversible + mechanically verifiable
+        → automate aggressively
+
+material architecture / security / semantics
+        → package evidence and escalate
+
+irreversible / accepted risk / policy change
+        → explicit human authority
+~~~
+
+The goal is not "human approval everywhere".
+
+It is **human judgement where the meaning of the system changes**.
+
+---
+
+## 5. How the idea evolved
 
 ![From AI rescue to persistent technical ownership](../assets/vibeguard/diagrams/02-discovery-evolution.svg)
 
-The project started with a tactical question:
-
-> who helps when AI-generated code goes wrong?
-
-The prototype then exposed progressively larger problems:
+The product question moved upward:
 
 ~~~text
 AI Studio prototype
@@ -46,86 +95,66 @@ human attention becomes the bottleneck
 persistent Tech Owner
 ~~~
 
-The useful result is not that every earlier feature should survive.
+The useful result is the sequence of assumptions that became too small.
 
-It is the sequence of assumptions that became too small.
-
-[Read discovery & evolution →](discovery.md)
+[Discovery & evolution →](discovery.md)
 
 ---
 
-## Ownership model
-
-### Selective human authority, not approval everywhere
+## 6. The Tech Owner control loop
 
 ![Tech Owner control loop](../assets/vibeguard/diagrams/03-tech-owner-control-loop.svg)
 
-Agents should execute aggressively inside explicit project boundaries.
+Agents execute inside known boundaries.
 
-Routine changes should disappear into tests, CI, static/security checks and automated review. Human attention should be reserved for decisions that change architecture, security, irreversible data semantics, accepted debt or the policy itself.
+Tests, CI, scanners and automated review absorb mechanical verification.
+
+Only material uncertainty reaches the Tech Owner.
 
 ### Evidence before judgement
 
 ![Evidence first, judgement where evidence ends](../assets/vibeguard/diagrams/04-evidence-decision-boundary.svg)
 
-The Tech Owner should not receive a raw stream of PRs and telemetry.
-
-The intended interface compresses implementation activity into a decision packet:
+The human should receive a compressed decision packet:
 
 - what materially changed;
 - which boundary was crossed;
-- what has already been verified;
+- what is already verified;
 - which previous decision matters;
 - what uncertainty remains;
-- what authority is being requested.
+- what authority is requested.
 
-[Read the Tech Owner model →](ownership-model.md)
+[Tech Owner model →](ownership-model.md)
 
 ---
 
-## Business case
-
-### More buildable software, a new review ceiling
+## 7. Why this can matter commercially
 
 ![Business case for reorganizing agentic engineering](../assets/vibeguard/diagrams/06-business-case.svg)
 
-The commercial thesis is not merely that AI makes existing engineering cheaper.
+If implementation becomes cheaper, more real-world software becomes worth building.
 
-It may make **more software worth building at all**.
+But if every generated change still requires traditional senior review, judgement becomes the new throughput ceiling.
 
-That pushes agentic engineering into more real-world domains and creates a corresponding workflow problem: implementation bandwidth can expand far faster than senior technical judgement.
+The business hypothesis is therefore:
 
-VibeGuard's proposed answer is to reorganize work around:
+> **use automation to scale execution, and experienced engineers to scale technical ownership.**
 
-- safe delegation;
-- automated evidence;
-- selective escalation;
-- experienced engineers operating at decision boundaries;
-- visible technical accountability for stakeholders.
+The stakeholder-facing version is simpler:
 
-The goal is to let agentic workflows push beyond assumptions inherited from traditional development without making either uncontrolled autonomy or manual senior review the limiting factor.
+> **There is a pilot in this plane.**
 
-[Read the business case →](business-case.md)
+[Business case →](business-case.md)
 
 ---
 
-## Prototype & architecture
-
-### Keep implemented evidence separate from the product claim
+## 8. What is actually built
 
 ![Prototype evidence vs product direction](../assets/vibeguard/diagrams/05-prototype-product-boundary.svg)
 
-The private repository already implements real pieces of the earlier exploration:
+The private prototype already contains real repository inspection, AI audit, structured findings, diffs, debug/PR flows and guardrail experiments.
 
-- GitHub repository/branch/file inspection;
-- server-side AI audit;
-- structured findings;
-- line annotations;
-- diff/patch interaction;
-- debug-ticket and PR-review flows;
-- guardrail / agent-instruction experiments.
-
-The newer Tech Owner slice is intentionally thinner and more conceptual. It uses mock decision packets and session state to test the interaction:
+The newer Tech Owner slice is deliberately smaller:
 
 ~~~text
 Project Policy
@@ -135,73 +164,35 @@ Owner Inbox
 Decision Workspace
 ~~~
 
-A real product would need a fresh architecture around durable policy, evidence provenance, GitHub-native event ingestion, authorization, decision memory and auditability.
+Its decision packets are simulated. Durable policy, decision memory, event ingestion, authorization and auditability remain product work.
 
-[Read prototype & claim boundary →](prototype.md)
-
----
-
-## How the diagrams map to the story
-
-| Diagram | Question it answers |
-|---|---|
-| **Responsibility gap** | Why does AI-assisted software creation create a new ownership problem? |
-| **Discovery evolution** | How did the product move from rescue/debugging to ongoing ownership? |
-| **Tech Owner control loop** | Where should agents remain autonomous and where should a human stay authoritative? |
-| **Evidence / decision boundary** | How do we avoid turning the senior engineer into a manual PR queue? |
-| **Business case** | Why can agentic engineering expand the addressable software problem space, and where does the traditional workflow become the ceiling? |
-| **Prototype / product boundary** | What has actually been built, what is simulated, and what remains a future design? |
-
-This structure intentionally mirrors the Stynk case study: overview first, then discovery, model, engineering/prototype boundary and a visual synthesis. The difference is that VibeGuard's strongest evidence today is conceptual evolution rather than production scale.
+[Prototype & claim boundary →](prototype.md)
 
 ---
 
-## Future screenshot pass
-
-Screenshots are deferred, not required for the current story.
-
-When there is a convenient desktop capture pass, the useful set remains small:
-
-- **Project Policy** — where autonomy stops;
-- **Owner Inbox** — which changes survived automated filtering;
-- **Decision Workspace** — evidence, historical intent and explicit owner action;
-- optional historical **AI Code Auditor / Human Debug Workspace** — to show the earlier rescue/review model.
-
-Those screenshots should support the conceptual diagrams, not replace them.
-
----
-
-## Closing synthesis
-
-VibeGuard started as a small attempt to put a human back into AI-assisted debugging.
-
-The stronger question appeared one abstraction level higher:
-
-> **Who owns the technical system when implementation itself is increasingly delegated?**
-
-The current answer being explored is:
+## 9. The whole thesis in one loop
 
 ~~~text
-Founder / domain owner
-        ↓
-product intent
-        ↓
-AI / coding agents
-        ↓
+business intent
+      ↓
+coding agents
+      ↓
 implementation
-        ↓
-automated evidence
-        ↓
+      ↓
+automated evidence + policy
+      ↓
 material uncertainty only
-        ↓
+      ↓
 Tech Owner
-        ↓
-decision / rationale / policy
-        └──────────────→ future agent context
+      ↓
+decision / rationale / exception / policy change
+      └────────────→ future agent context
 ~~~
 
-The product is still a PoC.
+Success is not "maximum autonomy" and not "maximum review".
 
-The ownership model is the artifact worth evaluating now.
+It is:
 
-[Back to the case-study overview →](../VIBEGUARD.md)
+> **more useful software per unit of scarce senior attention without losing technical accountability.**
+
+[Back to case-study overview →](../VIBEGUARD.md)
