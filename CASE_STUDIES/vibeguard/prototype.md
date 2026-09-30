@@ -1,6 +1,6 @@
 # VibeGuard — prototype, architecture and claim boundary
 
-[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Visual tour](visual-tour.md)
+[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Visual tour](visual-tour.md)
 
 VibeGuard is intentionally a prototype-heavy project.
 
