@@ -6,6 +6,18 @@ These diagrams are a sanitized visual companion to the [Stynk CRM case study](ST
 
 They are derived from the current private-project architecture, but intentionally omit source code, credentials, client data and proprietary business configuration.
 
+## Visual language
+
+The presentation uses one semantic palette across the whole architecture set:
+
+- **blue — app / flow:** API boundaries, application services, domain flow and Stynk bindings;
+- **green — durable state:** PostgreSQL-backed business truth, pinned state, snapshots and recoverable work intent;
+- **purple — model / runtime:** canonical types, interfaces, executable graphs, revisions and runtime behavior;
+- **orange — async / external:** Celery execution, OCR/AI and other slow or external effects;
+- **red — trust / security:** public/private exposure rules, allowlists and trust boundaries.
+
+Color is not used merely to distinguish arbitrary steps. A concept keeps the same visual meaning when it appears on another slide.
+
 ## 1. One coherent business core, modular by domain
 
 ![Stynk CRM business core](assets/stynk/architecture/01-business-core.svg)
