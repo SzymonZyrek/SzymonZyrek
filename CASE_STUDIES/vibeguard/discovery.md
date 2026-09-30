@@ -50,6 +50,14 @@ Examples from my public repositories:
 
 Those projects are not proof that I independently invented the mature tools around them, and that is not the claim.
 
+Stynk is the stronger, later piece of evidence because it moved the same habit out of toy systems and into a real business.
+
+The company owner initially carried a large amount of operational synchronization in his head. As the CRM evolved, mechanical coordination moved into explicit workflow, notifications and state. Later, repeated pricing and service changes exposed another ownership problem: business variability lived in developer-owned code. The response was not another larger hard-coded feature, but a shift toward a configurable model/runtime where the platform owns execution guarantees and the business increasingly owns the model it changes.
+
+VibeGuard is not a direct continuation of Stynk's code. It is a continuation of that boundary question applied to engineering itself:
+
+> If agents can execute much more work, what should automation own — and what must remain an explicit human decision because it changes the meaning, risk or future shape of the system?
+
 The pattern is simpler:
 
 ```text
