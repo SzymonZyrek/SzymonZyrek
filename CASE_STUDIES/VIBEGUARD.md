@@ -1,3 +1,5 @@
+# DISLAIMER - to be extended with more public info in near future
+
 # VibeGuard — human-in-the-loop reliability for AI-assisted software development
 
 > **Source:** private repository / public sanitized case study  
