@@ -258,6 +258,26 @@ Projects such as **CodexProject**, **CodexProjectTest1**, **Codex2** and later *
 
 Instead of only asking how code should be structured, I started asking how the work around code could be structured: context, ownership, task state, evidence, CI feedback, review, escalation and bounded autonomy for coding agents.
 
+The line did not start with HackaTeam. The rough progression was:
+
+```text
+hands-on ML / neural-network experiments
+        ↓
+MLFramework and model-lifecycle abstractions
+        ↓
+local models + custom agent loops
+        ↓
+CodexProject / Codex2
+(documentation-first context, AGENTS.md, TDD/task records)
+        ↓
+agent workflows used in Stynk development
+        ↓
+HackaTeam
+(GitHub-native coordination, evidence and feedback loops)
+```
+
+So HackaTeam is better understood as the latest crystallization of a longer attempt to move one abstraction level outward: from modelling software systems to modelling the engineering process around them.
+
 Those projects are much newer and still evolving, so I keep most of that material under my R&D account:
 
 https://github.com/ateshgahofmine
