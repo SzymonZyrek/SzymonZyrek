@@ -31,7 +31,7 @@ That habit has stayed useful professionally: it helps me reason at a higher leve
 ## Realtime systems and the game-engine detour
 
 ### game10: realtime engine and rendering sandbox
-**Source:** [historical public Bitbucket archive](https://bitbucket.org/Mexorsu/)  
+**Source:** historical project; original repository predates the current GitHub portfolio migration  
 **Period:** 2014–2015
 
 Before most of the repositories below, I had a fairly web-shaped mental model of software: Spring/Angular-style application structure, object models, services and layers.
