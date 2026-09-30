@@ -107,6 +107,8 @@ The application deliberately remains a **modular monolith**.
 
 That is an architectural choice, not an unfinished microservice migration.
 
+![Stynk CRM system architecture](assets/stynk/architecture/01-system-overview.svg)
+
 The current production shape is roughly:
 
 ```mermaid
@@ -168,6 +170,8 @@ The business has enough complexity to justify strong internal boundaries, but no
 ## 4. Background work: Celery as execution, Django as truth
 
 One architectural rule I care about in this system is that **the task queue is not the business database**.
+
+![Durable asynchronous work in Stynk CRM](assets/stynk/architecture/03-durable-async.svg)
 
 Redis is used as a Celery broker, but durable work state lives in Django/PostgreSQL.
 
@@ -465,6 +469,8 @@ The current implementation supports local storage and Google Drive with encrypte
 
 The biggest architectural evolution in the system is the move from hard-coded Job/pricing types toward a configurable model.
 
+![Studio to canonical runtime](assets/stynk/architecture/04-studio-canonical-runtime.svg)
+
 The long-term direction is not to build "a pricing form builder".
 
 It is to let the system describe more of its own business model using:
@@ -480,7 +486,9 @@ It is to let the system describe more of its own business model using:
 
 A Job can expose Operations as first-class CRM rows while pricing executes through a pinned model/catalog context.
 
-Published catalogs are treated as historical evidence: they are immutable rather than silently reinterpreted after configuration changes.\n\n![Versioned pricing and historical compatibility](assets/stynk/architecture/05-versioned-pricing.svg)
+Published catalogs are treated as historical evidence: they are immutable rather than silently reinterpreted after configuration changes.
+
+![Versioned pricing and historical compatibility](assets/stynk/architecture/05-versioned-pricing.svg)
 
 The 3.0.1 binding direction intentionally separates:
 
@@ -557,6 +565,8 @@ Security/operational boundaries also show up in deployment:
 ## 11. Deployment and operations
 
 The production deployment deliberately fits on one Linux VPS.
+
+![Stynk CRM production topology](assets/stynk/architecture/06-production-topology.svg)
 
 That keeps the operational burden proportional to the company while still using clear service boundaries:
 
