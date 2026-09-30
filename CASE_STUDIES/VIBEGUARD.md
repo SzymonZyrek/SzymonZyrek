@@ -49,6 +49,7 @@ This is still a hypothesis, not validated market evidence. But it is not a detac
 | **Current PoC** | Project Policy → automated evidence → Owner Inbox → Decision Workspace → recorded owner decision. |
 | **Human value** | Sanity, anti-hallucination, architecture, security, technical debt control and confidence for the founder and their stakeholders. |
 | **Business case** | Agentic coding can make far more software economically viable, but scaling that implementation safely requires reorganizing work around delegated execution, selective human authority and visible technical accountability. |
+| **External evidence** | Ecosystem data supports the premise — high AI adoption and fast growth coexist with persistent trust/security concerns and reluctance to delegate consequential work. It does **not** validate VibeGuard demand. |
 | **Prototype boundary** | The current Tech Owner slice is deliberately demo-grade: mock decision packets, local/in-memory state and no claim of production governance infrastructure. |
 
 **Recurring pattern:** let AI carry more implementation bandwidth, but move human attention upward toward decisions whose cost cannot be reduced to "did the tests pass?".
@@ -59,6 +60,15 @@ The core product tension is not whether AI can produce useful code. It is whethe
 
 ![From coding agents to a new engineering model](assets/vibeguard/diagrams/07-engineering-model.svg)
 
+### Evidence check
+
+A separate research pass tested the premises rather than the product pitch.
+
+The useful result is a tension, not a market-size number: **AI-assisted implementation is scaling quickly, while trust and delegation remain much weaker around consequential work.**
+
+![External evidence behind the workflow thesis](assets/vibeguard/diagrams/08-evidence-landscape.svg)
+
+[Research snapshot, exact sources and claim boundaries →](vibeguard/evidence.md)
 
 ---
 
@@ -421,9 +431,10 @@ The code is evidence that the idea was explored materially, not proof of a produ
 | If you have… | Read / view |
 |---|---|
 | **30 seconds** | This page. |
-| **3–5 minutes** | [Visual tour](vibeguard/visual-tour.md) — conceptual diagrams for the responsibility gap, discovery path, ownership loop and prototype boundary. |
+| **3–5 minutes** | [Visual tour](vibeguard/visual-tour.md) — the full thesis in diagrams: problem, evidence, delegation boundary, control loop and prototype boundary. |
 | **5 minutes** | [Discovery & evolution](vibeguard/discovery.md) — AI Studio prototype → rescue marketplace → review layer → persistent Tech Owner. |
 | **5–10 minutes** | [Tech Owner model](vibeguard/ownership-model.md) — what remains human-owned and why. |
+| **5 minutes** | [External evidence](vibeguard/evidence.md) — the small set of public signals worth keeping, plus explicit claim boundaries. |
 | **5–10 minutes** | [Business case](vibeguard/business-case.md) — why agentic engineering may expand the amount of software worth building, where the traditional workflow hits a ceiling, and how senior technical ownership could become leverage. |
 | **5–10 minutes** | [Prototype & architecture](vibeguard/prototype.md) — what really exists, what is simulated and what a production rewrite would need. |
 
