@@ -25,6 +25,8 @@ The objective is not to turn the Tech Owner into a high-priced approval button.
 
 The objective is to maximize engineering leverage without losing accountability.
 
+![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
+
 ---
 
 ## 1. Why code review is not enough
@@ -179,6 +181,8 @@ ADR-014: avoid queues until reliability/traffic evidence justifies one
 ```
 
 The human should arrive at the trade-off, not at the beginning of the investigation.
+
+![Evidence first, judgement where evidence ends](../assets/vibeguard/diagrams/04-evidence-decision-boundary.svg)
 
 ---
 
