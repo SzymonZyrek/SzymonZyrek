@@ -36,7 +36,7 @@ jobs:
              -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages=true -dCompressFonts=true \
              -sOutputFile=Szymon_Zyrek_CV.pdf /tmp/Szymon_Zyrek_CV.raw.pdf
           test "$(pdfinfo Szymon_Zyrek_CV.pdf | awk '/^Pages:/ {print $2}')" = "2"
-          pdftotext Szymon_Zyrek_CV.pdf - | grep -q "Software / Systems Architect"
+          pdftotext Szymon_Zyrek_CV.pdf - | grep -qi "software / systems architect"
 
       - name: Commit generated PDF
         run: |
