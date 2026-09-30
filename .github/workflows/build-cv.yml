@@ -1,0 +1,51 @@
+name: Build CV PDF
+
+on:
+  push:
+    paths:
+      - "cv/Szymon_Zyrek_CV.html"
+      - ".github/workflows/build-cv.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install renderer and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-inter ghostscript poppler-utils
+          python -m pip install --disable-pip-version-check "weasyprint==68.0"
+          test -f /usr/share/fonts/opentype/inter/Inter-Regular.otf
+
+      - name: Render and optimize PDF
+        run: |
+          weasyprint cv/Szymon_Zyrek_CV.html /tmp/Szymon_Zyrek_CV.raw.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.7 -dPDFSETTINGS=/prepress \
+             -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages=true -dCompressFonts=true \
+             -sOutputFile=Szymon_Zyrek_CV.pdf /tmp/Szymon_Zyrek_CV.raw.pdf
+          test "$(pdfinfo Szymon_Zyrek_CV.pdf | awk '/^Pages:/ {print $2}')" = "2"
+          pdftotext Szymon_Zyrek_CV.pdf - | grep -q "Software / Systems Architect"
+
+      - name: Commit generated PDF
+        run: |
+          if git diff --quiet -- Szymon_Zyrek_CV.pdf; then
+            echo "PDF already up to date"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Szymon_Zyrek_CV.pdf
+          git commit -m "Regenerate CV PDF from portfolio-aligned source"
+          git push
