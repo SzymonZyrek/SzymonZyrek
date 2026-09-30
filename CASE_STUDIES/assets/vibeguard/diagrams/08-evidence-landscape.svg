@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#F5F8FC"/>
+  <text x="55" y="62" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">The ecosystem is scaling faster than confidence</text>
+  <text x="55" y="96" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#687B96">Measured 2025–2026 signals behind the VibeGuard workflow hypothesis — not product-market validation.</text>
+
+  <rect x="55" y="130" width="470" height="122" rx="18" fill="#FFFFFF" stroke="#D8E3EF"/>
+  <text x="82" y="165" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="800" fill="#2F7BF6">GITHUB OCTOVERSE 2025</text>
+  <text x="82" y="213" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="800" fill="#10243E">1.1M+</text>
+  <text x="220" y="213" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="620" fill="#10243E">public repos using LLM SDKs</text>
+  <text x="82" y="238" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">693,867 new in prior 12 months · +178% YoY</text>
+
+  <rect x="565" y="130" width="470" height="122" rx="18" fill="#FFFFFF" stroke="#D8E3EF"/>
+  <text x="592" y="165" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="800" fill="#6F56E8">STACK OVERFLOW 2025</text>
+  <text x="592" y="213" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="800" fill="#10243E">84%</text>
+  <text x="705" y="213" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="620" fill="#10243E">use or plan to use AI</text>
+  <text x="592" y="238" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">but 46% distrust AI accuracy; 33% trust it</text>
+
+  <rect x="1075" y="130" width="470" height="122" rx="18" fill="#FFFFFF" stroke="#D8E3EF"/>
+  <text x="1102" y="165" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="800" fill="#F08A00">LINKEDIN ECONOMIC GRAPH</text>
+  <text x="1102" y="206" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="800" fill="#10243E">AI Agents</text>
+  <text x="1102" y="233" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">fastest-growing AI engineering skill in 2025</text>
+
+  <rect x="55" y="292" width="720" height="372" rx="22" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.4"/>
+  <text x="88" y="334" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#2F7BF6">IMPLEMENTATION CAPACITY</text>
+  <text x="88" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" font-weight="760" fill="#10243E">More AI-native work, more change volume</text>
+
+  <rect x="88" y="411" width="650" height="88" rx="14" fill="#EAF2FF"/>
+  <text x="112" y="448" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="32" font-weight="800" fill="#2F7BF6">518.7M</text>
+  <text x="270" y="448" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="650" fill="#10243E">merged pull requests in 2025</text>
+  <text x="112" y="477" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" fill="#687B96">+29% YoY · GitHub says correlation, not proof of AI causality</text>
+
+  <rect x="88" y="522" width="315" height="108" rx="14" fill="#F7FAFD" stroke="#D8E3EF"/>
+  <text x="110" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#687B96">AI ENGINEERING JOB SIGNAL</text>
+  <text x="110" y="595" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" fill="#10243E">+54%</text>
+  <text x="200" y="595" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#10243E">India YoY</text>
+  <text x="110" y="618" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">paid postings requiring AI engineering skills</text>
+
+  <rect x="423" y="522" width="315" height="108" rx="14" fill="#F7FAFD" stroke="#D8E3EF"/>
+  <text x="445" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#687B96">AI ENGINEERING JOB SIGNAL</text>
+  <text x="445" y="595" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="800" fill="#10243E">+37%</text>
+  <text x="535" y="595" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#10243E">UK YoY</text>
+  <text x="445" y="618" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">same LinkedIn measure, 2025</text>
+
+  <rect x="825" y="292" width="720" height="372" rx="22" fill="#FFFFFF" stroke="#F08A00" stroke-width="1.4"/>
+  <text x="858" y="334" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#F08A00">ACCOUNTABILITY GAP</text>
+  <text x="858" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="26" font-weight="760" fill="#10243E">Delegation drops as consequences get larger</text>
+
+  <rect x="858" y="412" width="306" height="100" rx="14" fill="#FFF4E7"/>
+  <text x="880" y="450" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="800" fill="#F08A00">76%</text>
+  <text x="880" y="478" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#10243E">do not plan AI for deployment / monitoring</text>
+
+  <rect x="1183" y="412" width="306" height="100" rx="14" fill="#FFF4E7"/>
+  <text x="1205" y="450" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="800" fill="#F08A00">69%</text>
+  <text x="1205" y="478" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#10243E">do not plan AI for project planning</text>
+
+  <rect x="858" y="531" width="306" height="100" rx="14" fill="#F7FAFD" stroke="#D8E3EF"/>
+  <text x="880" y="569" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="800" fill="#10243E">87%</text>
+  <text x="880" y="597" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">agent users concerned about accuracy</text>
+
+  <rect x="1183" y="531" width="306" height="100" rx="14" fill="#F7FAFD" stroke="#D8E3EF"/>
+  <text x="1205" y="569" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="800" fill="#10243E">81%</text>
+  <text x="1205" y="597" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">concerned about security / privacy</text>
+
+  <rect x="55" y="705" width="1490" height="118" rx="18" fill="#10243E"/>
+  <text x="86" y="746" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="760" fill="#FFFFFF">Measured pattern: implementation is scaling faster than confidence in delegating consequential work.</text>
+  <text x="86" y="778" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#DDE6F1">VibeGuard hypothesis: reorganize the workflow so automation absorbs safe execution while experienced engineers own material boundaries.</text>
+  <text x="86" y="804" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#AFC0D4">Sources: GitHub Octoverse 2025 · Stack Overflow Developer Survey 2025 · LinkedIn Economic Graph, Jan 2026. Evidence for the workflow premise, not VibeGuard demand or revenue.</text>
+</svg>
