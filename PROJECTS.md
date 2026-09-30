@@ -27,6 +27,8 @@ https://github.com/ateshgahofmine/HackaTeam/blob/main/PROJECTS.md
 
 Human-in-the-loop code review/debugging prototype for AI-assisted development. The current implementation explores live GitHub inspection, structured AI code audit, diff/review interaction and escalation of difficult work to experienced human developers.
 
+See the sanitized [VibeGuard case study](CASE_STUDIES/VIBEGUARD.md) and [recommended screenshot set](CASE_STUDIES/VIBEGUARD_SCREENSHOTS.md).
+
 The repository remains private while the product direction is still changing.
 
 ### github_manager
@@ -73,7 +75,7 @@ A separate account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, cur
 - **Agent-Native Engineering Runtime — Draft Specification** — larger formal runtime/specification exploration; currently private.
 - **Local Coding Agent** — local llama.cpp coding-agent loop; currently private.
 - **AI Worker** — controlled Task/Action execution and authorization experiment; currently private.
-- **VibeGuard** — human review/debugging layer; currently private.
+- **VibeGuard** — human review/debugging layer; currently private; [public case study](CASE_STUDIES/VIBEGUARD.md).
 - **[CodexProject](https://github.com/ateshgahofmine/CodexProject)** and **[Codex2](https://github.com/ateshgahofmine/Codex2)** — historical documentation-driven predecessors.
 
 The important part of this collection is that the projects are allowed to disagree. Hacka, for example, deliberately tries to delete custom infrastructure whenever ordinary GitHub primitives already solve the problem.
