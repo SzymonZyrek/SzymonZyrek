@@ -41,29 +41,35 @@ Alongside it I built a reusable authentication library for legacy cases that sti
 
 The point was not language cleverness. It was to keep one security-sensitive implementation and one configuration model instead of duplicating protocol behavior, contracts and fixes across several stacks.
 
-### From engines to APIs to composed products
+### From legacy products to the platform that became FusionFabric
 
-Over time the work moved outward from individual engines and services.
+Over time the work moved outward from individual engines and services toward a configurable product assembled from them.
 
-Existing capabilities were exposed behind clearer service boundaries and **OpenAPI/REST contracts**, then composed into higher-level workflows and dashboards. I worked on both the functional product changes inside the underlying systems and the glue required to make those systems useful together.
+Legacy capabilities from systems such as CMR, KGR and ALM were wrapped behind **OpenAPI/REST contracts** and run together as a composed environment. Shared pieces such as **UserManagement**, identity, configuration and operational plumbing made those previously separate products behave like parts of one platform rather than a collection of unrelated applications.
 
-The dashboard/composition layer I knew as **MisysBoard** belonged to the same broader platform direction in which Misys was consolidating products behind a shared modular architecture. Public product branding from that period converged around **FusionFabric** and later **FusionFabric.cloud**; I deliberately do not claim a one-to-one rename because the internal product history was more nuanced than that.
+The internal MVP/interface for that idea was **MisysBoard**. In practical terms it was already a platform prototype: a configurable UI over a Docker Compose-based assembly of legacy services, normalized behind APIs and tied together through common identity and configuration.
 
-The important architectural progression for me was:
+That work later evolved into the product/platform sold under the **FusionFabric** name. I therefore treat MisysBoard not as a separate dashboard project, but as an internal MVP on the path from a portfolio of legacy financial products to a configurable, API-driven platform.
+
+The architectural progression was roughly:
 
 ```text
-legacy product capabilities
+legacy financial products
         ↓
-stable service/API boundaries
+capabilities wrapped behind OpenAPI
         ↓
 shared identity + configuration
         ↓
-cross-product orchestration
+Docker Compose-based integrated environment
         ↓
-dashboards / composed workflows
+MisysBoard internal MVP / configurable UI
+        ↓
+commercialized FusionFabric platform
 ```
 
-By the end, I was no longer thinking primarily in terms of “the C++ product” or “the Java product”. I was thinking about heterogeneous systems as capabilities that could be normalized behind contracts and safely composed.
+This was one of the first times I saw — and helped build — the pattern of turning heterogeneous legacy systems into reusable capabilities behind stable contracts, then composing them into a new product without first rewriting everything underneath.
+
+By the end, I was no longer thinking primarily in terms of “the C++ product” or “the Java product”. I was thinking about heterogeneous systems as capabilities that could be normalized, secured and composed into something new.
 
 ### Infrastructure transition
 
