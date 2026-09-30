@@ -68,6 +68,68 @@ It tried to normalize package-manager differences, install/compile the tools I c
 
 Not configuration management in any serious sense; more like a personal "make this host sane enough to work on" button.
 
+## Professional context: learning under production pressure
+
+These hobby projects were not happening in a vacuum.
+
+Early in my Misys/Finastra work I was already debugging large systems such as TopOffice, initially with only a partial mental model of what the surrounding code was doing. A very practical debugging loop emerged: reproduce the bug, inspect logs/debugger/stack traces/tests, find code near the failure that looked suspiciously complicated or inconsistent, simplify the weirdness, and see whether the reproduction changed.
+
+That is not a substitute for understanding a system. It was one of the ways I learned to build that understanding.
+
+The same period also pushed me deeper into C++. Pointers, references, compilation, linking and dependency wiring were not abstract language topics anymore; they were things that could make a production problem difficult to reason about.
+
+A lot of the repositories below are therefore best read as the after-hours version of the same instinct:
+
+```text
+something behaves like magic
+        ↓
+go underneath the abstraction
+        ↓
+rebuild a small version
+        ↓
+let the implementation expose the missing constraints
+        ↓
+return to the real system with a better model
+```
+
+That pattern later repeated with build systems, artifact repositories, application containers and, much later, agentic software-development workflows.
+
+## Events, concurrency and the C++ detour
+
+### java_events
+**Repository:** https://github.com/SzymonZyrek/java_events  
+**Period:** July 2015
+
+A small Java concurrency laboratory that gradually turned into an asynchronous event system.
+
+The useful part was not the event API itself. It was decomposing a seemingly high-level abstraction into queues, threads, synchronization, dispatch and lifecycle, including deliberately rebuilding some mechanisms that the JDK already provided.
+
+This became an early version of a learning method I kept reusing: rebuild just enough of an abstraction that it stops being magical.
+
+### cpp_events
+**Repository:** https://github.com/SzymonZyrek/cpp_events  
+**Period:** August 2015
+
+I then tried to translate roughly the same mental model into C++.
+
+That immediately exposed places where the Java model did not carry over cleanly: callables, runtime vs compile-time typing, threading interfaces, ownership, compilation and linking.
+
+The event system itself eventually became secondary. To make the experiments build and test reliably, the repository grew its own test framework, source preprocessing, test discovery/code generation and build scripts.
+
+That build plumbing became the direct ancestor of `just_build_poc`.
+
+The lineage was roughly:
+
+```text
+java_events
+    ↓
+cpp_events
+    ↓
+compiler/linker/build pain becomes the interesting problem
+    ↓
+just_build_poc
+```
+
 ## Build systems, artifacts and dependency experiments
 
 ### just_build_poc
@@ -89,6 +151,10 @@ A more ambitious rewrite in Java/Groovy.
 The core was separated from toolchain-specific builders; builders could be loaded as plugins, project settings were executable Groovy, and build phases exchanged typed inputs/outputs before producing commands and artifacts.
 
 This is one of those projects where the main value for me was discovering how quickly a "simple build tool" turns into questions about lifecycle, extensibility, dependency resolution and artifact identity.
+
+Looking back, there is a slightly funny historical detail here: I had not yet encountered Gradle, but I had independently converged on several ideas that later made Gradle feel immediately familiar to me — executable Groovy configuration, a plugin/builder model and a build engine separated from toolchain-specific behavior.
+
+That is not a claim that JustBuild was "Gradle before Gradle". It was a small learning project. The useful signal is that once I eventually met the mature tool, I already had a concrete model of why those abstractions existed.
 
 ### fetchdog
 **Repository:** https://github.com/SzymonZyrek/fetchdog  
@@ -117,6 +183,40 @@ This looks like the furthest point of the early JustBuild → dependency → art
 It is still visibly experimental and unfinished. Around this point the practical value of simply using Maven and existing ecosystem tooling seems to have won over the urge to finish my own parallel ecosystem.
 
 That is part of the learning record too: understanding an abstraction well enough can make the mature boring tool more attractive, not less.
+
+## Application runtime / framework internals
+
+### meserve
+**Repository:** https://github.com/SzymonZyrek/meserve  
+**Period:** 2015–2016
+
+Meserve applied the same reconstruction habit to application frameworks and containers.
+
+Instead of asking only which Java EE or Spring annotation to use, I wanted to see how much machinery had to exist underneath a pleasant application model. The project grew experiments around declarative metadata, annotation processing, typed configuration, configuration injection, custom class loaders, bootstrap/restart behavior, lifecycle, event buses, sockets, protocols, HTTP parsing, routing and static-resource serving.
+
+The interesting boundary was the one between declarative application intent and the runtime machinery required to make it true:
+
+```text
+source / annotations
+        ↓
+compile-time metadata
+        ↓
+bootstrap + class loading
+        ↓
+runtime configuration / lifecycle
+        ↓
+application behavior
+```
+
+This was never a serious attempt to replace Java EE or Spring. It was a way to make container/framework internals concrete enough that, when an abstraction leaked in real work, there was somewhere sensible to start debugging.
+
+In hindsight it sits naturally next to the build-system line of experiments:
+
+- JustBuild made build/toolchain mechanics less magical.
+- FetchDog and Faxus made artifact resolution and repository semantics less magical.
+- Meserve made application-container/runtime mechanics less magical.
+
+The recurring outcome was not "therefore I should maintain my own framework forever." Usually it was the opposite: after rebuilding enough of the mechanism, the mature ecosystem tool became easier to trust, debug and use deliberately.
 
 ## Later technical detours
 
