@@ -2,14 +2,13 @@
 
 These diagrams are a sanitized visual companion to the [Stynk CRM case study](STYNK_CRM.md).
 
-> **Narrative source:** the next visual pass is driven by [STYNK_ARCHITECTURE_CONTENT_SPEC.md](STYNK_ARCHITECTURE_CONTENT_SPEC.md). That document captures the problem, decision, rejected alternatives, trade-off, risk controls and change trigger for each slide. The SVGs below are the current visual iteration and will be revised against that spec.
+> **Narrative source:** [STYNK_ARCHITECTURE_CONTENT_SPEC.md](STYNK_ARCHITECTURE_CONTENT_SPEC.md) is the content source of truth. The diagrams below are now rebuilt from that spec: each one focuses on an architectural tension, the chosen boundary, the trade-off and the condition that would justify changing the decision.
 
 They are based on the current private-project architecture, but intentionally omit source code, credentials, client data and proprietary business configuration. The point is to show engineering decisions and failure boundaries rather than publish an implementation blueprint.
 
-
 ### Visual language
 
-The color palette is semantic rather than decorative and stays consistent across the set:
+The palette is semantic rather than decorative:
 
 - **cyan** — user/configuration/authoring surfaces;
 - **purple** — application and model/runtime logic;
@@ -18,49 +17,47 @@ The color palette is semantic rather than decorative and stays consistent across
 - **blue** — transport/interface boundaries;
 - **red** — legacy compatibility, risk or intentionally retained historical paths.
 
-Each diagram also includes the architectural decision it is meant to explain: the constraint or force behind the choice and the consequence/trade-off of taking that path.
-
-## 1. System at a glance
+## 1. One coherent application
 
 ![Stynk CRM system overview](assets/stynk/architecture/01-system-overview.svg)
 
-A deliberately modular monolith: Angular and Django/DRF share one main application boundary, while PostgreSQL remains the durable source of business state and asynchronous execution stays behind explicit worker/broker boundaries.
+Boundaries appear where responsibility changes: internet exposure at nginx, transactional business consistency inside Django/PostgreSQL, and asynchronous execution behind a durable-work seam. The slide deliberately separates **truth ownership** from **execution location**.
 
-## 2. Inside the modular monolith
+## 2. Modularity before network decomposition
 
 ![Stynk CRM modular monolith](assets/stynk/architecture/02-modular-monolith.svg)
 
-The current slide captures the topology; the content spec expands the actual decision: local consistency and one operational owner currently matter more than independent service deployment. A split becomes interesting only with evidence such as independent scaling, ownership/release cadence, hard isolation or a measured bottleneck.
+The decision is framed as a balance of forces rather than “monolith good / microservices bad”: shared transactions, one operational owner and local reproducibility currently favour one process boundary; independent scaling, ownership, physical isolation or a measured bottleneck would justify extraction later.
 
-## 3. Reliable background work
+## 3. Durable intent before queue delivery
 
 ![Stynk CRM durable async architecture](assets/stynk/architecture/03-durable-async.svg)
 
-Celery executes work; it does not define whether the work exists. Durable `DomainWorkItem` state lives in Django/PostgreSQL, identifiers are enqueued after commit, Redis is transport, and Celery Beat reconciles pending work after failures.
+The diagram exposes the database/broker failure window directly. PostgreSQL stores committed work intent, Redis transports identifiers, workers execute, and reconciliation repairs missed delivery. It also states what the design does **not** promise: exactly-once external effects.
 
-## 4. Studio to canonical runtime
+## 4. Generalise recurring variability, not the whole CRM
 
 ![Stynk CRM Studio and canonical runtime](assets/stynk/architecture/04-studio-canonical-runtime.svg)
 
-The current generalisation work separates a generic Platform language/runtime from Stynk-specific System definitions. The intent is not to make the whole CRM generic, but to model the part of the domain whose variability became structural.
+The generic Platform kernel contains reusable semantics such as types, identity, references, behaviour and revision resolution. Job/Operation bindings, pricing context and CRM workflows remain Stynk-owned. Promotion into the kernel is driven by repeated semantic reuse, not by a desire to make everything configurable.
 
-## 5. Pricing without losing history
+## 5. Pricing as executable policy and historical evidence
 
 ![Stynk CRM versioned pricing](assets/stynk/architecture/05-versioned-pricing.svg)
 
-Published catalogs are immutable historical evidence. New Jobs pin concrete semantics and persist pricing snapshots; older catalogs remain readable through an explicit compatibility lane. Canonical pricing failure is not hidden by silently reverting to legacy semantics.
+New pricing policy may evolve, but historical Jobs must retain the meaning under which they were priced. Published catalogs stay immutable, snapshots are preserved, compatibility is explicit, canonical failure does not silently fall back to legacy logic, and runtime context stays typed rather than being injected magically.
 
-## 6. Production topology
+## 6. Recovery before redundancy
 
 ![Stynk CRM production topology](assets/stynk/architecture/06-production-topology.svg)
 
-Production intentionally fits on one Linux VPS. The architectural point is recoverability rather than pretending this is high availability: host-level supervision, backups, certificates and recovery remain outside the application queue so they survive application failure.
+The single VPS is shown honestly as one online failure domain. The architectural point is that watchdogs, backups, certificates and off-host recovery remain outside the application components they must recover. This is a recoverability-first topology, not a claim of high availability.
 
-## 7. Evolution without a rewrite
+## 7. Prove the replacement path before deleting the old one
 
 ![Stynk CRM architecture evolution](assets/stynk/architecture/07-evolution-path.svg)
 
-The project is being generalized in place. New schema/runtime paths are additive, historical semantics remain readable, conversion is bounded and adoption creates an explicit no-downgrade point after which the system fixes forward.
+The migration is additive and gated: new structures arrive before old readers disappear; conversion is all-or-nothing and idempotent; semantic identity is preserved; unknown historical semantics are not guessed. Activating the first binding-bearing catalog is the explicit no-downgrade boundary after which rollback becomes fix-forward.
 
 ---
 
