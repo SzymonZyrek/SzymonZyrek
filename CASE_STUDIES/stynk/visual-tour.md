@@ -103,3 +103,16 @@ This is the shortest visual path through the project. The JPEG slides combine re
 The visual set shows the current system. The discovery deep dive shows why those concepts exist at all: the sequence from contract capture to workflow, lifecycle, configurable Jobs/pricing, canonical runtime and Studio.
 
 [Read discovery & evolution →](discovery.md)
+
+---
+
+## Closing synthesis
+
+The detailed slides above separate product, runtime and engineering concerns.
+The closing view recombines them into the end-to-end story: fragmented tools
+and hand-offs became one operational model with explicit ownership,
+automation, auditability and recovery.
+
+![Stynk CRM — closing synthesis](../assets/stynk/slides/stynk_case_study_summary.png)
+
+[Back to the case-study overview →](../STYNK_CRM.md)
