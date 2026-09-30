@@ -1,167 +1,180 @@
 # VibeGuard — visual tour
 
-[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Prototype & architecture](prototype.md)
+[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
 
-This page is the planned shortest visual route through the case study.
+This is the shortest visual path through VibeGuard for now.
 
-The current Tech Owner slice is a fresh PoC, so the screenshots should make that explicit rather than trying to look like production telemetry.
+The Stynk case study uses a mix of product screenshots and architecture diagrams because there is a production system to show. VibeGuard is at a different stage: the useful artifact today is the **product model**. The diagrams therefore carry the story first; screenshots can be added later without blocking the case study.
 
-## 1. Project Policy
+## Product thesis
 
-**Story:** make architectural intent explicit before asking agents to act autonomously.
+### The responsibility gap in AI-built software
 
-Capture the PoC with:
+![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
 
-- project name / Tech Owner;
-- autonomy mode;
-- architectural invariants;
-- "always requires owner approval" rules;
-- security boundaries.
+AI expands implementation bandwidth, iteration speed and access to software creation much faster than it expands architecture judgement, continuity or accountability.
 
-Suggested caption:
+The product hypothesis is the missing layer between those two curves: a persistent Tech Owner who remains responsible for the technical system while agents perform more of the implementation.
 
-> The Tech Owner defines the boundaries inside which agents can execute without interrupting a human.
-
-Target asset:
-
-`assets/vibeguard/01-project-policy.png`
+[Read discovery & evolution →](discovery.md)
 
 ---
 
-## 2. Owner Inbox
+## Discovery & evolution
 
-**Story:** compress implementation volume into the small number of changes that actually require senior judgement.
+### The product question moved upward
 
-The strongest screen should show several different decision classes, for example:
+![From AI rescue to persistent technical ownership](../assets/vibeguard/diagrams/02-discovery-evolution.svg)
 
-- new infrastructure + changed failure semantics;
-- identity/account-ownership boundary;
-- irreversible migration/data semantics.
+The project started with a tactical question:
 
-The right-hand "attention compression" and decision-memory cards should remain visible.
+> who helps when AI-generated code goes wrong?
 
-Suggested caption:
+The prototype then exposed progressively larger problems:
 
-> Most changes should disappear into automated evidence. The Owner Inbox contains only material boundary crossings.
+~~~text
+AI Studio prototype
+   ↓
+human rescue marketplace
+   ↓
+AI audit + structured findings
+   ↓
+PR review + guardrails
+   ↓
+human attention becomes the bottleneck
+   ↓
+persistent Tech Owner
+~~~
 
-Target asset:
+The useful result is not that every earlier feature should survive.
 
-`assets/vibeguard/02-owner-inbox.png`
+It is the sequence of assumptions that became too small.
 
----
-
-## 3. Decision Workspace
-
-**Story:** when the human is interrupted, arrive with evidence rather than a raw diff and a vague question.
-
-The screenshot should include:
-
-- "why the system interrupted the Tech Owner";
-- previous owner decision / ADR context;
-- evidence packet;
-- meaningful diff;
-- owner actions.
-
-Suggested caption:
-
-> The owner sees why the change matters, what has already been verified, relevant historical intent and the concrete decision being requested.
-
-Target asset:
-
-`assets/vibeguard/03-decision-workspace.png`
+[Read discovery & evolution →](discovery.md)
 
 ---
 
-## 4. Historical VibeGuard prototype — optional
+## Ownership model
 
-One historical screenshot can help explain the discovery path.
+### Selective human authority, not approval everywhere
 
-A good candidate is either:
+![Tech Owner control loop](../assets/vibeguard/diagrams/03-tech-owner-control-loop.svg)
 
-- AI Code Auditor with line findings; or
-- Human Debug Workspace with patch/diff.
+Agents should execute aggressively inside explicit project boundaries.
 
-This should be labelled as the **earlier rescue/review model**, not mixed with the new Tech Owner flow.
+Routine changes should disappear into tests, CI, static/security checks and automated review. Human attention should be reserved for decisions that change architecture, security, irreversible data semantics, accepted debt or the policy itself.
 
-Suggested caption:
+### Evidence before judgement
 
-> Earlier VibeGuard experiments focused on AI audit and human rescue. That work exposed the larger question of continuous technical ownership.
+![Evidence first, judgement where evidence ends](../assets/vibeguard/diagrams/04-evidence-decision-boundary.svg)
 
-Target asset:
+The Tech Owner should not receive a raw stream of PRs and telemetry.
 
-`assets/vibeguard/04-historical-audit-or-debug.png`
+The intended interface compresses implementation activity into a decision packet:
 
----
+- what materially changed;
+- which boundary was crossed;
+- what has already been verified;
+- which previous decision matters;
+- what uncertainty remains;
+- what authority is being requested.
 
-## 5. Evolution diagram
-
-This diagram can be rendered directly in Markdown or turned into an SVG later.
-
-```mermaid
-flowchart LR
-    A[AI Studio prototype] --> B[Human rescue marketplace]
-    B --> C[AI audit + diff]
-    C --> D[PR review + guardrails]
-    D --> E[Attention problem]
-    E --> F[Tech Owner control loop]
-```
-
-Caption:
-
-> The product question moved upward: from "who fixes AI code?" to "who owns the technical system while AI implements it?"
+[Read the Tech Owner model →](ownership-model.md)
 
 ---
 
-## 6. Ownership loop diagram
+## Prototype & architecture
 
-```mermaid
-flowchart TD
-    P[Project Policy] --> A[Agent execution]
-    A --> V[CI / tests / audit]
-    V --> Q{Material boundary crossed?}
-    Q -->|No| A
-    Q -->|Yes| O[Owner Inbox]
-    O --> D[Tech Owner decision]
-    D -->|Approve| A
-    D -->|Request change| A
-    D -->|Exception| A
-    D -->|Update policy| P
-```
+### Keep implemented evidence separate from the product claim
 
-Caption:
+![Prototype evidence vs product direction](../assets/vibeguard/diagrams/05-prototype-product-boundary.svg)
 
-> Human judgement is retained at architecture, security, irreversible-data and policy boundaries instead of every implementation step.
+The private repository already implements real pieces of the earlier exploration:
 
----
+- GitHub repository/branch/file inspection;
+- server-side AI audit;
+- structured findings;
+- line annotations;
+- diff/patch interaction;
+- debug-ticket and PR-review flows;
+- guardrail / agent-instruction experiments.
 
-## Screenshot hygiene
+The newer Tech Owner slice is intentionally thinner and more conceptual. It uses mock decision packets and session state to test the interaction:
 
-Before publishing:
-
-- keep the "Fresh PoC / simulated decision flow" label visible;
-- do not imply the sample evidence is measured production data;
-- use one consistent viewport;
-- avoid private repository names or tokens;
-- prefer readable demo code over realistic-but-illegible production files;
-- show one coherent scenario across the Inbox and Decision Workspace if possible;
-- crop enough browser chrome to make the product legible, but do not fake a production deployment.
-
-A 1440×900 desktop capture should be a good starting point.
-
----
-
-## Suggested portfolio order
-
-```text
+~~~text
 Project Policy
       ↓
 Owner Inbox
       ↓
 Decision Workspace
-      ↓
-historical prototype (optional)
-      ↓
-evolution + architecture diagrams
-```
+~~~
 
-That order tells the current product story first and only then explains where it came from.
+A real product would need a fresh architecture around durable policy, evidence provenance, GitHub-native event ingestion, authorization, decision memory and auditability.
+
+[Read prototype & claim boundary →](prototype.md)
+
+---
+
+## How the diagrams map to the story
+
+| Diagram | Question it answers |
+|---|---|
+| **Responsibility gap** | Why does AI-assisted software creation create a new ownership problem? |
+| **Discovery evolution** | How did the product move from rescue/debugging to ongoing ownership? |
+| **Tech Owner control loop** | Where should agents remain autonomous and where should a human stay authoritative? |
+| **Evidence / decision boundary** | How do we avoid turning the senior engineer into a manual PR queue? |
+| **Prototype / product boundary** | What has actually been built, what is simulated, and what remains a future design? |
+
+This structure intentionally mirrors the Stynk case study: overview first, then discovery, model, engineering/prototype boundary and a visual synthesis. The difference is that VibeGuard's strongest evidence today is conceptual evolution rather than production scale.
+
+---
+
+## Future screenshot pass
+
+Screenshots are deferred, not required for the current story.
+
+When there is a convenient desktop capture pass, the useful set remains small:
+
+- **Project Policy** — where autonomy stops;
+- **Owner Inbox** — which changes survived automated filtering;
+- **Decision Workspace** — evidence, historical intent and explicit owner action;
+- optional historical **AI Code Auditor / Human Debug Workspace** — to show the earlier rescue/review model.
+
+Those screenshots should support the conceptual diagrams, not replace them.
+
+---
+
+## Closing synthesis
+
+VibeGuard started as a small attempt to put a human back into AI-assisted debugging.
+
+The stronger question appeared one abstraction level higher:
+
+> **Who owns the technical system when implementation itself is increasingly delegated?**
+
+The current answer being explored is:
+
+~~~text
+Founder / domain owner
+        ↓
+product intent
+        ↓
+AI / coding agents
+        ↓
+implementation
+        ↓
+automated evidence
+        ↓
+material uncertainty only
+        ↓
+Tech Owner
+        ↓
+decision / rationale / policy
+        └──────────────→ future agent context
+~~~
+
+The product is still a PoC.
+
+The ownership model is the artifact worth evaluating now.
+
+[Back to the case-study overview →](../VIBEGUARD.md)
