@@ -46,7 +46,7 @@ python -m pip install -r cv/requirements.txt
 Build and verify:
 
 ```bash
-./cv/build.sh
+bash cv/build.sh
 ```
 
 ## CI
