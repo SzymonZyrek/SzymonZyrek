@@ -47,9 +47,9 @@ Over time the work moved outward from individual engines and services toward a c
 
 Legacy capabilities from systems such as CMR, KGR and ALM were wrapped behind **OpenAPI/REST contracts** and run together as a composed environment. Shared pieces such as **UserManagement**, identity, configuration and operational plumbing made those previously separate products behave like parts of one platform rather than a collection of unrelated applications.
 
-The internal MVP/interface for that idea was **MisysBoard**. In practical terms it was already a platform prototype: a configurable UI over a Docker Compose-based assembly of legacy services, normalized behind APIs and tied together through common identity and configuration.
+The internal MVP/interface for that idea was **MisysBoard**: a configurable UI over a Docker Compose-based assembly of legacy services, normalized behind APIs and tied together through common identity and configuration.
 
-That work later evolved into the product/platform sold under the **FusionFabric** name. I therefore treat MisysBoard not as a separate dashboard project, but as an internal MVP on the path from a portfolio of legacy financial products to a configurable, API-driven platform.
+That work later evolved into the **FusionFabric** platform, turning previously separate financial products into a configurable, API-driven product surface.
 
 The architectural progression was roughly:
 
