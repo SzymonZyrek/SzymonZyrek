@@ -2,7 +2,9 @@
 
 This is the wider map behind the shorter profile README.
 
-The repositories are intentionally not presented as if every experiment were one polished product. Some are active systems, some are current R&D, some are competing architectural hypotheses, and some are historical learning artifacts.
+The repositories are intentionally not presented as if every experiment were one polished product. Some are active systems, some are current R&D, and some are simply old hobby projects I still like having around.
+
+For a chronological, less formal look at the older experiments, see **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)**.
 
 For employer-owned systems that cannot be represented by source repositories, see **[CAREER.md](CAREER.md)** for the product-level commercial engineering history.
 
@@ -49,24 +51,10 @@ The interesting part is the capability boundary: make a tool powerful enough to 
 
 Historical notebooks covering a range of direct ML work: NumPy/Pandas, regression, decision trees, SVM, gradient descent, backpropagation, neural-network classification, computer vision/object detection, sentiment analysis and early transformer/GPT-2 experiments.
 
-This repository is intentionally preserved as a learning record rather than normalized into one fake production project.
-
 ### MLFramework
 **Repository:** https://github.com/SzymonZyrek/MLFramework
 
 A small framework experiment around reusable training infrastructure: model backend abstraction, scikit-learn and Keras/TensorFlow implementations, dataset configuration, model I/O and pipeline orchestration.
-
-The useful progression is:
-
-```text
-direct model experiments
-        ↓
-training/model lifecycle abstractions
-        ↓
-workflow/orchestration concerns
-        ↓
-agentic engineering systems
-```
 
 ## 3. Agentic engineering R&D
 
@@ -82,9 +70,15 @@ A separate account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, cur
 - **VibeGuard** — Tech Owner / human technical-ownership experiment around AI-built software; currently private; [public case study](CASE_STUDIES/VIBEGUARD.md).
 - **[CodexProject](https://github.com/ateshgahofmine/CodexProject)** and **[Codex2](https://github.com/ateshgahofmine/Codex2)** — historical documentation-driven predecessors.
 
-The important part of this collection is that the projects are allowed to disagree. Hacka, for example, deliberately tries to delete custom infrastructure whenever ordinary GitHub primitives already solve the problem.
+These experiments are allowed to disagree with each other. Part of the fun is trying an idea, finding where it becomes awkward, and deleting machinery when ordinary tools already solve the problem better.
 
-## 4. Historical systems / engineering labs
+## 4. Older hobby projects
+
+These are not maintained as current products. They are simply older things I built while learning, experimenting or trying to make my own work easier.
+
+A useful way to read several of them is as one evolving investigation rather than unrelated toys: Java concurrency experiments led into a C++ translation attempt; C++ compilation/linking pain led into build automation; build automation exposed dependency and artifact-resolution concerns; those concerns became FetchDog and then Faxus. Meserve explored the same "go underneath the abstraction" habit on the application-runtime/container side.
+
+That progression also overlapped with early commercial debugging in large Java EE/C++ systems, where learning to reconstruct unfamiliar mechanisms from failures, logs, stack traces, tests and debugger evidence became a practical skill rather than a purely academic exercise.
 
 ### Concurrency and events
 - [java_events](https://github.com/SzymonZyrek/java_events)
@@ -110,7 +104,7 @@ The important part of this collection is that the projects are allowed to disagr
 - [bashrc](https://github.com/SzymonZyrek/bashrc)
 - [vimrc](https://github.com/SzymonZyrek/vimrc)
 
-These are kept because they show how the engineering interests evolved. They are not maintained as current products.
+The longer notes in [HOBBY_PROJECTS.md](HOBBY_PROJECTS.md) explain why some of these existed and what I was curious about at the time.
 
 ## 5. Java/Jakarta case study
 
