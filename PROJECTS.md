@@ -83,7 +83,7 @@ A useful way to read several of them is as one evolving investigation rather tha
 That progression also overlapped with early commercial debugging in large Java EE/C++ systems, where learning to reconstruct unfamiliar mechanisms from failures, logs, stack traces, tests and debugger evidence became a practical skill rather than a purely academic exercise.
 
 ### Realtime / graphics / engine work
-- **[game10](HOBBY_PROJECTS.md#game10-realtime-engine-and-rendering-sandbox)** — historical C++/OpenGL engine and rendering sandbox; a useful early lesson in frame budgets, data locality, ownership and the fact that architecture follows constraints. Original source remains in the older public [Bitbucket archive](https://bitbucket.org/Mexorsu/).
+- **[game10](HOBBY_PROJECTS.md#game10-realtime-engine-and-rendering-sandbox)** — historical C++/OpenGL engine and rendering sandbox; a useful early lesson in frame budgets, data locality, ownership and the fact that architecture follows constraints. The original repository predates the current GitHub portfolio migration.
 
 ### Concurrency and events
 - [java_events](https://github.com/SzymonZyrek/java_events)
