@@ -1,6 +1,6 @@
 # VibeGuard — discovery: from rescue marketplace to technical ownership
 
-[← Case study overview](../VIBEGUARD.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
+[← Case study overview](../VIBEGUARD.md) · [Evidence](evidence.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
 
 VibeGuard is useful to me less as a finished product than as a record of a changing question.
 
