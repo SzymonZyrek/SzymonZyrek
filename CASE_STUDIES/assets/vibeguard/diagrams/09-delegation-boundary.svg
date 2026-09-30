@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="risk" x1="0" x2="1">
+      <stop offset="0%" stop-color="#EAF2FF"/>
+      <stop offset="52%" stop-color="#F2EEFF"/>
+      <stop offset="100%" stop-color="#FFF1DF"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#10243E"/></marker>
+  </defs>
+  <rect width="1600" height="900" fill="#F5F8FC"/>
+  <text x="55" y="62" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="38" font-weight="780" fill="#10243E">Delegate by consequence, not by whether the model can do it</text>
+  <text x="55" y="96" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#687B96">Measured trust boundaries suggest a different unit of engineering control than “AI writes → human approves”.</text>
+
+  <rect x="55" y="132" width="1490" height="95" rx="16" fill="#FFFFFF" stroke="#D8E3EF"/>
+  <text x="83" y="164" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#6F56E8">MEASURED SIGNALS · STACK OVERFLOW 2025</text>
+  <text x="83" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#10243E">84% use/plan AI</text>
+  <text x="275" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#687B96">·</text>
+  <text x="300" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#10243E">46% distrust accuracy</text>
+  <text x="545" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#687B96">·</text>
+  <text x="570" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#10243E">76% avoid AI deployment/monitoring</text>
+  <text x="930" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#687B96">·</text>
+  <text x="955" y="202" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" fill="#10243E">87% accuracy concern · 81% security/privacy</text>
+
+  <text x="55" y="282" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#687B96">VIBEGUARD INFERENCE — NOT A SURVEY RESULT</text>
+  <rect x="55" y="307" width="1490" height="328" rx="24" fill="url(#risk)" stroke="#D8E3EF"/>
+
+  <line x1="120" y1="382" x2="1470" y2="382" stroke="#10243E" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="120" y="365" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">lower consequence / easier verification</text>
+  <text x="1268" y="365" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" fill="#687B96">higher consequence / harder verification</text>
+
+  <rect x="92" y="420" width="315" height="150" rx="16" fill="#FFFFFF" fill-opacity="0.88" stroke="#BFD4F8"/>
+  <text x="116" y="454" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#2F7BF6">AUTONOMOUS</text>
+  <text x="116" y="489" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#10243E">Mechanical &amp; reversible</text>
+  <text x="116" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">tests · formatting · local fixes</text>
+  <text x="116" y="545" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">repo search · CI iteration</text>
+
+  <rect x="430" y="420" width="315" height="150" rx="16" fill="#FFFFFF" fill-opacity="0.88" stroke="#CFC3FB"/>
+  <text x="454" y="454" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#6F56E8">BOUNDED AUTONOMY</text>
+  <text x="454" y="489" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#10243E">Evidence can close the loop</text>
+  <text x="454" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">bounded feature work</text>
+  <text x="454" y="545" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">local refactors · integrations</text>
+
+  <rect x="768" y="420" width="315" height="150" rx="16" fill="#FFFFFF" fill-opacity="0.9" stroke="#D8B7F7"/>
+  <text x="792" y="454" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#7F4CC9">ESCALATE</text>
+  <text x="792" y="489" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#10243E">System meaning changes</text>
+  <text x="792" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">architecture · auth boundaries</text>
+  <text x="792" y="545" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">failure semantics · major refactors</text>
+
+  <rect x="1106" y="420" width="395" height="150" rx="16" fill="#FFFFFF" fill-opacity="0.92" stroke="#F0B56B"/>
+  <text x="1130" y="454" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#F08A00">HUMAN AUTHORITY</text>
+  <text x="1130" y="489" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#10243E">Irreversible / accountable</text>
+  <text x="1130" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">security exceptions · destructive migrations</text>
+  <text x="1130" y="545" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" fill="#687B96">accepted debt · policy changes · risk ownership</text>
+
+  <text x="55" y="686" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="800" fill="#10243E">CONTROL LOOP</text>
+  <rect x="55" y="708" width="1490" height="126" rx="18" fill="#10243E"/>
+  <text x="86" y="748" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">policy → agent execution → automated evidence → material uncertainty only → Tech Owner decision → decision memory</text>
+  <text x="86" y="783" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#DDE6F1">The goal is not more approval. The goal is less human attention spent below the level where judgement changes the system.</text>
+  <text x="86" y="811" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#AFC0D4">Inference derived from adoption + trust/responsibility signals; source details and claim boundaries in vibeguard/evidence.md.</text>
+</svg>
