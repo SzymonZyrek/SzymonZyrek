@@ -78,22 +78,22 @@ These repositories are not meant to compete with mature frameworks. They documen
 
 ## Commercial work
 
-A large part of my professional code is not public because it was written in employer- or client-owned repositories.
+A large part of my professional code is not public because it was written in employer- or client-owned repositories. The short version below is deliberately product-oriented; **[CAREER.md](CAREER.md)** contains the fuller engineering history.
 
-My commercial path includes work on:
+- **Misys / Finastra** — TopOffice, KGR, CMR, ALM and UserManagement; legacy persistence modernization from DataXtend to JPA; shared identity/OIDC integration across heterogeneous C++, Java and Objective-C/GNUstep clients; OpenAPI/service boundaries and cross-product dashboard/composition work.
+- **Intel** — NAND/storage-driver software, automated verification and internal engineering tooling close to the hardware boundary.
+- **Ciklum / EverC** — MerchantView fraud/risk product work, stabilization during organizational transition, AWS/Terraform/Kubernetes delivery, Grafana/alerting and hands-on on-call production ownership.
+- **Nordea** — Java/Angular financing capability inside a larger microservice/microfrontend banking ecosystem; explicit contracts, quality/security gates and cross-team dependency coordination.
+- **Hapag-Lloyd** — Java/Jakarta EE, event-driven shipping/logistics systems and platform/integration services.
+- **Stynk** — current end-to-end product/system ownership from requirements and UX through implementation, CI/CD, deployment and operations.
 
-- **Intel** — NAND/storage-driver work and automated testing;
-- **Misys / Finastra** — financial risk systems, Java EE/C++, integrations and production debugging;
-- **Ciklum / EverC** — fraud-detection product work and operational ownership;
-- **Nordea** — banking microservices/microfrontends and integration work;
-- **Hapag-Lloyd** — event-driven shipping/container-tracking and platform services;
-- **Stynk** — current end-to-end product/system ownership.
+Across those roles the infrastructure story moved from legacy on-prem/Solaris and SSH-managed environments, through Azure and AWS/Kubernetes, to current Docker/Linux operations and Google Cloud/AI-platform experiments.
 
 So this GitHub profile is best read as a mix of **public engineering history, selected experiments and current R&D**, not as a complete chronological record of employment.
 
 ## Technologies I have worked with
 
-Java / Jakarta EE / Spring · C / C++ · Python / Django · TypeScript / Angular / React · Groovy / Grails · SQL / PostgreSQL · Docker · Linux · GitHub Actions · REST / event-driven systems · MCP · local LLM tooling / llama.cpp
+Java / Jakarta EE / Spring · C / C++ · Objective-C / GNUstep · Python / Django · TypeScript / Angular / React · Groovy / Grails · SQL / PostgreSQL · JPA · JNI · OpenAPI / REST · OAuth / OIDC · Docker · Kubernetes · Terraform · Linux · Azure · AWS · Google Cloud · GitHub Actions · event-driven systems · MCP · local LLM tooling / llama.cpp
 
 ---
 
