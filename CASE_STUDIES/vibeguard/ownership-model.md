@@ -1,6 +1,6 @@
 # VibeGuard — Tech Owner model: human judgement above agent execution
 
-[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
+[← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Business case](business-case.md) · [Prototype & architecture](prototype.md) · [Visual tour](visual-tour.md)
 
 The current VibeGuard thesis is not "put a human in every AI loop".
 
