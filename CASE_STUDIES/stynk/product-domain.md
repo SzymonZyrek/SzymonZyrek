@@ -8,7 +8,7 @@ This page follows the operational system itself: field evidence → CRM state �
 
 The key product idea is continuity: the same business object should remain understandable from the first field interaction through execution, payment, audit and public-facing outcomes.
 
-## 1. The problem
+## The problem
 
 Before the CRM, operational information was spread between paper contracts, local spreadsheets, Google Drive, e-mail, WhatsApp and verbal hand-offs.
 
@@ -29,9 +29,7 @@ The goal was to turn a real operating process into one explicit, auditable syste
 
 ---
 
----
-
-## 2. Business workflow modelled by the system
+## Business workflow modelled by the system
 
 A simplified contract flow looks like this:
 
@@ -83,8 +81,6 @@ This is the kind of domain logic that made the project much more interesting tha
 
 ---
 
----
-
 ## Communication, finance and planning as lifecycle projections
 
 ![Notifications and role communication](../assets/stynk/slides/product/03-notifications-role-communication.jpg)
@@ -95,7 +91,7 @@ This is the kind of domain logic that made the project much more interesting tha
 
 These are deliberately not separate mini-systems. Notifications, payment obligations, commissions and planning are projections of the same Contract/Job lifecycle and role model.
 
-## 5. OCR: two providers, one review-first contract
+## OCR: two providers, one review-first contract
 
 Contract intake is one of the clearest examples of the system trying to remove repetitive office work without giving automation too much authority.
 
@@ -103,7 +99,7 @@ Only contract/annex scan attachments are eligible for OCR.
 
 The system supports two provider modes.
 
-### 5.1 Google Document AI
+### Google Document AI
 
 The direct provider path can use Google Document AI.
 
@@ -136,7 +132,7 @@ explicit application
 
 —not "AI saw a number, therefore the database now contains it".
 
-### 5.2 E-mail OCR workflow
+### E-mail OCR workflow
 
 The alternative e-mail provider is one of my favourite integrations in the project because it treats unreliable external communication as a workflow instead of a single API call.
 
@@ -196,9 +192,7 @@ That separation is particularly important because a successful message delivery 
 
 ---
 
----
-
-## 6. Frontend: responsive workflow UI, not a shrunk desktop
+## Frontend: responsive workflow UI, not a shrunk desktop
 
 The frontend is Angular with a shared component layer and theme-aware SCSS.
 
@@ -241,13 +235,11 @@ This matters because Sales and subcontractor workflows are naturally used away f
 
 ---
 
----
-
-## 7. Selected product features
+## Selected product features
 
 The full system contains many small workflows; these are the ones I think best illustrate its character.
 
-### 7.1 Contract intake and office hand-off
+### Contract intake and office hand-off
 
 Sales representatives can upload paper-contract scans/photos plus attachments and notes.
 
@@ -257,7 +249,7 @@ The workflow intentionally retains the original evidence next to the normalized 
 
 OCR can assist this process, but it remains review-first.
 
-### 7.2 Job lifecycle and pricing
+### Job lifecycle and pricing
 
 A Contract contains one or more Jobs.
 
@@ -271,7 +263,7 @@ Jobs have their own lifecycle and can be:
 
 The system connects operational state to financial and planning consequences rather than making users reproduce those links manually.
 
-### 7.3 Scheduling and overbooking
+### Scheduling and overbooking
 
 The planning calendar is derived from Job data rather than maintaining a second calendar database.
 
@@ -279,7 +271,7 @@ Office can assign subcontractors and planned dates; the system can detect date o
 
 The calendar supports global/subcontractor-oriented planning and uses lifecycle state to communicate work status.
 
-### 7.4 Mobile-first field sales visits
+### Mobile-first field sales visits
 
 The Sales Visit module uses a reusable:
 
@@ -305,7 +297,7 @@ It supports:
 
 This is a good example of domain-specific UX that would be awkward to force into a generic "activities" table.
 
-### 7.5 Public website → CRM lead flow
+### Public website → CRM lead flow
 
 ![Website ↔ CRM sales loop](../assets/stynk/slides/product/06-website-crm-sales-loop.jpg)
 
@@ -333,13 +325,13 @@ The HTTP response does not wait for SMTP.
 
 That means an SMTP outage does not turn a valid lead into lost browser state.
 
-### 7.6 Operational media → public realizations
+### Operational media → public realizations
 
 ![Operational photos to public realizations](../assets/stynk/slides/product/07-operational-photos-public-realizations.jpg)
 
 Operational media can be promoted into reviewed public-facing realizations without giving the public website access to the private CRM media surface.
 
-### 7.7 Audit history
+### Audit history
 
 Business audit is separate from technical logging.
 
@@ -355,7 +347,7 @@ Some UI audit timelines expand one logical object into related records, so the s
 
 Raw audit tooling is admin-only.
 
-### 7.8 Managed file storage
+### Managed file storage
 
 Attachments started on local media storage, but the current storage layer introduces a managed datastore seam.
 
@@ -367,9 +359,7 @@ The current implementation supports local storage and Google Drive with encrypte
 
 ---
 
----
-
-## 10. Permissions, edit ownership and operational safety
+## Permissions, edit ownership and operational safety
 
 The application has four primary business roles:
 
