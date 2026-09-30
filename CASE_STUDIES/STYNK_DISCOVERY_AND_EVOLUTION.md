@@ -1,5 +1,7 @@
 # Stynk CRM — discovery, domain evolution and the path from form to platform
 
+[← Case study overview](STYNK_CRM.md) · [Product & domain](STYNK_PRODUCT_AND_DOMAIN.md) · [Model & runtime](STYNK_MODEL_AND_RUNTIME.md) · [Engineering system](STYNK_ENGINEERING_SYSTEM.md) · [Visual tour](STYNK_ARCHITECTURE.md)
+
 This companion to the main [Stynk CRM case study](STYNK_CRM.md) focuses on a part of the project that is easy to miss when looking only at the final architecture:
 
 **there was no finished software specification waiting to be implemented.**
