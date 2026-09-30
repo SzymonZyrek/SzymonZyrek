@@ -31,14 +31,24 @@ It started as a request to capture data from a paper contract and evolved, throu
 
 **[Read the case study →](CASE_STUDIES/STYNK_CRM.md)** · **[Open the visual tour →](CASE_STUDIES/stynk/visual-tour.md)** · [full-size closing synthesis](CASE_STUDIES/assets/stynk/slides/stynk_case_study_summary.png)
 
-## Selected current work
+## Current thesis — VibeGuard
 
-| Project | What it explores | Useful entry points |
-|---|---|---|
-| **Stynk CRM** | Production product/system ownership from requirements and UX through architecture, Angular/Django implementation, CI/CD, deployment and support | [Case study](CASE_STUDIES/STYNK_CRM.md) · [visual tour](CASE_STUDIES/stynk/visual-tour.md) · [model/runtime](CASE_STUDIES/stynk/model-runtime.md) |
-| **VibeGuard** | A Tech Owner control loop for AI-built software: evidence compression, architecture/security sanity, escalation and durable human decisions | [Case study](CASE_STUDIES/VIBEGUARD.md) · [visual tour](CASE_STUDIES/vibeguard/visual-tour.md) · [ownership model](CASE_STUDIES/vibeguard/ownership-model.md) |
-| **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting agentic software-development loop | Workflow architecture, evaluation, local/hosted execution and evidence-driven coordination |
-| **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Narrowly scoped MCP server for explicit GitHub administration capabilities | Capability boundaries, tool design, TypeScript, Docker and CI |
+If Stynk is the production proof, VibeGuard is the forward-looking engineering thesis.
+
+It explores how AI-heavy software delivery can scale without turning senior engineers into permanent diff reviewers or leaving architecture, security and irreversible technical choices effectively ownerless. The current model separates routine execution and mechanical evidence from the smaller set of decisions that still need explicit human technical authority.
+
+[![VibeGuard — from coding agents to a new engineering model](CASE_STUDIES/assets/vibeguard/diagrams/07-engineering-model.svg)](CASE_STUDIES/VIBEGUARD.md)
+
+**[Read the case study →](CASE_STUDIES/VIBEGUARD.md)** · **[Open the visual tour →](CASE_STUDIES/vibeguard/visual-tour.md)** · [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md) · [evidence](CASE_STUDIES/vibeguard/evidence.md)
+
+## Current R&D and public tools
+
+| Project | What it explores |
+|---|---|
+| **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting agentic software-development loop: workflow architecture, evaluation, local/hosted execution and evidence-driven coordination |
+| **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Narrowly scoped MCP server for explicit GitHub administration capabilities; capability boundaries, TypeScript, Docker and CI |
+| **[MLFramework](https://github.com/SzymonZyrek/MLFramework)** | Model-backend abstraction and reusable training/workflow infrastructure |
+| **[neural-networks-labs](https://github.com/SzymonZyrek/neural-networks-labs)** | Hands-on ML/NN experiments from gradient descent and backpropagation through computer vision and transformers |
 
 Most experimental runner/integration infrastructure lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**.
 
