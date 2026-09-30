@@ -13,9 +13,11 @@ For employer-owned systems that cannot be represented by source repositories, se
 ### Stynk CRM
 **Status:** active, proprietary, production system
 
-Public source is intentionally unavailable. See the sanitized [case study](CASE_STUDIES/STYNK_CRM.md).
+Public source is intentionally unavailable. See the sanitized **[case study](CASE_STUDIES/STYNK_CRM.md)**, **[visual tour](CASE_STUDIES/stynk/visual-tour.md)** and **[discovery/evolution story](CASE_STUDIES/stynk/discovery.md)**.
 
 The project is my strongest example of end-to-end ownership: requirements, business/domain modelling, architecture, UX, full-stack implementation, testing, CI/CD, infrastructure, deployments and support.
+
+The [closing synthesis slide](CASE_STUDIES/assets/stynk/slides/stynk_case_study_summary.png) compresses the whole case into one visual.
 
 ### HackaTeam
 **Repository:** https://github.com/ateshgahofmine/HackaTeam  
@@ -33,7 +35,7 @@ VibeGuard started as a deliberately fast human-in-the-loop code-review/debugging
 
 The current direction explores a **Tech Owner control loop**: explicit project policy, automated evidence, an Owner Inbox for material boundary crossings, and recorded human decisions around architecture, security, irreversible data choices and technical debt.
 
-See the [VibeGuard case study](CASE_STUDIES/VIBEGUARD.md), [discovery/evolution](CASE_STUDIES/vibeguard/discovery.md), [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md), [prototype boundary](CASE_STUDIES/vibeguard/prototype.md) and [visual tour](CASE_STUDIES/vibeguard/visual-tour.md).
+See the **[VibeGuard case study](CASE_STUDIES/VIBEGUARD.md)**, **[visual tour](CASE_STUDIES/vibeguard/visual-tour.md)**, [discovery/evolution](CASE_STUDIES/vibeguard/discovery.md), [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md), [prototype boundary](CASE_STUDIES/vibeguard/prototype.md) and [external-evidence notes](CASE_STUDIES/vibeguard/evidence.md).
 
 The implementation repository remains private while the product direction is still being explored. The portfolio explicitly distinguishes implemented prototype capabilities from the newer simulated Tech Owner interaction slice.
 
@@ -79,6 +81,9 @@ These are not maintained as current products. They are simply older things I bui
 A useful way to read several of them is as one evolving investigation rather than unrelated toys: Java concurrency experiments led into a C++ translation attempt; C++ compilation/linking pain led into build automation; build automation exposed dependency and artifact-resolution concerns; those concerns became FetchDog and then Faxus. Meserve explored the same "go underneath the abstraction" habit on the application-runtime/container side.
 
 That progression also overlapped with early commercial debugging in large Java EE/C++ systems, where learning to reconstruct unfamiliar mechanisms from failures, logs, stack traces, tests and debugger evidence became a practical skill rather than a purely academic exercise.
+
+### Realtime / graphics / engine work
+- **[game10](HOBBY_PROJECTS.md#game10-realtime-engine-and-rendering-sandbox)** — historical C++/OpenGL engine and rendering sandbox; a useful early lesson in frame budgets, data locality, ownership and the fact that architecture follows constraints. Original source remains in the older public [Bitbucket archive](https://bitbucket.org/Mexorsu/).
 
 ### Concurrency and events
 - [java_events](https://github.com/SzymonZyrek/java_events)
