@@ -35,7 +35,7 @@ deployment / operations
 
 Some active experimental infrastructure still lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, where runners and agent workflows can evolve without turning this professional profile into an operational control plane.
 
-See **[PROJECTS.md](PROJECTS.md)** for the wider project map, including older R&D and historical engineering labs.
+See **[PROJECTS.md](PROJECTS.md)** for the wider project map.
 
 ## ML / neural-network work
 
@@ -45,36 +45,13 @@ I did not arrive at AI through chat interfaces alone.
 
 **[MLFramework](https://github.com/SzymonZyrek/MLFramework)** moves one level outward: model-backend abstraction, scikit-learn and Keras/TensorFlow training, dataset configuration, model packaging and orchestration.
 
-The current agentic work is therefore a continuation of a broader systems/ML path rather than my first contact with models.
+## Hobby projects / engineering archaeology
 
-## Engineering archaeology
+I have kept a fair amount of old code public: tiny utilities, half-finished frameworks, build-system experiments, editor configs and other things I built mostly because I was curious.
 
-I keep older learning projects public instead of rewriting history into a collection of freshly generated demos.
+I do not treat them as a portfolio of finished products. They are more useful as a record of how I learn — usually by rebuilding a small version of something until I understand which parts are essential, which are accidental complexity, and where the abstraction starts leaking.
 
-A few of them form a useful chain:
-
-```text
-java_events
-    ↓
-cpp_events
-    ↓
-just_build_poc → justbuild
-                     ↓
-                  FetchDog
-                     ↓
-                   Faxus
-
-meserve ── application runtime / metadata / class loading / events / HTTP
-```
-
-- **[java_events](https://github.com/SzymonZyrek/java_events)** — concurrency and asynchronous event dispatch in Java.
-- **[cpp_events](https://github.com/SzymonZyrek/cpp_events)** — rebuilding familiar ideas in C++, then discovering toolchain/build-system boundaries.
-- **[just_build_poc](https://github.com/SzymonZyrek/just_build_poc)** / **[justbuild](https://github.com/SzymonZyrek/justbuild)** — learning what a build system actually has to model.
-- **[fetchdog](https://github.com/SzymonZyrek/fetchdog)** / **[faxus](https://github.com/SzymonZyrek/faxus)** — artifact identity, qualifiers, providers and resolution.
-- **[meserve](https://github.com/SzymonZyrek/meserve)** — reconstructing pieces of an application runtime: metadata, configuration, annotation processing, class loading, lifecycle, events and HTTP serving.
-- **[roy_batty](https://github.com/SzymonZyrek/roy_batty)** — desktop keyboard/mouse macro recording and hotkey automation.
-
-These repositories are not meant to compete with mature frameworks. They document a learning method I still use: rebuild a small version of an abstraction, let reality break the model, then return to the established tool with better questions.
+If that sounds interesting, I wrote up the timeline in **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)**.
 
 ## Commercial work
 
