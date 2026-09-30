@@ -84,6 +84,17 @@ paper contract
 
 The point is not that the final system is more complicated than the first screen. It is that each layer appeared after the previous model met a real limitation.
 
+## Closing synthesis
+
+The individual sections above explain the product, model/runtime and engineering
+system separately. This final view puts them back together: fragmented
+operations on one side, one role-aware operating model in the middle, and
+traceable, recoverable business execution on the other.
+
+![Stynk CRM — case-study closing synthesis](assets/stynk/slides/stynk_case_study_summary.png)
+
+[Open the visual tour →](stynk/visual-tour.md)
+
 ## Source boundary
 
 The implementation repository is private because it contains proprietary business logic and production-oriented code for a real company. This case study uses sanitized diagrams and screenshots rather than publishing a toy reconstruction that would no longer be the actual system.
