@@ -104,13 +104,19 @@ The main question I was playing with was how much of an artifact's identity coul
 **Repository:** https://github.com/SzymonZyrek/faxus  
 **Period:** 2016
 
-Another pass at the same general area.
+The last substantial pass I found at the build/dependency problem before I mostly stopped trying to replace Maven.
 
-The repository contains experiments around artifact identity, versioning, qualifiers, Java/C++ variants, repository/cache/resolver concepts and REST exposure.
+By this point the experiment had moved beyond fetching files or wiring a builder to a dependency source. The code contains an explicit artifact model: `Artifact`, `ArtifactId`, `ArtifactDescriptor`, `ArtifactType`, `ArtifactQualifier` and a non-trivial `Version` model, plus language/platform-specific specializations for Java and C++.
 
-It is visibly unfinished. By then I had also become much more comfortable simply using Maven and existing tooling, so finishing my own ecosystem stopped being particularly important.
+The important idea was that an artifact should have a logical identity independent from where its bytes happen to live. Java and native artifacts could then add the dimensions that actually matter for compatibility: type, version, architecture, compiler/runtime family and similar qualifiers.
 
-That is part of the learning record too: sometimes understanding the abstraction better is enough to appreciate the mature tool instead of replacing it.
+Around that model there are repository, cache and resolver abstractions, a local-filesystem resolver, REST resources for publishing/resolving artifacts, and tests for versioning, qualifiers, repository behavior and Java/C++ identifiers. The repository even keeps an older implementation under `legacy/`, so it visibly contains more than one attempt at finding the right model.
+
+This looks like the furthest point of the early JustBuild → dependency → artifact-repository line of experiments. The “next big thing” was not another build command; it was trying to define a common semantic model for artifacts and let storage/resolution become interchangeable mechanisms underneath it.
+
+It is still visibly experimental and unfinished. Around this point the practical value of simply using Maven and existing ecosystem tooling seems to have won over the urge to finish my own parallel ecosystem.
+
+That is part of the learning record too: understanding an abstraction well enough can make the mature boring tool more attractive, not less.
 
 ## Later technical detours
 
