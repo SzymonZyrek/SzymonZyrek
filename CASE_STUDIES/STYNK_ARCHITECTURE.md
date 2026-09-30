@@ -2,62 +2,51 @@
 
 These diagrams are a sanitized visual companion to the [Stynk CRM case study](STYNK_CRM.md).
 
-> **Narrative source:** [STYNK_ARCHITECTURE_CONTENT_SPEC.md](STYNK_ARCHITECTURE_CONTENT_SPEC.md) is the content source of truth. The diagrams below are now rebuilt from that spec: each one focuses on an architectural tension, the chosen boundary, the trade-off and the condition that would justify changing the decision.
+> **Narrative source:** [STYNK_ARCHITECTURE_CONTENT_SPEC.md](STYNK_ARCHITECTURE_CONTENT_SPEC.md) is the content source of truth. The slide set is capability-first: each diagram starts from something the system enables, then shows the architectural mechanism behind it.
 
-They are based on the current private-project architecture, but intentionally omit source code, credentials, client data and proprietary business configuration. The point is to show engineering decisions and failure boundaries rather than publish an implementation blueprint.
+They are derived from the current private-project architecture, but intentionally omit source code, credentials, client data and proprietary business configuration.
 
-### Visual language
+## 1. One coherent business core, modular by domain
 
-The palette is semantic rather than decorative:
+![Stynk CRM business core](assets/stynk/architecture/01-business-core.svg)
 
-- **cyan** — user/configuration/authoring surfaces;
-- **purple** — application and model/runtime logic;
-- **green** — durable state and historical truth;
-- **amber** — asynchronous execution and operational boundaries;
-- **blue** — transport/interface boundaries;
-- **red** — legacy compatibility, risk or intentionally retained historical paths.
+Contracts, Jobs, pricing, payments, planning, notifications and audit remain in one transactional business system. Responsibility boundaries live in domain modules and services; background execution, files and public integrations leave through explicit seams.
 
-## 1. One coherent application
+## 2. Business state drives the workflow
 
-![Stynk CRM system overview](assets/stynk/architecture/01-system-overview.svg)
+![Stynk CRM lifecycle orchestration](assets/stynk/architecture/02-lifecycle-orchestration.svg)
 
-Boundaries appear where responsibility changes: internet exposure at nginx, transactional business consistency inside Django/PostgreSQL, and asynchronous execution behind a durable-work seam. The slide deliberately separates **truth ownership** from **execution location**.
+Lifecycle transitions are orchestration points, not cosmetic status labels. A Contract becoming binding, a Job actually starting or the final Job completing can update payments, planning, commissions, notifications and audit through one controlled service-layer workflow.
 
-## 2. Modularity before network decomposition
-
-![Stynk CRM modular monolith](assets/stynk/architecture/02-modular-monolith.svg)
-
-The decision is framed as a balance of forces rather than “monolith good / microservices bad”: shared transactions, one operational owner and local reproducibility currently favour one process boundary; independent scaling, ownership, physical isolation or a measured bottleneck would justify extraction later.
-
-## 3. Durable intent before queue delivery
+## 3. Durable automation outside the request path
 
 ![Stynk CRM durable async architecture](assets/stynk/architecture/03-durable-async.svg)
 
-The diagram exposes the database/broker failure window directly. PostgreSQL stores committed work intent, Redis transports identifiers, workers execute, and reconciliation repairs missed delivery. It also states what the design does **not** promise: exactly-once external effects.
+Business-significant background work is anchored in durable PostgreSQL state before Redis/Celery transport. The normal worker path is separated from OCR/AI queues, and reconciliation can rediscover committed work after delivery failures.
 
-## 4. Generalise recurring variability, not the whole CRM
+## 4. Reusable Platform kernel, explicit Stynk bindings
 
-![Stynk CRM Studio and canonical runtime](assets/stynk/architecture/04-studio-canonical-runtime.svg)
+![Stynk CRM Platform and System boundary](assets/stynk/architecture/04-platform-system-boundary.svg)
 
-The generic Platform kernel contains reusable semantics such as types, identity, references, behaviour and revision resolution. Job/Operation bindings, pricing context and CRM workflows remain Stynk-owned. Promotion into the kernel is driven by repeated semantic reuse, not by a desire to make everything configurable.
+The generic layer owns reusable semantics such as types, identity, references, callable execution, events/state machines and revision resolution. Stynk-specific roles such as Job bindings, pricing context and CRM lifecycle integration stay in the System layer.
 
-## 5. Pricing as executable policy and historical evidence
+## 5. Jobs composed from reusable typed capabilities
 
-![Stynk CRM versioned pricing](assets/stynk/architecture/05-versioned-pricing.svg)
+![Stynk CRM capability-based pricing](assets/stynk/architecture/05-capability-pricing.svg)
 
-New pricing policy may evolve, but historical Jobs must retain the meaning under which they were priced. Published catalogs stay immutable, snapshots are preserved, compatibility is explicit, canonical failure does not silently fall back to legacy logic, and runtime context stays typed rather than being injected magically.
+Canonical Composites can be exposed as Stynk Jobs through bindings. Operations implement a reusable `Priced.price()` capability, receive typed pricing context and are composed into the Job result through the same graph runtime used for custom logic.
 
-## 6. Recovery before redundancy
+## 6. Every price remains reproducible and explainable
 
-![Stynk CRM production topology](assets/stynk/architecture/06-production-topology.svg)
+![Stynk CRM versioned pricing](assets/stynk/architecture/06-versioned-pricing.svg)
 
-The single VPS is shown honestly as one online failure domain. The architectural point is that watchdogs, backups, certificates and off-host recovery remain outside the application components they must recover. This is a recoverability-first topology, not a claim of high availability.
+Published model/catalog semantics are immutable and Jobs stay pinned to the revision that priced them. Snapshots, components and execution trace preserve both the business result and the explanation behind it while new revisions move forward.
 
-## 7. Prove the replacement path before deleting the old one
+## 7. Public website and CRM share infrastructure, not trust
 
-![Stynk CRM architecture evolution](assets/stynk/architecture/07-evolution-path.svg)
+![Stynk CRM public/private security boundary](assets/stynk/architecture/07-public-private-boundary.svg)
 
-The migration is additive and gated: new structures arrive before old readers disappear; conversion is all-or-nothing and idempotent; semantic identity is preserved; unknown historical semantics are not guessed. Activating the first binding-bearing catalog is the explicit no-downgrade boundary after which rollback becomes fix-forward.
+The public site and CRM share nginx infrastructure but not one trust zone. Public APIs/media are explicitly allowlisted, while the CRM remains session-authenticated, role/object-filtered and permission-checks private attachments through Django.
 
 ---
 
