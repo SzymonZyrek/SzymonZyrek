@@ -8,7 +8,7 @@ I have 12+ years of professional software-engineering experience spanning embedd
 
 A recurring theme in my work is moving between abstraction levels:
 
-```text
+~~~text
 requirements
    ↓
 domain model
@@ -20,7 +20,7 @@ implementation
 verification
    ↓
 deployment / operations
-```
+~~~
 
 ## Current work
 
@@ -28,7 +28,7 @@ deployment / operations
 |---|---|---|
 | **[Stynk CRM — case study](CASE_STUDIES/STYNK_CRM.md)** | Proprietary CRM/ERP-style platform used by a construction company | End-to-end ownership: requirements, domain, UX, Angular/Django implementation, CI/CD, deployment, operations and support |
 | **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting agentic software-development loop | Workflow architecture, evaluation, agent coordination, local/hosted execution and aggressive simplification |
-| **[VibeGuard — case study](CASE_STUDIES/VIBEGUARD.md)** | Human-in-the-loop code review/debugging prototype for AI-assisted development | GitHub inspection, AI audit, diff/review UX and human escalation; currently private while evolving |
+| **[VibeGuard — case study](CASE_STUDIES/VIBEGUARD.md)** | GitHub-native technical-ownership control plane for AI-heavy software development | Capability modelling, PR impact, Owner routing, trust boundaries, authenticated review, GitHub evidence and bounded LLM onboarding |
 | **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Explicit MCP server for narrowly scoped GitHub administration capabilities | MCP/tool design, capability boundaries, TypeScript, Docker and CI |
 
 Some active experimental infrastructure still lives under my R&D account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, where runners and agent workflows can evolve without turning this professional profile into an operational control plane.
@@ -51,7 +51,7 @@ I keep older learning projects public instead of rewriting history into a collec
 
 A few of them form a useful chain:
 
-```text
+~~~text
 java_events
     ↓
 cpp_events
@@ -63,7 +63,7 @@ just_build_poc → justbuild
                    Faxus
 
 meserve ── application runtime / metadata / class loading / events / HTTP
-```
+~~~
 
 - **[java_events](https://github.com/SzymonZyrek/java_events)** — concurrency and asynchronous event dispatch in Java.
 - **[cpp_events](https://github.com/SzymonZyrek/cpp_events)** — rebuilding familiar ideas in C++, then discovering toolchain/build-system boundaries.
