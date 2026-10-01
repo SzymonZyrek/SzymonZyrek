@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">VibeGuard GitHub-native control plane</title>
+  <desc id="desc">GitHub provides PRs, CI, checks and rulesets. VibeGuard receives events, extracts evidence, evaluates policy and escalates material decisions to a Tech Owner.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#071019"/><stop offset="100%" stop-color="#0d1522"/></linearGradient>
+    <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b2a34"/><stop offset="100%" stop-color="#10233a"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.32"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#6b7f95"/></marker>
+    <marker id="arrowCyan" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#56d8e4"/></marker>
+  </defs>
+  <rect width="1200" height="700" rx="28" fill="url(#bg)"/>
+  <text x="60" y="62" fill="#f3f7fb" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="30" font-weight="700">VibeGuard — GitHub-native technical ownership loop</text>
+  <text x="60" y="94" fill="#8190a3" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15">GitHub stays the engineering substrate. VibeGuard spends owner attention only on material decisions.</text>
+  <g filter="url(#shadow)"><rect x="60" y="145" width="315" height="440" rx="24" fill="#0d1723" stroke="#263444"/></g>
+  <text x="90" y="184" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">GITHUB / EXECUTION PLANE</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="90" y="220" width="255" height="68" rx="14" fill="#111f2d" stroke="#314255"/><text x="112" y="249" fill="#f3f7fb" font-size="17" font-weight="650">Pull Request</text><text x="112" y="273" fill="#8292a6" font-size="13">base/head SHA · diff · files</text>
+    <rect x="90" y="310" width="255" height="68" rx="14" fill="#111f2d" stroke="#314255"/><text x="112" y="339" fill="#f3f7fb" font-size="17" font-weight="650">CI + security evidence</text><text x="112" y="363" fill="#8292a6" font-size="13">tests · CodeQL · workflows · checks</text>
+    <rect x="90" y="400" width="255" height="68" rx="14" fill="#111f2d" stroke="#314255"/><text x="112" y="429" fill="#f3f7fb" font-size="17" font-weight="650">Policy + ADRs</text><text x="112" y="453" fill="#8292a6" font-size="13">versioned with the repository</text>
+    <rect x="90" y="490" width="255" height="68" rx="14" fill="#111f2d" stroke="#314255"/><text x="112" y="519" fill="#f3f7fb" font-size="17" font-weight="650">Ruleset / merge gate</text><text x="112" y="543" fill="#8292a6" font-size="13">requires VibeGuard Check</text>
+  </g>
+  <g filter="url(#shadow)"><rect x="430" y="145" width="400" height="440" rx="24" fill="url(#vg)" stroke="#1d6a78"/></g>
+  <text x="460" y="184" fill="#70e2eb" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">VIBEGUARD / CONTROL PLANE</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <rect x="460" y="220" width="340" height="62" rx="14" fill="#0b1b26" stroke="#245565"/><text x="485" y="247" fill="#f3f7fb" font-size="16" font-weight="650">GitHub App ingress</text><text x="485" y="269" fill="#80a2ad" font-size="12">webhook · installation identity</text>
+    <path d="M630 282 L630 309" stroke="#56d8e4" stroke-width="2" marker-end="url(#arrowCyan)"/>
+    <rect x="460" y="315" width="340" height="62" rx="14" fill="#0b1b26" stroke="#245565"/><text x="485" y="342" fill="#f3f7fb" font-size="16" font-weight="650">Evidence extraction</text><text x="485" y="364" fill="#80a2ad" font-size="12">deterministic first · semantic only when needed</text>
+    <path d="M630 377 L630 404" stroke="#56d8e4" stroke-width="2" marker-end="url(#arrowCyan)"/>
+    <rect x="460" y="410" width="340" height="62" rx="14" fill="#0b1b26" stroke="#245565"/><text x="485" y="437" fill="#f3f7fb" font-size="16" font-weight="650">Policy Engine</text><text x="485" y="459" fill="#80a2ad" font-size="12">effective policy comes from base SHA</text>
+    <path d="M630 472 L630 499" stroke="#56d8e4" stroke-width="2" marker-end="url(#arrowCyan)"/>
+    <rect x="460" y="505" width="155" height="52" rx="13" fill="#0e2c24" stroke="#2f8c69"/><text x="537.5" y="537" text-anchor="middle" fill="#83efbd" font-size="15" font-weight="700">AUTO-PASS</text>
+    <rect x="645" y="505" width="155" height="52" rx="13" fill="#302319" stroke="#a56a32"/><text x="722.5" y="528" text-anchor="middle" fill="#f6c37c" font-size="14" font-weight="700">OWNER</text><text x="722.5" y="545" text-anchor="middle" fill="#f6c37c" font-size="14" font-weight="700">REQUIRED</text>
+  </g>
+  <g filter="url(#shadow)"><rect x="885" y="210" width="255" height="265" rx="24" fill="#151728" stroke="#555384"/></g>
+  <text x="915" y="249" fill="#bebcf5" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">TECH OWNER</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif"><text x="915" y="292" fill="#f3f7fb" font-size="21" font-weight="700">One material decision</text><text x="915" y="322" fill="#9296b4" font-size="13">WHAT changed?</text><text x="915" y="346" fill="#9296b4" font-size="13">WHY is it material?</text><text x="915" y="370" fill="#9296b4" font-size="13">WHICH boundary?</text><text x="915" y="394" fill="#9296b4" font-size="13">WHAT evidence?</text><text x="915" y="418" fill="#9296b4" font-size="13">WHAT authority is needed?</text></g>
+  <path d="M375 250 C405 250, 405 250, 430 250" stroke="#6b7f95" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M375 344 C405 344, 405 344, 430 344" stroke="#6b7f95" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M375 434 C405 434, 405 434, 430 434" stroke="#6b7f95" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M800 531 C846 531, 850 410, 885 390" stroke="#c18c4c" stroke-width="2.2" fill="none" marker-end="url(#arrow)"/><path d="M1010 475 C1010 570, 865 610, 750 585" stroke="#7774c9" stroke-width="2" fill="none" marker-end="url(#arrow)"/><path d="M460 531 C410 531, 405 524, 375 524" stroke="#4bb98c" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <line x1="60" y1="625" x2="1140" y2="625" stroke="#1d2a38"/><text x="60" y="660" fill="#738397" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13">Core invariant:</text><text x="155" y="660" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="600">machines compress evidence; humans retain authority over material technical change.</text>
+</svg>
