@@ -1,7 +1,7 @@
 # VibeGuard — technical ownership control plane for AI-heavy software development
 
-> **Source:** private repository / public sanitized case study  
-> **Status:** active prototype, real GitHub dogfood  
+> **Repository:** https://github.com/ateshgahofmine/VibeGuard  
+> **Status:** active public prototype, real GitHub dogfood  
 > **Role:** product concept, architecture, full-stack implementation, trust-boundary design and workflow R&D  
 > **Current focus:** capability ownership, PR impact, Owner routing, auditable human decisions
 
@@ -12,6 +12,8 @@ VibeGuard started from a simple concern:
 The first prototype explored AI code audit, debugging hand-off and a human-review marketplace. Building that exposed a more structural problem underneath: when implementation becomes increasingly automated, somebody still needs to own the boundaries of a system, understand why a change is material and retain authority over the final decision.
 
 That became the current product.
+
+The implementation is now public at **[ateshgahofmine/VibeGuard](https://github.com/ateshgahofmine/VibeGuard)**.
 
 VibeGuard is now a GitHub-native control plane that connects:
 
