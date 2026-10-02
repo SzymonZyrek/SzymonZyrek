@@ -1,229 +1,147 @@
-# VibeGuard — recommended portfolio screenshots
+# VibeGuard — recommended portfolio evidence
 
-The repository is private, so screenshots are the fastest way to prove that VibeGuard is a real working prototype rather than only a product idea.
+VibeGuard has moved beyond the original Code Auditor / debug-marketplace prototype, so the screenshot set should show the **current ownership-control-plane workflow**.
 
-I would keep the public set small: **3 core screenshots**, plus 1–2 optional ones.
-
-The goal is to show the workflow, not every tab.
+Keep the public set small: **3 core images**, plus 1–2 optional ones.
 
 ---
 
-## Core screenshot 1 — Code Auditor with real findings
+## Core 1 — Projects / Founder capability confirmation
 
-**Suggested filename:** vibeguard-code-auditor.png
+**Suggested filename:** vibeguard-founder-capabilities.png
 
-**What to show**
+Show:
 
-- a real public/sample repository selected;
-- branch selector visible;
-- repository tree visible;
-- one non-trivial source file open;
-- AI audit result visible;
-- several line annotations visible;
-- drift/risk score and summary visible;
-- “request human debug” / escalation action visible if possible.
+- a real registered repository;
+- GitHub App-backed project state;
+- discovered or manually edited capabilities;
+- impact rules / required skills;
+- explicit Founder confirmation;
+- no human Owner selector.
 
-**Why this should be the hero image**
-
-This single screen communicates almost the entire product hypothesis:
+The point is to prove the product rule:
 
 ~~~text
-real repository
-    +
-real source
-    +
-AI verification
-    +
-structured findings
-    +
-human escalation
-~~~
-
-It is much stronger than a landing page or dashboard.
-
-**Good demo setup**
-
-Use a small repository/file containing 2–4 intentionally understandable issues:
-
-- wrong API usage;
-- missing edge case;
-- weak error handling;
-- invented parameter/import;
-- obvious security smell.
-
-Avoid a huge production file where the reviewer cannot visually understand what the annotations refer to.
-
-**Caption**
-
-> Live repository inspection with structured AI findings attached to source lines. Findings remain reviewable evidence and can be escalated into a human debugging workflow.
-
----
-
-## Core screenshot 2 — Human Debug Workspace in diff mode
-
-**Suggested filename:** vibeguard-human-debug-diff.png
-
-**What to show**
-
-- ticket title and repository/file context;
-- original vs proposed patch;
-- diff tab active;
-- meaningful code change;
-- at least one review comment or explanation;
-- ticket status / assigned human visible if the layout permits.
-
-**Why it matters**
-
-This is the screenshot that proves VibeGuard is not merely “LLM comments on code”.
-
-It shows the second half of the idea:
-
-~~~text
-automation reaches uncertainty
-        ↓
-context survives escalation
-        ↓
-human engineer works on the same evidence
-        ↓
-reviewable patch
+Founder declares project responsibilities
+VibeGuard resolves ownership
 ~~~
 
 **Caption**
 
-> Human escalation preserves repository, file, audit and ticket context, then turns the investigation into a reviewable patch/diff rather than another disconnected chat.
+> Founder onboarding turns bounded repository evidence into editable capability suggestions. Suggestions are inert until explicit confirmation; Owner identity is not part of repository configuration.
 
 ---
 
-## Core screenshot 3 — PR Review Board
+## Core 2 — PR-aware Owner Inbox
 
-**Suggested filename:** vibeguard-pr-review-board.png
+**Suggested filename:** vibeguard-owner-inbox.png
 
-**What to show**
+Show one real pull request grouped as a review workspace with:
 
-- a pull request with repository/branch context;
-- diff summary;
-- review status;
-- AI audit summary if available;
-- human-review action/state.
+- repository + PR;
+- impacted capability;
+- why it was routed to this Owner;
+- matched files / patch context;
+- Approve / Request changes.
 
-**Why it matters**
-
-This places the idea inside a normal engineering lifecycle.
-
-A recruiter working on DevTools, CI, testing or AI reliability immediately sees how the concept could live next to GitHub rather than requiring teams to abandon their existing workflow.
+This should be the hero product screenshot.
 
 **Caption**
 
-> PR-level review concept: automated inspection and human review operate around the same repository-native delivery boundary.
+> Owner review is capability-scoped and PR-aware: routing evidence, GitHub patches and the exact change under review stay together before the authenticated Owner decides.
 
 ---
 
-## Optional screenshot 4 — Debug Requests board
+## Core 3 — GitHub PR with VibeGuard evidence
 
-**Suggested filename:** vibeguard-debug-board.png
+**Suggested filename:** vibeguard-github-check.png
 
-Show several tickets with different status/urgency and one claimed/in-progress request.
+Show the GitHub side:
 
-This is useful if the board looks visually strong because it explains that escalation is a workflow with ownership and state, not just a modal.
+- a real PR;
+- VibeGuard technical-ownership check;
+- pending/success/failure state;
+- capability/Owner context in the check or comment;
+- the owner-required label when applicable.
+
+This proves that VibeGuard is a control plane around the existing engineering workflow rather than a separate toy universe.
 
 **Caption**
 
-> Debug requests are explicit work items with repository context, state and ownership instead of ephemeral messages.
+> GitHub remains the durable engineering substrate. VibeGuard writes ownership state back as normal repository evidence: checks, labels and comments bound to the current PR head.
 
 ---
 
-## Optional screenshot 5 — Repository connection / file explorer
+## Optional 4 — Owner skill inference
 
-**Suggested filename:** vibeguard-repository-inspection.png
+**Suggested filename:** vibeguard-owner-profile.png
 
-Use this only if the UI looks especially good.
+Show:
 
-The important thing to capture is that the application works against repository/branch/file context rather than pasted snippets.
+- authenticated GitHub identity;
+- CV or connected-repository inference;
+- structured skill suggestions;
+- explicit review/edit/save boundary.
 
-This should not replace the Code Auditor screenshot; it is supporting evidence.
+**Caption**
 
----
-
-## Optional screenshot 6 — Guardian / human reviewer routing concept
-
-**Suggested filename:** vibeguard-reviewer-routing.png
-
-This can be visually attractive, but it needs a very explicit caption:
-
-> Experimental reviewer-routing UI. Marketplace, reputation and billing are product concepts rather than production subsystems.
-
-I would **not** use this as one of the first three screenshots because the human-review marketplace is more speculative than the code-audit/debug workflow.
+> CV and repository evidence can propose technical skills, but only the Owner's saved profile participates in deterministic capability matching.
 
 ---
 
-## Screens I would avoid
+## Optional 5 — module impact direction
 
-Do not spend portfolio space on:
+The architecture diagram is already stored in the portfolio:
 
-- login/auth modal;
-- empty states;
-- generic navigation;
-- configuration screens;
-- mock-heavy marketplace screens without a prototype disclaimer;
-- screenshots dominated by placeholder profiles or fake metrics;
-- a screen where the AI result is only a block of prose.
+- assets/vibeguard/module-impact-signals.svg
 
-Those screens prove very little.
+Use it when explaining the next evolution beyond path-only impact.
+
+Be explicit that routes, symbols, domain state, events and dependency signals are the **designed extension seam**, not all fully implemented detectors today.
 
 ---
 
-## Recommended order in the case study
+## Screens to retire from the hero narrative
 
-If using three screenshots:
+Do not lead with the older:
 
-1. **Code Auditor** — “Here is the problem being inspected.”
-2. **Human Debug Diff** — “Here is the escalation and resolution loop.”
-3. **PR Review Board** — “Here is how the idea connects back to normal software delivery.”
+- Code Auditor;
+- debug-ticket marketplace;
+- Guardian/reviewer marketplace;
+- generic PR review board;
+- empty dashboard.
 
-That creates a coherent story:
+They are useful only if explaining the product pivot.
+
+The new story is:
 
 ~~~text
-inspect
-  ↓
-verify
-  ↓
-escalate
-  ↓
-patch/review
-  ↓
-delivery boundary
+project model
+   ↓
+capability ownership
+   ↓
+real PR impact
+   ↓
+Owner review
+   ↓
+durable GitHub decision
 ~~~
 
 ---
 
 ## Screenshot hygiene
 
-Before capturing:
+Before capture:
 
-- use a public/sample repository or code you are comfortable publishing;
-- remove GitHub tokens, e-mails and private repository names;
-- make sure no browser password-manager overlays are visible;
-- avoid exposing Gemini/API configuration;
-- use one consistent browser size for all desktop screenshots;
-- crop out irrelevant browser chrome when possible;
-- do not fake production claims — if a surface is conceptual, label it as conceptual.
+- use repositories and PRs safe to show publicly;
+- hide e-mail addresses, installation ids and private repository names where appropriate;
+- never expose OAuth/App/OpenAI credentials;
+- keep the same browser size across screenshots;
+- prefer real state over mock metrics;
+- show one coherent flow rather than many unrelated tabs.
 
-A 1440×900-ish desktop viewport should work well for the current layout.
+Recommended desktop viewport: roughly 1440×900.
 
----
-
-## Portfolio image paths
-
-When the screenshots are ready, store them under:
+Store images under:
 
 CASE_STUDIES/assets/vibeguard/
-
-with:
-
-- vibeguard-code-auditor.png
-- vibeguard-human-debug-diff.png
-- vibeguard-pr-review-board.png
-- optional vibeguard-debug-board.png
-- optional vibeguard-reviewer-routing.png
-
-Then embed only the three strongest images in VIBEGUARD.md; leave the rest available for application-specific links or later portfolio expansion.
