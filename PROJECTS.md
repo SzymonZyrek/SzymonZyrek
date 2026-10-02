@@ -23,7 +23,8 @@ Related map in the R&D account:
 https://github.com/ateshgahofmine/HackaTeam/blob/main/PROJECTS.md
 
 ### VibeGuard
-**Status:** active private side project / real GitHub dogfood
+**Repository:** https://github.com/ateshgahofmine/VibeGuard  
+**Status:** active public prototype / real GitHub dogfood
 
 A GitHub-native technical-ownership control plane for AI-heavy software development. VibeGuard models product capabilities, matches them to explicit Owner skills, resolves PR impact, routes capability-scoped human decisions and writes durable evidence back to GitHub.
 
@@ -31,7 +32,7 @@ LLMs are used at bounded onboarding boundaries to propose capabilities and Owner
 
 See the sanitized [VibeGuard case study](CASE_STUDIES/VIBEGUARD.md) and [current evidence/screenshot guide](CASE_STUDIES/VIBEGUARD_SCREENSHOTS.md).
 
-The repository remains private while the product direction is still changing.
+The repository is public; the case study remains the shorter narrative entrypoint for the product and architecture.
 
 ### github_manager
 **Repository:** https://github.com/SzymonZyrek/github_manager
@@ -77,7 +78,7 @@ A separate account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, cur
 - **Agent-Native Engineering Runtime — Draft Specification** — larger formal runtime/specification exploration; currently private.
 - **Local Coding Agent** — local llama.cpp coding-agent loop; currently private.
 - **AI Worker** — controlled Task/Action execution and authorization experiment; currently private.
-- **VibeGuard** — GitHub-native capability ownership / review control plane; currently private; [public case study](CASE_STUDIES/VIBEGUARD.md).
+- **[VibeGuard](https://github.com/ateshgahofmine/VibeGuard)** — GitHub-native capability ownership / review control plane; [public case study](CASE_STUDIES/VIBEGUARD.md).
 - **[CodexProject](https://github.com/ateshgahofmine/CodexProject)** and **[Codex2](https://github.com/ateshgahofmine/Codex2)** — historical documentation-driven predecessors.
 
 The important part of this collection is that the projects are allowed to disagree. Hacka, for example, deliberately tries to delete custom infrastructure whenever ordinary GitHub primitives already solve the problem.
