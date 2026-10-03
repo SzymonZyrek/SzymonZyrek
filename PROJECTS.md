@@ -19,6 +19,18 @@ The project is my strongest example of end-to-end ownership: requirements, busin
 
 The [closing synthesis slide](CASE_STUDIES/assets/stynk/slides/stynk_case_study_summary.png) compresses the whole case into one visual.
 
+### RepoGraph
+**Repository:** https://github.com/SzymonZyrek/RepoGraph  
+**Status:** active public R&D / contract-first implementation
+
+A small, inspectable dependency-intelligence graph for Git repositories. RepoGraph turns an exact Git revision into deterministic facts about files, modules, symbols, contracts and their relationships, with provenance and bounded traversal rather than opaque whole-repository "understanding".
+
+The architectural reason for extracting it is more interesting than the graph itself: VibeGuard and HackaTeam both need repository intelligence, but neither should own a private second implementation of dependency extraction, reverse traversal, cache invalidation or causal "why did this match?" logic.
+
+RepoGraph is therefore intentionally **evidence infrastructure, not a control plane**. Git stays authoritative; graph state is derived and disposable; product policy, ownership and task selection remain with consumers.
+
+See the [repository](https://github.com/SzymonZyrek/RepoGraph), [architecture](https://github.com/SzymonZyrek/RepoGraph/blob/main/docs/architecture.md) and [consumer boundaries](https://github.com/SzymonZyrek/RepoGraph/blob/main/docs/consumers.md).
+
 ### HackaTeam
 **Repository:** https://github.com/ateshgahofmine/HackaTeam  
 **Status:** active R&D
@@ -29,15 +41,18 @@ Related map in the R&D account:
 https://github.com/ateshgahofmine/HackaTeam/blob/main/PROJECTS.md
 
 ### VibeGuard
-**Status:** active private R&D / fresh Tech Owner PoC
+**Repository:** https://github.com/ateshgahofmine/VibeGuard  
+**Status:** active public R&D / working product prototype
 
 VibeGuard started as a deliberately fast human-in-the-loop code-review/debugging experiment and evolved toward a broader question: how do you preserve real technical ownership when founders and agents can generate implementation faster than they can reliably understand the resulting system?
 
-The current direction explores a **Tech Owner control loop**: explicit project policy, automated evidence, an Owner Inbox for material boundary crossings, and recorded human decisions around architecture, security, irreversible data choices and technical debt.
+The current implementation has moved beyond the earlier mock Tech Owner slice into real GitHub identity/App integration, repository registration, Founder capability discovery/confirmation, deterministic capability impact, persisted Owner profiles and ownership lifecycle, capability-scoped review evidence and configurable per-user analysis backends.
 
-See the **[VibeGuard case study](CASE_STUDIES/VIBEGUARD.md)**, **[visual tour](CASE_STUDIES/vibeguard/visual-tour.md)**, [discovery/evolution](CASE_STUDIES/vibeguard/discovery.md), [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md), [prototype boundary](CASE_STUDIES/vibeguard/prototype.md) and [external-evidence notes](CASE_STUDIES/vibeguard/evidence.md).
+The next architectural step is deliberately compositional rather than monolithic: **RepoGraph** supplies pinned-revision repository evidence; **VibeGuard** owns Founder/Owner policy, ownership and decisions; an execution provider such as **HackaTeam** can receive bounded GitHub-native work requests and return normal PR/check evidence.
 
-The implementation repository remains private while the product direction is still being explored. The portfolio explicitly distinguishes implemented prototype capabilities from the newer simulated Tech Owner interaction slice.
+See the **[public repository](https://github.com/ateshgahofmine/VibeGuard)**, **[VibeGuard case study](CASE_STUDIES/VIBEGUARD.md)**, **[visual tour](CASE_STUDIES/vibeguard/visual-tour.md)**, [discovery/evolution](CASE_STUDIES/vibeguard/discovery.md), [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md), [prototype boundary](CASE_STUDIES/vibeguard/prototype.md) and [external-evidence notes](CASE_STUDIES/vibeguard/evidence.md).
+
+The portfolio distinguishes shipped prototype behavior from the still-open RepoGraph/execution-provider integration work rather than presenting the whole control loop as finished.
 
 ### github_manager
 **Repository:** https://github.com/SzymonZyrek/github_manager
@@ -64,12 +79,13 @@ A separate account, **[ateshgahofmine](https://github.com/ateshgahofmine)**, cur
 
 ### Active / relevant
 
-- **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** — current primary agentic-development experiment.
+- **[RepoGraph](https://github.com/SzymonZyrek/RepoGraph)** — shared Git-revision dependency-intelligence layer for VibeGuard/HackaTeam; public and currently contract-first.
+- **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** — current primary agentic-development/execution experiment.
 - **Agent-Native Engineering System** — explicit goals/actions/evidence/validation; currently private.
 - **Agent-Native Engineering Runtime — Draft Specification** — larger formal runtime/specification exploration; currently private.
 - **Local Coding Agent** — local llama.cpp coding-agent loop; currently private.
 - **AI Worker** — controlled Task/Action execution and authorization experiment; currently private.
-- **VibeGuard** — Tech Owner / human technical-ownership experiment around AI-built software; currently private; [public case study](CASE_STUDIES/VIBEGUARD.md).
+- **[VibeGuard](https://github.com/ateshgahofmine/VibeGuard)** — public Tech Owner / technology-control-plane experiment around AI-built software; [portfolio case study](CASE_STUDIES/VIBEGUARD.md).
 - **[CodexProject](https://github.com/ateshgahofmine/CodexProject)** and **[Codex2](https://github.com/ateshgahofmine/Codex2)** — historical documentation-driven predecessors.
 
 These experiments are allowed to disagree with each other. Part of the fun is trying an idea, finding where it becomes awkward, and deleting machinery when ordinary tools already solve the problem better.

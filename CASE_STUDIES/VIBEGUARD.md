@@ -1,9 +1,9 @@
 # VibeGuard — scaling agentic software engineering without losing technical ownership
 
-> **Source:** private R&D repository / public sanitized case study  
-> **Status:** fresh product-concept PoC built on top of an earlier prototype  
-> **Role:** product concept · technical direction · full-stack prototyping · workflow design  
-> **Focus:** human technical ownership, AI-assisted delivery, architecture/security sanity, evidence and escalation
+> **Source:** [public VibeGuard repository](https://github.com/ateshgahofmine/VibeGuard) + this portfolio case study  
+> **Status:** active product/R&D prototype; ownership/review loop implemented, RepoGraph + execution-provider loop under active delivery  
+> **Role:** product concept · technical direction · full-stack implementation · workflow / trust-boundary design  
+> **Focus:** human technical ownership, repository intelligence, capability-scoped impact/review, AI-assisted delivery and evidence
 
 VibeGuard started from a simple observation: AI can make software implementation dramatically more accessible, but it does not automatically give the person driving the prompts the engineering judgement needed to understand what the system is becoming.
 
@@ -46,13 +46,48 @@ This is still a hypothesis, not validated market evidence. But it is not a detac
 | **Problem** | Vibecoding lowers the cost of producing software faster than it lowers the cost of understanding and owning it. |
 | **Initial idea** | Connect vibecoders with senior developers who can inspect, debug and rescue AI-generated code. |
 | **Discovery** | The valuable human role is not merely "fix the broken code after the fire"; it is ongoing ownership of the technical decisions that automation should not make alone. |
-| **Current PoC** | Project Policy → automated evidence → Owner Inbox → Decision Workspace → recorded owner decision. |
+| **Current implementation** | GitHub identity/App → registered repositories → Founder-confirmed capabilities → persisted Owner lifecycle → capability-scoped impact/review → durable GitHub evidence. |
 | **Human value** | Sanity, anti-hallucination, architecture, security, technical debt control and confidence for the founder and their stakeholders. |
 | **Business case** | Agentic coding can make far more software economically viable, but scaling that implementation safely requires reorganizing work around delegated execution, selective human authority and visible technical accountability. |
 | **External evidence** | Ecosystem data supports the premise — high AI adoption and fast growth coexist with persistent trust/security concerns and reluctance to delegate consequential work. It does **not** validate VibeGuard demand. |
-| **Prototype boundary** | The current Tech Owner slice is deliberately demo-grade: mock decision packets, local/in-memory state and no claim of production governance infrastructure. |
+| **Current boundary** | The ownership/review prototype is real; RepoGraph-backed dependency intelligence and VibeGuard → execution-provider handoff are public, issue-tracked architecture still being implemented. |
 
 **Recurring pattern:** let AI carry more implementation bandwidth, but move human attention upward toward decisions whose cost cannot be reduced to "did the tests pass?".
+
+### Where RepoGraph and HackaTeam fit now
+
+The current architecture is becoming a closed loop with deliberately separate responsibilities:
+
+```text
+GitHub
+  │ code / refs / issues / PRs / checks
+  ▼
+RepoGraph
+  │ deterministic pinned-revision facts,
+  │ dependency paths, affected slices, provenance
+  ▼
+VibeGuard
+  │ Founder + Owner control plane:
+  │ capabilities / ownership / impact / decisions / policy
+  ▼
+GitHub-native work request
+  ▼
+HackaTeam (first intended execution provider)
+  │ implementation / validation / PR / evidence
+  ▼
+GitHub
+```
+
+The split is intentional:
+
+- **RepoGraph** answers bounded repository questions and explains *why* an impact path exists. It is evidence, not authority.
+- **VibeGuard** decides what those facts mean in the product domain: which capability is affected, who owns it, whether human review is required and whether work should be delegated.
+- **HackaTeam** can execute accepted work and return normal GitHub evidence without becoming VibeGuard's hidden backend or scheduler.
+- **GitHub** remains the durable coordination surface between all three.
+
+This is not presented as a finished end-to-end product today. The RepoGraph consumer proof, VibeGuard adapter and HackaTeam work-request integration are still open delivery items; keeping that boundary explicit is part of the design.
+
+Useful live anchors: [RepoGraph consumer contract](https://github.com/SzymonZyrek/RepoGraph/blob/main/docs/consumers.md), [VibeGuard control-plane direction](https://github.com/ateshgahofmine/VibeGuard/issues/186), [VibeGuard RepoGraph adapter](https://github.com/ateshgahofmine/VibeGuard/issues/182), [HackaTeam RepoGraph integration](https://github.com/ateshgahofmine/HackaTeam/issues/54) and [GitHub-native execution handoff](https://github.com/ateshgahofmine/HackaTeam/issues/55).
 
 ![The responsibility gap in AI-built software](assets/vibeguard/diagrams/01-responsibility-gap.svg)
 
@@ -231,9 +266,9 @@ It is an **attention-compression layer** that answers:
 
 [Tech Owner model →](vibeguard/ownership-model.md)
 
-### 4. The PoC is intentionally smaller than the idea
+### 4. The first Tech Owner interaction slice was intentionally smaller than the idea
 
-The fresh Tech Owner slice has only three main surfaces:
+An earlier Tech Owner interaction slice had only three main surfaces:
 
 - **Project Policy** — architectural invariants, security boundaries and classes of change that always require human approval;
 - **Owner Inbox** — only material escalations, rather than every PR or every model observation;
@@ -398,7 +433,7 @@ The existing prototype is a React + TypeScript / Express application with:
 - architecture/guardrail authoring experiments;
 - Docker-based development/test/production-style configurations.
 
-The newer Tech Owner control-loop slice deliberately reuses that prototype rather than pretending the UI needed a clean rewrite first.
+That Tech Owner control-loop slice deliberately reused the prototype rather than pretending the UI needed a clean rewrite first.
 
 That makes the relationship clear:
 
@@ -484,14 +519,19 @@ It is to spend engineering judgement where it is actually scarce.
 
 ## Source and claim boundary
 
-The VibeGuard implementation repository is private while the concept is still evolving.
+The VibeGuard implementation repository is now public: **[ateshgahofmine/VibeGuard](https://github.com/ateshgahofmine/VibeGuard)**.
 
-This case study deliberately separates three things:
+The project has moved beyond the original demo interaction slice. The current repository contains real GitHub identity/App integration, project registration, Founder capability confirmation, persisted Owner profiles and lifecycle, deterministic capability-scoped impact/review evidence and configurable user-owned analysis backends.
 
-1. **Implemented prototype capabilities** — Git/repository inspection, AI audit, structured findings, diff/review interaction, debug/PR flows and supporting prototype infrastructure.
-2. **Fresh Tech Owner PoC** — a demo interaction slice using mock decision packets and in-memory/session state.
-3. **Product direction** — durable decision memory, policy propagation, real event ingestion, ongoing ownership/certification workflows and stakeholder-facing trust signals.
+The next system step is still explicitly **work in progress**:
 
-The portfolio does not present category 2 or 3 as production functionality.
+1. **RepoGraph** is currently contract-first shared repository-intelligence infrastructure; its consumer proof and releases are still being delivered.
+2. **VibeGuard** has an open adapter/control-plane track for consuming RepoGraph evidence without moving ownership or policy into the graph.
+3. **HackaTeam** has open integration work for RepoGraph-backed context and a GitHub-native execution-provider handoff.
 
-The prototype has already done its most important job: it made the problem concrete enough to change the model.
+So the portfolio makes two claims, not one inflated claim:
+
+- the VibeGuard ownership/review prototype is materially implemented and inspectable in public source;
+- the larger RepoGraph → VibeGuard → execution-provider loop is the current architecture and delivery direction, not yet a fully completed product.
+
+That distinction is useful evidence in itself: the design is trying to preserve exact authority, provenance and source-of-truth boundaries even while the surrounding agentic workflow is still changing quickly.
