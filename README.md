@@ -16,7 +16,8 @@ A recurring habit is moving up and down abstraction layers until the system stop
 | If you want to see… | Best entry point |
 |---|---|
 | **End-to-end product and system ownership** | **[Stynk CRM case study](CASE_STUDIES/STYNK_CRM.md)** · [visual tour](CASE_STUDIES/stynk/visual-tour.md) · [discovery/evolution](CASE_STUDIES/stynk/discovery.md) |
-| **My current agentic-engineering product thesis** | **[VibeGuard case study](CASE_STUDIES/VIBEGUARD.md)** · [visual tour](CASE_STUDIES/vibeguard/visual-tour.md) · [evidence](CASE_STUDIES/vibeguard/evidence.md) |
+| **My current agentic-engineering product thesis** | **[VibeGuard case study](CASE_STUDIES/VIBEGUARD.md)** · [public source](https://github.com/ateshgahofmine/VibeGuard) · [visual tour](CASE_STUDIES/vibeguard/visual-tour.md) |
+| **How the current agentic R&D fits together** | **[RepoGraph](https://github.com/SzymonZyrek/RepoGraph)** → VibeGuard control plane → **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** execution loop |
 | **What I built professionally when the code is private** | **[Commercial engineering history](CAREER.md)** |
 | **The wider map of active and historical projects** | **[PROJECTS.md](PROJECTS.md)** |
 | **Why I keep rebuilding abstractions for fun** | **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)** — including the old game-engine, event-system, build-tool and runtime experiments |
@@ -41,11 +42,44 @@ It explores how AI-heavy software delivery can scale without turning senior engi
 
 **[Read the case study →](CASE_STUDIES/VIBEGUARD.md)** · **[Open the visual tour →](CASE_STUDIES/vibeguard/visual-tour.md)** · [Tech Owner model](CASE_STUDIES/vibeguard/ownership-model.md) · [evidence](CASE_STUDIES/vibeguard/evidence.md)
 
+## Current agentic system — control, intelligence and execution
+
+The newer R&D is converging into three deliberately separate layers rather than one oversized "agent platform":
+
+```text
+GitHub
+  │ durable repositories / refs / issues / PRs / checks
+  ▼
+RepoGraph
+  │ pinned-revision dependency intelligence + provenance
+  ▼
+VibeGuard
+  │ Founder / Owner control plane: capabilities, ownership,
+  │ impact, decisions, policy and execution handoff
+  ▼
+GitHub-native work request
+  ▼
+HackaTeam (first execution provider)
+  │ implementation / tests / PR / evidence
+  ▼
+GitHub
+```
+
+**[RepoGraph](https://github.com/SzymonZyrek/RepoGraph)** is the headless repository-intelligence layer: deterministic graph facts, dependency paths, affected slices and provenance derived from an exact Git revision. It deliberately does not own product policy, task orchestration or human authority.
+
+**[VibeGuard](https://github.com/ateshgahofmine/VibeGuard)** stays above that as the product/control plane for Founders and technical Owners: confirmed capabilities, ownership, impact interpretation, review routing and human decisions.
+
+**[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** stays below it as an execution provider: scope accepted work, implement it, run validation and return ordinary GitHub commits, PRs and evidence.
+
+The separation is the point. Repository understanding can improve without becoming a policy engine; governance can delegate implementation without becoming an agent runtime; execution can stay replaceable. The cross-product loop is **under active delivery rather than presented as fully shipped**: RepoGraph's consumer proof, VibeGuard's adapter and HackaTeam's GitHub-native handoff are tracked in public issues.
+
 ## Current R&D and public tools
 
 | Project | What it explores |
 |---|---|
-| **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting agentic software-development loop: workflow architecture, evaluation, local/hosted execution and evidence-driven coordination |
+| **[RepoGraph](https://github.com/SzymonZyrek/RepoGraph)** | Inspectable dependency-intelligence graph for exact Git revisions; shared evidence substrate for impact analysis, bounded context and causal explanations |
+| **[VibeGuard](https://github.com/ateshgahofmine/VibeGuard)** | Human technical-ownership / technology-control-plane experiment over GitHub: capabilities, Owner lifecycle, impact, review and policy |
+| **[HackaTeam](https://github.com/ateshgahofmine/HackaTeam)** | GitHub-native, self-hosting execution loop: task scoping, implementation, evaluation, local/hosted execution and evidence-driven coordination |
 | **[github_manager](https://github.com/SzymonZyrek/github_manager)** | Narrowly scoped MCP server for explicit GitHub administration capabilities; capability boundaries, TypeScript, Docker and CI |
 | **[MLFramework](https://github.com/SzymonZyrek/MLFramework)** | Model-backend abstraction and reusable training/workflow infrastructure |
 | **[neural-networks-labs](https://github.com/SzymonZyrek/neural-networks-labs)** | Hands-on ML/NN experiments from gradient descent and backpropagation through computer vision and transformers |
@@ -71,7 +105,7 @@ end-to-end product ownership in Stynk
         ↓
 ML / model lifecycle / local agents
         ↓
-HackaTeam + VibeGuard
+RepoGraph → VibeGuard ↔ HackaTeam
 ```
 
 The old **[Game-10](https://github.com/SzymonZyrek/Game-10)** thread matters here. Coming from Spring/Angular-style web development, writing a realtime C++/OpenGL engine made it very obvious that familiar object-heavy patterns are not universal truths: memory layout, predictable work and a frame budget can completely change what “good architecture” means. [Read the archaeology context →](HOBBY_PROJECTS.md#game-10-realtime-engine-and-rendering-sandbox)
@@ -99,7 +133,7 @@ I did not arrive at AI through chat interfaces alone.
 
 **[MLFramework](https://github.com/SzymonZyrek/MLFramework)** moves one layer outward into reusable training infrastructure and model/workflow orchestration.
 
-That progression continued through local models and custom agent loops into documentation-driven coding workflows, **HackaTeam** and the current **VibeGuard** Tech Owner experiment.
+That progression continued through local models and custom agent loops into documentation-driven coding workflows, **HackaTeam**, the shared **RepoGraph** repository-intelligence layer and the current **VibeGuard** technical-ownership/control-plane experiment.
 
 ## Engineering archaeology
 
