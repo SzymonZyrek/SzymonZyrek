@@ -4,7 +4,39 @@
 
 This is the shortest visual path through the idea.
 
-VibeGuard is still R&D, so the strongest artifacts today are the **problem model, evidence, control loop and claim boundary** rather than polished product screenshots.
+VibeGuard remains R&D, with an implemented authenticated ownership/review workflow. The tour starts with actual application captures, then explains the problem model, evidence, control loop and claim boundary.
+
+## The working product — 2026-10-04
+
+Actual screenshots from an authenticated local workspace with real GitHub project and PR context. These show product behavior, not market validation or a production-readiness claim.
+
+### Review the capability, with the exact PR context
+
+A real PR diff is grouped into the Owner’s capability scope. The UI explains why the work is theirs and binds the decision to the PR head and that capability.
+
+![Review the capability, with the exact PR context](../assets/vibeguard/screenshots/2026-10-04/12-scoped-review-portfolio.jpg)
+
+### Make technical responsibility visible
+
+Discover shows required and matched skills together with current ownership load. Eligibility is evidence for staffing; responsibility still requires an explicit offer and acceptance.
+
+![Make technical responsibility visible](../assets/vibeguard/screenshots/2026-10-04/04-discover-ownership.jpg)
+
+### Explain the match instead of inventing a score
+
+Founder coverage exposes active Owners and staffing gaps. “Why this match?” shows skill requirements, qualification, capacity and deterministic candidate ordering.
+
+![Explain the match instead of inventing a score](../assets/vibeguard/screenshots/2026-10-04/09-owner-matching-detail.jpg)
+
+### Keep analysis configurable and authority human
+
+Named OpenAI and Gemini backends can serve the two inference operations independently. Model suggestions remain advisory; human confirmation and deterministic runtime rules retain authority.
+
+![Keep analysis configurable and authority human](../assets/vibeguard/screenshots/2026-10-04/07-analysis-backends.jpg)
+
+[Complete application screenshot gallery →](https://github.com/ateshgahofmine/VibeGuard/blob/main/docs/ux/screenshots/README.md)
+
+---
 
 ## 1. The responsibility gap
 
@@ -152,9 +184,9 @@ The stakeholder-facing version is simpler:
 
 ![Prototype evidence vs product direction](../assets/vibeguard/diagrams/05-prototype-product-boundary.svg)
 
-The private prototype already contains real repository inspection, AI audit, structured findings, diffs, debug/PR flows and guardrail experiments.
+The earlier prototype explored repository inspection, AI audit, structured findings, diffs, debug/PR flows and guardrails. The current implementation has moved to GitHub identity/App integration, confirmed capabilities, persisted ownership lifecycle and capability-scoped review.
 
-The newer Tech Owner slice is deliberately smaller:
+The earlier Tech Owner interaction slice was deliberately smaller:
 
 ~~~text
 Project Policy
@@ -164,7 +196,7 @@ Owner Inbox
 Decision Workspace
 ~~~
 
-Its decision packets are simulated. Durable policy, decision memory, event ingestion, authorization and auditability remain product work.
+Those earlier decision packets were simulated. The current workspace captures above show the later authenticated implementation: accepted responsibility, deterministic routing and real PR review context. Broader policy automation and the execution-provider loop remain separate product work.
 
 [Prototype & claim boundary →](prototype.md)
 

@@ -39,6 +39,36 @@ This is still a hypothesis, not validated market evidence. But it is not a detac
 
 [Why I trust the direction despite limited evidence →](vibeguard/discovery.md#why-i-take-this-seriously-despite-not-having-market-proof-yet)
 
+## The working product — October 2026
+
+These four captures show the authenticated prototype with real GitHub project and pull-request context on **2026-10-04**. They document the implemented ownership/review workflow; they do not establish market demand, production readiness or completion of the larger execution-provider loop.
+
+### Review the capability, with the exact PR context
+
+A real PR diff is grouped into the Owner’s capability scope. The UI explains why the work is theirs and binds the decision to the PR head and that capability.
+
+![Review the capability, with the exact PR context](assets/vibeguard/screenshots/2026-10-04/12-scoped-review-portfolio.jpg)
+
+### Make technical responsibility visible
+
+Discover shows required and matched skills together with current ownership load. Eligibility is evidence for staffing; responsibility still requires an explicit offer and acceptance.
+
+![Make technical responsibility visible](assets/vibeguard/screenshots/2026-10-04/04-discover-ownership.jpg)
+
+### Explain the match instead of inventing a score
+
+Founder coverage exposes active Owners and staffing gaps. “Why this match?” shows skill requirements, qualification, capacity and deterministic candidate ordering.
+
+![Explain the match instead of inventing a score](assets/vibeguard/screenshots/2026-10-04/09-owner-matching-detail.jpg)
+
+### Keep analysis configurable and authority human
+
+Named OpenAI and Gemini backends can serve the two inference operations independently. Model suggestions remain advisory; human confirmation and deterministic runtime rules retain authority.
+
+![Keep analysis configurable and authority human](assets/vibeguard/screenshots/2026-10-04/07-analysis-backends.jpg)
+
+[Complete application screenshot gallery in the VibeGuard documentation →](https://github.com/ateshgahofmine/VibeGuard/blob/main/docs/ux/screenshots/README.md)
+
 ## In 30 seconds
 
 | | |
