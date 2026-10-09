@@ -45,16 +45,23 @@ jobs:
       - name: Build and verify CV
         run: bash cv/build.sh
 
-      - name: Publish generated role-targeted PDFs
+      - name: Upload generated role-targeted PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: role-targeted-cvs
+          retention-days: 90
+          if-no-files-found: error
+          path: |
+            Szymon_Zyrek_CV_Senior.pdf
+            Szymon_Zyrek_CV_Agentic.pdf
+
+      - name: Publish stable CV downloads from main
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          # Preserve the existing public CV PDF exactly as committed.
-          git add Szymon_Zyrek_CV_Senior.pdf Szymon_Zyrek_CV_Agentic.pdf
-          if git diff --cached --quiet; then
-            echo "Role-targeted PDFs already up to date"
-            exit 0
+          # Release assets are allowed without pushing generated binaries to protected branches.
+          if ! gh release view cv-latest >/dev/null 2>&1; then
+            gh release create cv-latest --target "$GITHUB_SHA" --title "CV — current targeted variants" --notes "Generated from checked-in HTML/CSS with WeasyPrint and Ghostscript. The original profile CV is unchanged."
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Generate role-targeted CV PDFs"
-          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
+          gh release upload cv-latest Szymon_Zyrek_CV_Senior.pdf Szymon_Zyrek_CV_Agentic.pdf --clobber
