@@ -79,8 +79,10 @@ Two **additional**, reverse-chronological, recruiter-oriented sources live along
 Both sources use `styles.css` plus additive `variants.css`, Inter fonts,
 WeasyPrint, Ghostscript optimization, poppler page-count checks and searchable-text
 smoke tests. `bash cv/build.sh` renders and validates all three PDFs, each exactly
-two A4 pages. The GitHub Actions workflow publishes the two **new** PDFs and deliberately
-does not rewrite the original committed PDF.
+two A4 pages. The GitHub Actions workflow publishes the two **new** PDFs as 90-day CI artifacts
+on every source update. After merge to `main`, it also publishes stable assets on
+the `cv-latest` GitHub Release (without committing binaries to a protected branch).
+The existing root PDF is never rewritten in GitHub by this workflow.
 
 No unsupported experience is introduced: R&D work is explicitly identified,
 and the production Stynk project is kept distinct from agent-platform experiments.
