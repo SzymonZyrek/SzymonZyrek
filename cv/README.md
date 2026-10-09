@@ -63,3 +63,24 @@ README.md
           ↑
   HTML + CSS source
 ```
+
+## Role-targeted variants
+
+The original `cv/Szymon_Zyrek_CV.html`, `cv/styles.css` and root-level
+`Szymon_Zyrek_CV.pdf` stay the canonical architecture/storytelling CV.
+
+Two **additional**, reverse-chronological, recruiter-oriented sources live alongside it:
+
+| Source | Generated PDF | Use |
+| --- | --- | --- |
+| `Szymon_Zyrek_CV_Senior.html` | `../Szymon_Zyrek_CV_Senior.pdf` | Senior Java / Angular / Full-stack / Backend |
+| `Szymon_Zyrek_CV_Agentic.html` | `../Szymon_Zyrek_CV_Agentic.pdf` | Applied AI platform / coding-agent tooling |
+
+Both sources use `styles.css` plus additive `variants.css`, Inter fonts,
+WeasyPrint, Ghostscript optimization, poppler page-count checks and searchable-text
+smoke tests. `bash cv/build.sh` renders and validates all three PDFs, each exactly
+two A4 pages. The GitHub Actions workflow publishes the two **new** PDFs and deliberately
+does not rewrite the original committed PDF.
+
+No unsupported experience is introduced: R&D work is explicitly identified,
+and the production Stynk project is kept distinct from agent-platform experiments.

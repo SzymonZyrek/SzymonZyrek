@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - "cv/Szymon_Zyrek_CV.html"
+      - "cv/Szymon_Zyrek_CV_Senior.html"
+      - "cv/Szymon_Zyrek_CV_Agentic.html"
+      - "cv/variants.css"
+      - "cv/build-variants.sh"
       - "cv/styles.css"
       - "cv/build.sh"
       - "cv/requirements.txt"
@@ -41,19 +45,16 @@ jobs:
       - name: Build and verify CV
         run: bash cv/build.sh
 
-      - name: Publish generated PDF
+      - name: Publish generated role-targeted PDFs
         run: |
-          if git diff --quiet -- Szymon_Zyrek_CV.pdf; then
-            echo "PDF already up to date"
+          # Preserve the existing public CV PDF exactly as committed.
+          git add Szymon_Zyrek_CV_Senior.pdf Szymon_Zyrek_CV_Agentic.pdf
+          if git diff --cached --quiet; then
+            echo "Role-targeted PDFs already up to date"
             exit 0
           fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Szymon_Zyrek_CV.pdf
-          git commit -m "Regenerate CV PDF"
-
-          # The branch may have moved because of a documentation-only commit
-          # while rendering. Rebase the generated artifact instead of racing it.
-          git pull --rebase origin "$GITHUB_REF_NAME"
+          git commit -m "Generate role-targeted CV PDFs"
+          git pull --rebase --autostash origin "$GITHUB_REF_NAME"
           git push origin "HEAD:$GITHUB_REF_NAME"

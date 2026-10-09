@@ -2,7 +2,7 @@
 
 **Software / Systems Architect · Senior Software Engineer**
 
-**[CV / Resume (PDF)](Szymon_Zyrek_CV.pdf)** · **[Commercial engineering history](CAREER.md)** · **[Project map](PROJECTS.md)** · **[Engineering archaeology](HOBBY_PROJECTS.md)**  
+**[CV / Resume (PDF)](Szymon_Zyrek_CV.pdf)** · [Senior Full-stack / Backend CV](Szymon_Zyrek_CV_Senior.pdf) · [AI Platform / Agentic CV](Szymon_Zyrek_CV_Agentic.pdf) · **[Commercial engineering history](CAREER.md)** · **[Project map](PROJECTS.md)** · **[Engineering archaeology](HOBBY_PROJECTS.md)**  
 **Email:** [stynkdev@gmail.com](mailto:stynkdev@gmail.com) · [szyrek@stynk.eu](mailto:szyrek@stynk.eu)
 
 I build systems where product, domain, architecture, implementation and operations remain connected.
