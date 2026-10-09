@@ -45,6 +45,17 @@ jobs:
       - name: Build and verify CV
         run: bash cv/build.sh
 
+      # One-time bridge to place the generated binaries in this protected PR via
+      # the authorized GitHub connector. Remove after the initial import.
+      - name: Export generated PDF snapshots for PR import
+        run: |
+          for variant in Senior Agentic; do
+            echo "CV_BASE64_BEGIN_${variant}"
+            base64 -w0 "Szymon_Zyrek_CV_${variant}.pdf"
+            echo
+            echo "CV_BASE64_END_${variant}"
+          done
+
       - name: Upload generated role-targeted PDFs
         uses: actions/upload-artifact@v4
         with:
