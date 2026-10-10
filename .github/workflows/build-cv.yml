@@ -4,6 +4,10 @@ on:
   push:
     paths:
       - "cv/Szymon_Zyrek_CV.html"
+      - "cv/Szymon_Zyrek_CV_Senior.html"
+      - "cv/Szymon_Zyrek_CV_Agentic.html"
+      - "cv/variants.css"
+      - "cv/build-variants.sh"
       - "cv/styles.css"
       - "cv/build.sh"
       - "cv/requirements.txt"
@@ -41,19 +45,23 @@ jobs:
       - name: Build and verify CV
         run: bash cv/build.sh
 
-      - name: Publish generated PDF
+      - name: Upload generated role-targeted PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: role-targeted-cvs
+          retention-days: 90
+          if-no-files-found: error
+          path: |
+            Szymon_Zyrek_CV_Senior.pdf
+            Szymon_Zyrek_CV_Agentic.pdf
+
+      - name: Publish stable CV downloads from main
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- Szymon_Zyrek_CV.pdf; then
-            echo "PDF already up to date"
-            exit 0
+          # Release assets are allowed without pushing generated binaries to protected branches.
+          if ! gh release view cv-latest >/dev/null 2>&1; then
+            gh release create cv-latest --target "$GITHUB_SHA" --title "CV — current targeted variants" --notes "Generated from checked-in HTML/CSS with WeasyPrint and Ghostscript. The original profile CV is unchanged."
           fi
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Szymon_Zyrek_CV.pdf
-          git commit -m "Regenerate CV PDF"
-
-          # The branch may have moved because of a documentation-only commit
-          # while rendering. Rebase the generated artifact instead of racing it.
-          git pull --rebase origin "$GITHUB_REF_NAME"
-          git push origin "HEAD:$GITHUB_REF_NAME"
+          gh release upload cv-latest Szymon_Zyrek_CV_Senior.pdf Szymon_Zyrek_CV_Agentic.pdf --clobber
