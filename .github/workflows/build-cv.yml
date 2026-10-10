@@ -45,6 +45,16 @@ jobs:
       - name: Build and verify CV
         run: bash cv/build.sh
 
+      - name: Export PDFs for checked-in binary refresh (temporary)
+        if: github.ref != 'refs/heads/main'
+        run: |
+          for variant in Senior Agentic; do
+            echo "CV_B64_START_${variant}"
+            base64 -w 0 "Szymon_Zyrek_CV_${variant}.pdf"
+            echo
+            echo "CV_B64_END_${variant}"
+          done
+
       - name: Upload generated role-targeted PDFs
         uses: actions/upload-artifact@v4
         with:

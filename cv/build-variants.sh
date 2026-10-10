@@ -22,11 +22,11 @@ for variant in Senior Agentic; do
   textfile="$(mktemp)"
   pdftotext "$output" "$textfile"
   if [[ "$variant" == "Senior" ]]; then
-    for needle in "Senior Full-stack" "Finastra" "Nordea" "Stynk"; do
+    for needle in "Senior Full-stack" "Finastra" "Nordea" "Stynk" "Kafka" "Spring Boot" "Oracle" "SQL Server" "Mockito" "Playwright"; do
       grep -qi "$needle" "$textfile" || { echo "Missing text: $needle" >&2; exit 1; }
     done
   else
-    for needle in "AI Platform" "RepoGraph" "VibeGuard" "HackaTeam" "Finastra"; do
+    for needle in "AI Platform" "RepoGraph" "VibeGuard" "HackaTeam" "Finastra" "Kafka" "Spring Boot" "Oracle"; do
       grep -qi "$needle" "$textfile" || { echo "Missing text: $needle" >&2; exit 1; }
     done
   fi
