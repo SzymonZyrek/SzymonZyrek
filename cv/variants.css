@@ -1,0 +1,42 @@
+/* Additive two-page resumes. The original cv/styles.css and CV HTML are untouched. */
+.resume .variant-page {padding:12.5mm 13mm 11.5mm; color:#18334d;}
+.resume .masthead {margin-bottom:2mm;}
+.resume .name {font-size:25pt;}
+.resume .roleline {font-size:11pt; color:#255c86; margin-top:1.9mm; letter-spacing:0;}
+.resume .contact {font-size:7pt; white-space:normal; line-height:1.35; margin-top:2.4mm;}
+.resume .subline {font-size:7.2pt; text-transform:uppercase; letter-spacing:.55px; color:#6f8092; font-weight:700; margin:2.4mm 0;}
+.resume .summary {background:#eff5f9; border-left:1.5mm solid #377fb8; padding:3.2mm 3.8mm; font-size:9.05pt; line-height:1.36; color:#344f67; margin:3.3mm 0 4mm;}
+.resume .summary strong {color:#173c5e;}
+.resume .resume-section {margin:3.3mm 0 0;}
+.resume .resume-section > h2 {font-family:InterDisplay,Inter,sans-serif; font-size:10.5pt; line-height:1.2; color:#1e486c; text-transform:uppercase; margin:0 0 2.3mm; padding-bottom:1.15mm; border-bottom:.6px solid #cbd9e4; letter-spacing:.1px;}
+.resume .skill-rows {display:grid; gap:1mm; font-size:8.1pt; line-height:1.32;}
+.resume .skill-rows > div {display:grid; grid-template-columns:31mm 1fr; gap:3mm;}
+.resume .skill-rows strong {color:#244e70; font-weight:700;}
+.resume .skill-rows span {color:#42586d;}
+.resume .experience {margin:0 0 3.3mm; padding-bottom:2.5mm; border-bottom:.45px solid #e2e8ee; break-inside:avoid;}
+.resume .experience:last-child {border-bottom:0; margin-bottom:0;}
+.resume .item-head {display:flex; justify-content:space-between; align-items:baseline; gap:3mm; margin-bottom:1.25mm;}
+.resume .item-title {font-family:InterDisplay,Inter,sans-serif; font-size:9.4pt; line-height:1.2; font-weight:700;}
+.resume .at {color:#55758d; font-weight:600;}
+.resume .item-dates {font-size:7.2pt; white-space:nowrap; color:#778d9e;}
+.resume .experience ul {padding-left:4.3mm; margin:0 0 1mm; list-style-type:disc;}
+.resume .experience li {font-size:8.45pt; color:#31475a; line-height:1.37; margin:0 0 .85mm;}
+.resume .experience li::marker {color:#4483ac;}
+.resume .stack {font-size:7.1pt; color:#557891; font-weight:600; margin-top:.6mm;}
+.resume .pills {display:flex; flex-wrap:wrap; gap:1.4mm;}
+.resume .pills span {padding:1.25mm 2.2mm; background:#e6f0f6; color:#305c7c; border-radius:1mm; font-size:7.45pt; font-weight:600;}
+.resume .project {padding:2.3mm 0 2.5mm; border-bottom:.5px solid #dce6ed; break-inside:avoid;}
+.resume .project:first-of-type {padding-top:.6mm;}
+.resume .project:last-child {border-bottom:0;}
+.resume .project .item-head {margin-bottom:1mm;}
+.resume .project .item-title a {color:#245f8e; border-bottom:.35px solid #a4bbca;}
+.resume .project-tag {font-size:6.8pt; text-transform:uppercase; color:#795d8f; font-weight:700;}
+.resume .project p {font-size:8.45pt; line-height:1.42; color:#344b62; margin:0;}
+.resume .highlights {display:grid; grid-template-columns:repeat(3,1fr); gap:3.8mm;}
+.resume .highlights div {background:#f3f7fa; padding:2.5mm;}
+.resume .highlights strong {font-size:8.5pt; color:#274e6b;}
+.resume .highlights p {font-size:8pt; line-height:1.36; margin:1.1mm 0 0; color:#466077;}
+.resume .closing p {margin:0 0 2.3mm; font-size:8.1pt; line-height:1.42;}
+.resume .closing a {color:#245f8e; text-decoration:underline;}
+.resume .resume-footer {position:absolute; left:13mm; right:13mm; bottom:6mm; display:flex; justify-content:space-between; color:#8498a8; font-size:7pt; border-top:.35px solid #dae4eb; padding-top:2mm;}
+.resume .compact {font-size:7.9pt;}

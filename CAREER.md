@@ -24,6 +24,8 @@ One substantial modernization effort was moving CMR persistence away from an obs
 
 This was not a clean-room rewrite. The challenge was to change a foundational persistence mechanism while the product still had to keep moving: functional features, bug fixes, integrations and existing behavior all continued to matter.
 
+I also migrated stored procedures between Oracle Database and Microsoft SQL Server, working through the database-specific SQL / stored-procedure differences while preserving application behavior. That work complements the application-side ORM-to-JPA migration.
+
 That taught me a pattern I have reused many times since: modernize legacy systems incrementally, preserve contracts at the edges, and avoid turning an infrastructure improvement into an excuse to freeze product development.
 
 ### UserManagement — my first independently owned corporate subsystem
@@ -45,7 +47,7 @@ The point was not language cleverness. It was to keep one security-sensitive imp
 
 Over time the work moved outward from individual engines and services toward a configurable product assembled from them.
 
-Legacy capabilities from systems such as CMR, KGR and ALM were wrapped behind **OpenAPI/REST contracts** and run together as a composed environment. Shared pieces such as **UserManagement**, identity, configuration and operational plumbing made those previously separate products behave like parts of one platform rather than a collection of unrelated applications.
+Legacy capabilities from systems such as CMR, KGR and ALM were wrapped behind **OpenAPI/REST contracts** and run together as a composed environment. My work in the Finastra era also included **Apache Kafka** as well as JMS-based integration; these should not be conflated with a claim of owning Kafka infrastructure. Shared pieces such as **UserManagement**, identity, configuration and operational plumbing made those previously separate products behave like parts of one platform rather than a collection of unrelated applications.
 
 The internal MVP/interface for that idea was **MisysBoard**: a configurable UI over a Docker Compose-based assembly of legacy services, normalized behind APIs and tied together through common identity and configuration.
 
@@ -118,7 +120,7 @@ This was a useful counterweight to “standardize everything”. Large systems c
 
 ## Hapag-Lloyd — event-driven enterprise systems
 
-At Hapag-Lloyd I worked on Java/Jakarta EE systems in the shipping/logistics domain, including event-driven integration and platform services around operational data.
+At Hapag-Lloyd I worked on Java/Jakarta EE systems in the shipping/logistics domain, including **Apache Kafka**-backed event-driven integration and platform services around operational data.
 
 The useful part of this period was seeing how asynchronous events, replicated/configuration state and independently evolving enterprise services behave in a large operational organization. It reinforced lessons from Nordea: distributed systems are as much about contracts, ownership and failure handling as they are about messaging technology.
 
@@ -151,6 +153,10 @@ current Docker/Linux operations + Google Cloud / AI platform experiments
 Recent work includes Google Cloud services around document/AI experiments as well as local/self-hosted infrastructure for agentic workflows.
 
 I do not treat “cloud” as a separate specialization detached from software design. What matters to me is the full boundary: application architecture, deployment model, identity, configuration, observability, failure recovery and the people who operate the result.
+
+## Additional tools and practices (cross-career)
+
+Alongside the architectural work above, I have used: **Spring Boot**, **EJB**, **Project Reactor**, **Maven**, **JUnit**, **Mockito**, **Liquibase**, **Angular Material**, **RxJS**, **Jenkins**, **GitHub Actions**, **Jira**, **Scrum**, **Playwright**, **WireMock**, **Docker Compose**, **ActiveMQ**, **RabbitMQ**, **Jasmine**, **ELK**, **SonarQube**, **Checkmarx**, **OWASP ZAP**, and **domain-driven design (DDD)**. These are cross-career technologies, not claims that every tool was used at each employer. The exact employer/project attribution of **Project Reactor** remains unverified (EverC is plausible, not confirmed).
 
 ## What this progression taught me
 
