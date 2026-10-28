@@ -190,9 +190,7 @@ VibeGuard explores the same separation in engineering terms:
 - automated systems may own evidence collection and mechanical checks;
 - the **Tech Owner owns the technical model, its boundaries and the accepted exceptions**.
 
-That does not prove VibeGuard is a product.
-
-It explains why it is the next experiment I currently care about: after learning to move operational and business variability to the correct side of an abstraction boundary, I now want to test whether the same principle can make agentic software delivery scale without turning either the AI or the supervising engineer into the wrong kind of owner.
+VibeGuard applies that separation to agentic delivery: automation executes repeatable work, while a technical owner remains accountable for system-level decisions and their consequences.
 
 ---
 

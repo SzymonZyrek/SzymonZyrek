@@ -33,7 +33,7 @@ The original business instinct behind VibeGuard was simple:
 
 The repository became a way to explore what that service might look like.
 
-### Why I take this seriously despite not having market proof yet
+### Why this direction follows from my engineering practice
 
 This is not evidence that VibeGuard is already a business.
 
@@ -72,17 +72,11 @@ keep the mental model
 
 VibeGuard feels like the same kind of signal.
 
-I am not looking at agentic coding from the outside and guessing that governance might become fashionable.
-
 I have been using agents, building workflows around them, watching codebases change under repeated AI-assisted iteration, and repeatedly hitting the point where **local implementation capability is no longer the interesting problem**.
 
 The interesting problem is preserving a system-level model while the implementation engine gets faster.
 
-That is why my confidence here is stronger than the prototype evidence.
-
-It is still a hypothesis.
-
-But it is a bottom-up hypothesis formed by working under the abstraction rather than a top-down trend prediction.
+The product direction follows from those engineering constraints: preserving system-level understanding and responsibility as implementation throughput increases.
 
 ![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
 

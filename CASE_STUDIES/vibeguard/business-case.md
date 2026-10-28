@@ -398,7 +398,7 @@ The product is valuable only if it improves this loop without turning the human 
 
 ## 11. Potential commercial shapes
 
-These are hypotheses, not validated revenue models.
+Potential delivery models depend on client needs, project risk and the cost of sustained technical ownership.
 
 ### Continuous Tech Owner
 
