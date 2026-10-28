@@ -202,7 +202,7 @@ This is one of those projects where the main value for me was discovering how qu
 
 Looking back, there is a slightly funny historical detail here: I had not yet encountered Gradle, but I had independently converged on several ideas that later made Gradle feel immediately familiar to me — executable Groovy configuration, a plugin/builder model and a build engine separated from toolchain-specific behavior.
 
-That is not a claim that JustBuild was "Gradle before Gradle". It was a small learning project. The useful signal is that once I eventually met the mature tool, I already had a concrete model of why those abstractions existed.
+Building JustBuild gave me a concrete model of project lifecycles, toolchains, artifact resolution and extension points. That made mature build tools such as Gradle easier to understand and use deliberately.
 
 ### fetchdog
 **Repository:** https://github.com/SzymonZyrek/fetchdog  
@@ -256,7 +256,7 @@ runtime configuration / lifecycle
 application behavior
 ```
 
-This was never a serious attempt to replace Java EE or Spring. It was a way to make container/framework internals concrete enough that, when an abstraction leaked in real work, there was somewhere sensible to start debugging.
+Building container and framework internals gave me a practical model for debugging lifecycle, class loading, configuration and routing problems when application abstractions leak.
 
 In hindsight it sits naturally next to the build-system line of experiments:
 
@@ -298,7 +298,7 @@ The interesting part for me was the interaction between compile-time code genera
 
 A small framework experiment around backend-independent model training and workflow orchestration.
 
-It separates model backends behind a registry and uses declarative dataset/workflow configuration. Again, this was mostly me poking at where a useful abstraction boundary should sit rather than trying to create a general-purpose ML platform.
+It separates model backends behind a registry and uses declarative dataset/workflow configuration. The project explores reusable abstractions for model backends and training workflows.
 
 ## Agent workflow experiments
 

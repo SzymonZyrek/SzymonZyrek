@@ -5,8 +5,8 @@
 <text x="40" y="89" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="450" fill="#687B96">The case study separates what exists, what is simulated and what remains a hypothesis.</text>
 
 <rect x="40" y="112" width="1520" height="50" rx="13" fill="#FFFFFF" stroke="#D8E3EF"/>
-<text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#5E7188">CLAIM BOUNDARY</text>
-<text x="190" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">the prototype is implementation evidence; it is not presented as a production governance platform</text>
+<text x="58" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" font-weight="800" fill="#5E7188">IMPLEMENTATION STATUS</text>
+<text x="190" y="143" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="620" fill="#10243E">implemented ownership/review flow; production hardening is ongoing</text>
 
 <rect x="70" y="220" width="430" height="420" rx="20" fill="#FFFFFF" stroke="#2F7BF6" stroke-width="1.5"/>
 <text x="95" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="800" fill="#2F7BF6">1 · IMPLEMENTED PROTOTYPE</text>

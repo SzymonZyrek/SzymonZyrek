@@ -137,7 +137,7 @@ That progression continued through local models and custom agent loops into docu
 
 ## Engineering archaeology
 
-The older public repositories are not presented as finished products. They are a record of how I learn.
+My older public repositories document hands-on exploration of architecture, runtimes, build tools and low-level engineering.
 
 Highlights include:
 

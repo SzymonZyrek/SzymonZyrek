@@ -35,13 +35,13 @@ Not another model, prompt, skill or plugin, but a different **engineering model*
 
 VibeGuard puts an experienced engineer above the implementation loop as a persistent **Tech Owner**: the person who owns architecture, security boundaries, refactor direction, irreversible choices and technical sanity while agents handle an increasing share of execution.
 
-This is still a hypothesis, not validated market evidence. But it is not a detached forecast either. It comes from a recurring first-principles pattern in my work: go under an abstraction, rebuild enough of the machinery to expose the real constraints, and only then decide which layer actually needs to exist. Older projects such as [JustBuild](https://github.com/SzymonZyrek/just_build_poc), [FetchDog](https://github.com/SzymonZyrek/fetchdog), [Faxus](https://github.com/SzymonZyrek/faxus) and [Meserve](https://github.com/SzymonZyrek/meserve) document the same habit in build systems, artifact resolution and application runtimes.
+This direction follows a recurring first-principles pattern in my work: go under an abstraction, rebuild enough of the machinery to expose the real constraints, and only then decide which layer actually needs to exist. Older projects such as [JustBuild](https://github.com/SzymonZyrek/just_build_poc), [FetchDog](https://github.com/SzymonZyrek/fetchdog), [Faxus](https://github.com/SzymonZyrek/faxus) and [Meserve](https://github.com/SzymonZyrek/meserve) document the same habit in build systems, artifact resolution and application runtimes.
 
-[Why I trust the direction despite limited evidence →](vibeguard/discovery.md#why-i-take-this-seriously-despite-not-having-market-proof-yet)
+[Engineering evolution →](vibeguard/discovery.md)
 
 ## The working product — October 2026
 
-These four captures show the authenticated prototype with real GitHub project and pull-request context on **2026-10-04**. They document the implemented ownership/review workflow; they do not establish market demand, production readiness or completion of the larger execution-provider loop.
+These four captures show the authenticated ownership/review prototype working with real GitHub project and pull-request context on **2026-10-04**.
 
 ### Review the capability, with the exact PR context
 
@@ -115,7 +115,7 @@ The split is intentional:
 - **HackaTeam** can execute accepted work and return normal GitHub evidence without becoming VibeGuard's hidden backend or scheduler.
 - **GitHub** remains the durable coordination surface between all three.
 
-This is not presented as a finished end-to-end product today. The RepoGraph consumer proof, VibeGuard adapter and HackaTeam work-request integration are still open delivery items; keeping that boundary explicit is part of the design.
+The RepoGraph consumer integration, VibeGuard adapter and HackaTeam work-request handoff are tracked as upcoming delivery steps.
 
 Useful live anchors: [RepoGraph consumer contract](https://github.com/SzymonZyrek/RepoGraph/blob/main/docs/consumers.md), [VibeGuard control-plane direction](https://github.com/ateshgahofmine/VibeGuard/issues/186), [VibeGuard RepoGraph adapter](https://github.com/ateshgahofmine/VibeGuard/issues/182), [HackaTeam RepoGraph integration](https://github.com/ateshgahofmine/HackaTeam/issues/54) and [GitHub-native execution handoff](https://github.com/ateshgahofmine/HackaTeam/issues/55).
 
@@ -125,15 +125,15 @@ The core product tension is not whether AI can produce useful code. It is whethe
 
 ![From coding agents to a new engineering model](assets/vibeguard/diagrams/07-engineering-model.svg)
 
-### Evidence check
+### Industry signals
 
-A separate research pass tested the premises rather than the product pitch.
+Public industry research highlights the pressures facing AI-assisted software delivery.
 
 The useful result is a tension, not a market-size number: **AI-assisted implementation is scaling quickly, while trust and delegation remain much weaker around consequential work.**
 
 ![External evidence behind the workflow thesis](assets/vibeguard/diagrams/08-evidence-landscape.svg)
 
-[Research snapshot, exact sources and claim boundaries →](vibeguard/evidence.md)
+[Industry research and sources →](vibeguard/evidence.md)
 
 ---
 
@@ -499,7 +499,7 @@ The code is evidence that the idea was explored materially, not proof of a produ
 | **3–5 minutes** | [Visual tour](vibeguard/visual-tour.md) — the full thesis in diagrams: problem, evidence, delegation boundary, control loop and prototype boundary. |
 | **5 minutes** | [Discovery & evolution](vibeguard/discovery.md) — AI Studio prototype → rescue marketplace → review layer → persistent Tech Owner. |
 | **5–10 minutes** | [Tech Owner model](vibeguard/ownership-model.md) — what remains human-owned and why. |
-| **5 minutes** | [External evidence](vibeguard/evidence.md) — the small set of public signals worth keeping, plus explicit claim boundaries. |
+| **5 minutes** | [External evidence](vibeguard/evidence.md) — the small set of public signals worth keeping, with source references. |
 | **5–10 minutes** | [Business case](vibeguard/business-case.md) — why agentic engineering may expand the amount of software worth building, where the traditional workflow hits a ceiling, and how senior technical ownership could become leverage. |
 | **5–10 minutes** | [Prototype & architecture](vibeguard/prototype.md) — what really exists, what is simulated and what a production rewrite would need. |
 
@@ -547,7 +547,7 @@ It is to spend engineering judgement where it is actually scarce.
 
 ---
 
-## Source and claim boundary
+## Implementation and roadmap
 
 The VibeGuard implementation repository is now public: **[ateshgahofmine/VibeGuard](https://github.com/ateshgahofmine/VibeGuard)**.
 
@@ -559,9 +559,4 @@ The next system step is still explicitly **work in progress**:
 2. **VibeGuard** has an open adapter/control-plane track for consuming RepoGraph evidence without moving ownership or policy into the graph.
 3. **HackaTeam** has open integration work for RepoGraph-backed context and a GitHub-native execution-provider handoff.
 
-So the portfolio makes two claims, not one inflated claim:
-
-- the VibeGuard ownership/review prototype is materially implemented and inspectable in public source;
-- the larger RepoGraph → VibeGuard → execution-provider loop is the current architecture and delivery direction, not yet a fully completed product.
-
-That distinction is useful evidence in itself: the design is trying to preserve exact authority, provenance and source-of-truth boundaries even while the surrounding agentic workflow is still changing quickly.
+The current VibeGuard ownership/review workflow is implemented and inspectable in public source. The broader RepoGraph → VibeGuard → execution-provider architecture is under active integration, with human authority, provenance and GitHub-based evidence forming its core design constraints.

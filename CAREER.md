@@ -47,7 +47,7 @@ The point was not language cleverness. It was to keep one security-sensitive imp
 
 Over time the work moved outward from individual engines and services toward a configurable product assembled from them.
 
-Legacy capabilities from systems such as CMR, KGR and ALM were wrapped behind **OpenAPI/REST contracts** and run together as a composed environment. My work in the Finastra era also included **Apache Kafka** as well as JMS-based integration; these should not be conflated with a claim of owning Kafka infrastructure. Shared pieces such as **UserManagement**, identity, configuration and operational plumbing made those previously separate products behave like parts of one platform rather than a collection of unrelated applications.
+Legacy capabilities from systems such as CMR, KGR and ALM were wrapped behind **OpenAPI/REST contracts** and run together as a composed environment. My Finastra-era work also included **Apache Kafka** and JMS-based integrations. Shared pieces such as **UserManagement**, identity, configuration and operational plumbing made those previously separate products behave like parts of one platform rather than a collection of unrelated applications.
 
 The internal MVP/interface for that idea was **MisysBoard**: a configurable UI over a Docker Compose-based assembly of legacy services, normalized behind APIs and tied together through common identity and configuration.
 
@@ -156,7 +156,7 @@ I do not treat “cloud” as a separate specialization detached from software d
 
 ## Additional tools and practices (cross-career)
 
-Alongside the architectural work above, I have used: **Spring Boot**, **EJB**, **Project Reactor**, **Maven**, **JUnit**, **Mockito**, **Liquibase**, **Angular Material**, **RxJS**, **Jenkins**, **GitHub Actions**, **Jira**, **Scrum**, **Playwright**, **WireMock**, **Docker Compose**, **ActiveMQ**, **RabbitMQ**, **Jasmine**, **ELK**, **SonarQube**, **Checkmarx**, **OWASP ZAP**, and **domain-driven design (DDD)**. These are cross-career technologies, not claims that every tool was used at each employer. The exact employer/project attribution of **Project Reactor** remains unverified (EverC is plausible, not confirmed).
+Alongside the architectural work above, I have used: **Spring Boot**, **EJB**, **Project Reactor**, **Maven**, **JUnit**, **Mockito**, **Liquibase**, **Angular Material**, **RxJS**, **Jenkins**, **GitHub Actions**, **Jira**, **Scrum**, **Playwright**, **WireMock**, **Docker Compose**, **ActiveMQ**, **RabbitMQ**, **Jasmine**, **ELK**, **SonarQube**, **Checkmarx**, **OWASP ZAP**, and **domain-driven design (DDD)**.
 
 ## What this progression taught me
 

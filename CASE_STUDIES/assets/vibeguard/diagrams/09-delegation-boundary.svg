@@ -56,5 +56,5 @@
   <rect x="55" y="708" width="1490" height="126" rx="18" fill="#10243E"/>
   <text x="86" y="748" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">policy → agent execution → automated evidence → material uncertainty only → Tech Owner decision → decision memory</text>
   <text x="86" y="783" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" fill="#DDE6F1">The goal is not more approval. The goal is less human attention spent below the level where judgement changes the system.</text>
-  <text x="86" y="811" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#AFC0D4">Inference derived from adoption + trust/responsibility signals; source details and claim boundaries in vibeguard/evidence.md.</text>
+  <text x="86" y="811" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="12" fill="#AFC0D4">Inference derived from adoption + trust/responsibility signals; industry sources and methodology: vibeguard/evidence.md.</text>
 </svg>

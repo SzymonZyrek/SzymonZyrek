@@ -48,8 +48,6 @@ Examples from my public repositories:
 - **[Faxus](https://github.com/SzymonZyrek/faxus)** pushed that further into explicit artifact identity, qualifiers, repositories, caches and resolvers.
 - **[Meserve](https://github.com/SzymonZyrek/meserve)** reconstructed enough application-runtime/container machinery — metadata, configuration, lifecycle, class loading, events, HTTP — that framework/application-server abstractions became concrete rather than ceremonial.
 
-Those projects are not proof that I independently invented the mature tools around them, and that is not the claim.
-
 Stynk is the stronger, later piece of evidence because it moved the same habit out of toy systems and into a real business.
 
 The company owner initially carried a large amount of operational synchronization in his head. As the CRM evolved, mechanical coordination moved into explicit workflow, notifications and state. Later, repeated pricing and service changes exposed another ownership problem: business variability lived in developer-owned code. The response was not another larger hard-coded feature, but a shift toward a configurable model/runtime where the platform owns execution guarantees and the business increasingly owns the model it changes.
@@ -116,9 +114,7 @@ change the model
 
 That development method is important to the case study.
 
-VibeGuard is not presented as a polished codebase whose architecture should be copied into a production system.
-
-It is a **thinking tool implemented as software**.
+VibeGuard began as an experimental application for testing product workflows and architectural decisions through working software.
 
 ---
 
