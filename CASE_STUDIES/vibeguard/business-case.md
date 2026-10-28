@@ -46,7 +46,7 @@ GitHub, Stack Overflow and LinkedIn data point in the same direction: AI-assiste
 
 That is enough to justify testing a new workflow layer. It is not evidence that customers will pay for VibeGuard.
 
-[Exact sources, numbers and claim boundaries →](evidence.md)
+[Industry data and sources →](evidence.md)
 
 ---
 
@@ -398,7 +398,7 @@ The product is valuable only if it improves this loop without turning the human 
 
 ## 11. Potential commercial shapes
 
-These are hypotheses, not validated revenue models.
+Potential delivery models depend on client needs, project risk and the cost of sustained technical ownership.
 
 ### Continuous Tech Owner
 
@@ -434,7 +434,7 @@ The marketplace is then a supply mechanism for ownership rather than the core pr
 
 ## 12. What would make the business thesis false?
 
-The case is not proven.
+The business hypothesis is being tested.
 
 Several things could invalidate or weaken it:
 
@@ -445,9 +445,7 @@ Several things could invalidate or weaken it:
 - the cost of building reliable policy/evidence routing may exceed the value of the compressed attention;
 - one Tech Owner may not actually be able to supervise enough additional implementation to change the economics.
 
-Those are useful falsification questions.
-
-The PoC exists to make them easier to test.
+The PoC provides a way to test these assumptions against implementation and user feedback.
 
 ---
 

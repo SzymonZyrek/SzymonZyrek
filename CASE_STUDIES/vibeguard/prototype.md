@@ -1,4 +1,4 @@
-# VibeGuard — prototype, architecture and claim boundary
+# VibeGuard — implementation and architecture
 
 [← Case study overview](../VIBEGUARD.md) · [Evidence](evidence.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Visual tour](visual-tour.md)
 
@@ -10,7 +10,7 @@ This page separates:
 2. what the new Tech Owner PoC simulates;
 3. what would need to be rebuilt for a real product.
 
-That boundary matters more here than polishing the prototype into something it is not.
+The sections below trace the implementation and architectural evolution.
 
 ![Prototype evidence vs product direction](../assets/vibeguard/diagrams/05-prototype-product-boundary.svg)
 
@@ -70,7 +70,7 @@ The strongest implemented path is GitHub.
 
 Some "universal Git" behaviour uses synthetic fallbacks when provider APIs are unavailable.
 
-That is prototype convenience, not a production claim.
+This is a prototype implementation detail.
 
 ---
 
@@ -435,16 +435,8 @@ They have still earned their keep by helping expose the more useful model.
 
 ---
 
-## 13. Claim boundary
+## 13. Implementation status
 
-For this portfolio I am comfortable claiming:
-
-> I built and iterated a working prototype around AI-assisted repository inspection, audit, diff/review and human escalation, then used that prototype to explore a broader Tech Owner control-loop model.
-
-I am **not** claiming:
-
-> VibeGuard is a production-ready AI governance platform.
-
-The distinction is deliberate.
+The working prototype evolved from AI-assisted repository inspection, auditing and diff/review into an ownership and human-escalation control loop. Production hardening and the wider integration model are tracked separately from the implemented prototype.
 
 The interesting engineering signal is the ability to use implementation to test a systems hypothesis, recognize when the original abstraction is too small, and change the model before hardening the wrong product.

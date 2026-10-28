@@ -2,7 +2,7 @@
 
 This is the wider map behind the shorter profile README.
 
-The repositories are intentionally not presented as if every experiment were one polished product. Some are active systems, some are current R&D, and some are simply old hobby projects I still like having around.
+This index spans production systems, active R&D and historical engineering experiments.
 
 For a chronological, less formal look at the older experiments, see **[HOBBY_PROJECTS.md](HOBBY_PROJECTS.md)**.
 

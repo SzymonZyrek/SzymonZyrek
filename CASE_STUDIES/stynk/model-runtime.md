@@ -84,6 +84,6 @@ Some design choices I consider important:
 - dispatch depth is bounded to prevent automation loops;
 - semantic object changes go through an explicit mutation boundary rather than broad Django `post_save` magic.
 
-This is active platform/generalisation work rather than a claim that every historical CRM workflow has already been rewritten onto that runtime.
+The model/runtime generalisation is under active development, with existing CRM workflows moving to it incrementally.
 
 ---

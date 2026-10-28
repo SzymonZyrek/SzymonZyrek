@@ -33,7 +33,7 @@ The original business instinct behind VibeGuard was simple:
 
 The repository became a way to explore what that service might look like.
 
-### Why I take this seriously despite not having market proof yet
+### Why this direction follows from my engineering practice
 
 This is not evidence that VibeGuard is already a business.
 
@@ -47,8 +47,6 @@ Examples from my public repositories:
 - **[FetchDog](https://github.com/SzymonZyrek/fetchdog)** extracted artifact acquisition from the build tool and reframed it as logical artifact → concrete representation → provider/cache/resolution.
 - **[Faxus](https://github.com/SzymonZyrek/faxus)** pushed that further into explicit artifact identity, qualifiers, repositories, caches and resolvers.
 - **[Meserve](https://github.com/SzymonZyrek/meserve)** reconstructed enough application-runtime/container machinery — metadata, configuration, lifecycle, class loading, events, HTTP — that framework/application-server abstractions became concrete rather than ceremonial.
-
-Those projects are not proof that I independently invented the mature tools around them, and that is not the claim.
 
 Stynk is the stronger, later piece of evidence because it moved the same habit out of toy systems and into a real business.
 
@@ -74,17 +72,11 @@ keep the mental model
 
 VibeGuard feels like the same kind of signal.
 
-I am not looking at agentic coding from the outside and guessing that governance might become fashionable.
-
 I have been using agents, building workflows around them, watching codebases change under repeated AI-assisted iteration, and repeatedly hitting the point where **local implementation capability is no longer the interesting problem**.
 
 The interesting problem is preserving a system-level model while the implementation engine gets faster.
 
-That is why my confidence here is stronger than the prototype evidence.
-
-It is still a hypothesis.
-
-But it is a bottom-up hypothesis formed by working under the abstraction rather than a top-down trend prediction.
+The product direction follows from those engineering constraints: preserving system-level understanding and responsibility as implementation throughput increases.
 
 ![The responsibility gap in AI-built software](../assets/vibeguard/diagrams/01-responsibility-gap.svg)
 
@@ -116,9 +108,7 @@ change the model
 
 That development method is important to the case study.
 
-VibeGuard is not presented as a polished codebase whose architecture should be copied into a production system.
-
-It is a **thinking tool implemented as software**.
+VibeGuard began as an experimental application for testing product workflows and architectural decisions through working software.
 
 ---
 

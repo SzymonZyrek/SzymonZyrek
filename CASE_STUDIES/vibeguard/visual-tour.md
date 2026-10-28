@@ -4,11 +4,11 @@
 
 This is the shortest visual path through the idea.
 
-VibeGuard remains R&D, with an implemented authenticated ownership/review workflow. The tour starts with actual application captures, then explains the problem model, evidence, control loop and claim boundary.
+VibeGuard remains R&D, with an implemented authenticated ownership/review workflow. The tour starts with actual application captures, then explains the product model, industry context and ownership control loop.
 
 ## The working product — 2026-10-04
 
-Actual screenshots from an authenticated local workspace with real GitHub project and PR context. These show product behavior, not market validation or a production-readiness claim.
+Actual screenshots from an authenticated local workspace with real GitHub project and PR context. They document the implemented review and ownership interactions.
 
 ### Review the capability, with the exact PR context
 
@@ -198,7 +198,7 @@ Decision Workspace
 
 Those earlier decision packets were simulated. The current workspace captures above show the later authenticated implementation: accepted responsibility, deterministic routing and real PR review context. Broader policy automation and the execution-provider loop remain separate product work.
 
-[Prototype & claim boundary →](prototype.md)
+[Prototype architecture and implementation →](prototype.md)
 
 ---
 

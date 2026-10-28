@@ -3,13 +3,13 @@
 [← Case study overview](../VIBEGUARD.md) · [Discovery](discovery.md) · [Tech Owner model](ownership-model.md) · [Business case](business-case.md) · [Prototype](prototype.md) · [Visual tour](visual-tour.md)
 
 > **Research snapshot:** 2026-09-30  
-> **Purpose:** test the premises behind the VibeGuard thesis, not manufacture product validation.
+> **Purpose:** examine the engineering and industry context behind VibeGuard.
 
-The research supports a narrower claim than "VibeGuard has a validated market":
+Public data highlights a gap between growing AI-assisted implementation capacity and confidence in high-impact technical delegation:
 
 > **AI-assisted implementation capacity is scaling quickly, while trust, high-risk delegation and accountable technical ownership remain materially constrained.**
 
-That is enough to make the workflow problem worth testing.
+This is the engineering problem VibeGuard addresses through ownership, review and decision records.
 
 ## The few signals worth keeping
 
@@ -32,19 +32,9 @@ The first is measured ecosystem evidence.
 
 The second is a **VibeGuard inference** from those measurements: autonomy should increase where work is reversible and mechanically verifiable, while human authority should remain strongest where a change alters architecture, security, data semantics or accepted risk.
 
-## Claim boundary
+## Interpretation
 
-The research does **not** establish:
-
-- demand or willingness to pay for VibeGuard;
-- that AI caused all recent increases in repository or PR activity;
-- that every organization will need a separate Tech Owner product;
-- that human review should remain mandatory for all high-risk work forever;
-- that any one current metric predicts VibeGuard revenue.
-
-It does establish enough to justify testing the engineering hypothesis:
-
-> **scaling implementation and scaling judgement are becoming different problems.**
+These ecosystem measurements describe adoption, software-change activity and developer attitudes. They motivate VibeGuard's focus on a practical distinction: **scaling implementation and scaling accountable engineering decisions are different problems.**
 
 ## Sources
 
@@ -54,4 +44,3 @@ It does establish enough to justify testing the engineering hypothesis:
 - AGENTS.md open format — https://agents.md/
 - OpenAI, **Codex usage / agentic tooling** — https://openai.com/index/codex-for-knowledge-work/ and https://openai.com/index/introducing-the-agents-api/
 
-OpenAI usage numbers were useful as a scale signal in the research pass, but the primary portfolio slides above deliberately lean more heavily on GitHub, Stack Overflow and LinkedIn because they provide a cleaner mix of ecosystem activity, developer attitudes and labor-market demand.

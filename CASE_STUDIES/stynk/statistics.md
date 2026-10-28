@@ -31,7 +31,7 @@ The numbers below intentionally distinguish **repository-derived measurements** 
 | **Curated Browser E2E catalog** | **41** product-capability targets; **35** mapped to **8** active browser modules |
 | **Deployment shape** | Angular + Django/DRF + PostgreSQL + Redis/Celery + nginx, deployed with Docker Compose on Linux |
 
-These are deliberately not presented as productivity KPIs. Commit counts, file counts and test counts do not measure software quality. They are useful here only to establish the scale of the system behind the architectural story.
+Repository statistics provide a view of the system's scale, development activity and verification infrastructure. They are not a software-quality score.
 
 ---
 
@@ -242,7 +242,7 @@ These statistics are intentionally conservative.
 - Generated dependencies such as `node_modules` or Python virtual environments are not part of the tracked-file counts.
 - "Test/spec/E2E-like files" is a path/file-shape count, not a claim that every file represents one runtime test.
 - Historical CI reports contain individual runtime test/coverage measurements, but those become stale quickly in an actively changing repository and are therefore not used as headline statistics here.
-- Production/user/ownership facts are operational claims supplied by the system's technical owner and can be demonstrated/discussed in an interview; they are not inferred from commit authorship.
+- Production usage and operational ownership are described independently from repository activity.
 - Statistics will naturally drift as the active repository continues to change.
 
 The purpose of this page is not to turn software engineering into numerology. It is to give the qualitative case study a measurable physical scale.
