@@ -36,5 +36,5 @@ fi
 
 echo "Built: $OUTPUT ($pages pages)"
 
-# Render the two role-targeted CVs using the same HTML/CSS → WeasyPrint → Ghostscript pipeline.
+# Render the role-targeted CVs using the same HTML/CSS → WeasyPrint → Ghostscript pipeline.
 bash "$ROOT/cv/build-variants.sh"

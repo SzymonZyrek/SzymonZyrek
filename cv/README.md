@@ -69,17 +69,18 @@ README.md
 The original `cv/Szymon_Zyrek_CV.html`, `cv/styles.css` and root-level
 `Szymon_Zyrek_CV.pdf` stay the canonical architecture/storytelling CV.
 
-Two **additional**, reverse-chronological, recruiter-oriented sources live alongside it:
+Three **additional**, reverse-chronological, recruiter-oriented sources live alongside it:
 
 | Source | Generated PDF | Use |
 | --- | --- | --- |
 | `Szymon_Zyrek_CV_Senior.html` | `../Szymon_Zyrek_CV_Senior.pdf` | Senior Java / Angular / Full-stack / Backend |
 | `Szymon_Zyrek_CV_Agentic.html` | `../Szymon_Zyrek_CV_Agentic.pdf` | Applied AI platform / coding-agent tooling |
+| `Szymon_Zyrek_CV_Java_AI.html` | `../Szymon_Zyrek_CV_Java_AI.pdf` | Senior Java / applied AI / agentic systems |
 
-Both sources use `styles.css` plus additive `variants.css`, Inter fonts,
+All three targeted sources use `styles.css` plus additive `variants.css`, Inter fonts,
 WeasyPrint, Ghostscript optimization, poppler page-count checks and searchable-text
-smoke tests. `bash cv/build.sh` renders and validates all three PDFs, each exactly
-two A4 pages. The GitHub Actions workflow publishes the two **new** PDFs as 90-day CI artifacts
+smoke tests. `bash cv/build.sh` renders and validates all four PDFs, each exactly
+two A4 pages. The GitHub Actions workflow publishes the three targeted PDFs as 90-day CI artifacts
 on every source update. After merge to `main`, it also publishes stable assets on
 the `cv-latest` GitHub Release (without committing binaries to a protected branch).
 The existing root PDF is never rewritten in GitHub by this workflow.

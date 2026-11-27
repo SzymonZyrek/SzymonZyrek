@@ -6,6 +6,7 @@ on:
       - "cv/Szymon_Zyrek_CV.html"
       - "cv/Szymon_Zyrek_CV_Senior.html"
       - "cv/Szymon_Zyrek_CV_Agentic.html"
+      - "cv/Szymon_Zyrek_CV_Java_AI.html"
       - "cv/variants.css"
       - "cv/build-variants.sh"
       - "cv/styles.css"
@@ -54,6 +55,7 @@ jobs:
           path: |
             Szymon_Zyrek_CV_Senior.pdf
             Szymon_Zyrek_CV_Agentic.pdf
+            Szymon_Zyrek_CV_Java_AI.pdf
 
       - name: Publish stable CV downloads from main
         if: github.ref == 'refs/heads/main'
@@ -64,4 +66,4 @@ jobs:
           if ! gh release view cv-latest >/dev/null 2>&1; then
             gh release create cv-latest --target "$GITHUB_SHA" --title "CV — current targeted variants" --notes "Generated from checked-in HTML/CSS with WeasyPrint and Ghostscript. The original profile CV is unchanged."
           fi
-          gh release upload cv-latest Szymon_Zyrek_CV_Senior.pdf Szymon_Zyrek_CV_Agentic.pdf --clobber
+          gh release upload cv-latest Szymon_Zyrek_CV_Senior.pdf Szymon_Zyrek_CV_Agentic.pdf Szymon_Zyrek_CV_Java_AI.pdf --clobber
