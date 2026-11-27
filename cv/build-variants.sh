@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 for tool in weasyprint gs pdfinfo pdftotext; do
   command -v "$tool" >/dev/null || { echo "Missing dependency: $tool" >&2; exit 1; }
 done
-for variant in Senior Agentic; do
+for variant in Senior Agentic Java_AI; do
   source="$ROOT/cv/Szymon_Zyrek_CV_${variant}.html"
   output="$ROOT/Szymon_Zyrek_CV_${variant}.pdf"
   raw="$(mktemp --suffix=.pdf)"
@@ -23,6 +23,10 @@ for variant in Senior Agentic; do
   pdftotext "$output" "$textfile"
   if [[ "$variant" == "Senior" ]]; then
     for needle in "Senior Full-stack" "Finastra" "Nordea" "Stynk" "Kafka" "Spring Boot" "Oracle" "SQL Server" "Mockito" "Playwright"; do
+      grep -qi "$needle" "$textfile" || { echo "Missing text: $needle" >&2; exit 1; }
+    done
+  elif [[ "$variant" == "Java_AI" ]]; then
+    for needle in "Senior Java Engineer" "Agentic Systems" "RepoGraph" "VibeGuard" "HackaTeam" "Finastra" "MCP" "Spring Boot" "Kafka" "Stynk"; do
       grep -qi "$needle" "$textfile" || { echo "Missing text: $needle" >&2; exit 1; }
     done
   else
